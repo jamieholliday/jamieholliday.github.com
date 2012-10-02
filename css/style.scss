@@ -1,0 +1,186 @@
+@import "normalize";
+@import "main";
+
+/* vars ------------------------------------ */
+
+$padding:20px;
+$highlight:#EAA444;
+$text:#777;
+$lightGrey:#e5e5e5;
+
+/* Jamies styles begin here ------------------------------------ */
+
+/* Fonts ------------------------------------ */
+@font-face {
+	font-family: 'web-tech';
+	src:url('../fonts/web-tech.eot');
+	src:url('../fonts/web-tech.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/web-tech.svg#web-tech') format('svg'),
+		url('../fonts/web-tech.woff') format('woff'),
+		url('../fonts/web-tech.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background:url('../img/subtle_dots.png');
+	font-family: helvetica, sans-serif;
+	color:$text;
+	font-family: 'Source Code Pro', sans-serif;
+}
+
+a{
+	color:$highlight;
+}
+
+a:hover, a:active{
+	color: darken($highlight, 10%);
+}
+
+h2{
+	border-bottom:1px solid $lightGrey;
+	color:$highlight;
+	font-family: 'Source Code Pro', sans-serif;
+	font-size:200%;
+	font-weight:300;
+}
+
+.grid-2 {
+	width: 50%;
+	float: left;
+	padding-right: $padding;
+}
+
+.wrapper {
+	overflow: hidden;
+	width: 90%;
+	margin: 0 auto;
+	padding-left: $padding;
+}
+
+header{
+	overflow:hidden;
+}
+
+.title{
+	float:right;
+	padding-right:$padding;
+	width:80%;
+
+	h1{
+		font-family: 'Source Code Pro', sans-serif;
+		font-weight:400;
+		font-size:500%;
+		letter-spacing:-5px;
+		color:darken($lightGrey, 10%);
+		text-align:right;
+		margin: 10px 0;
+		line-height:0.9em;
+	}
+}
+
+.logo{
+	float:left;
+	width:15%;
+	margin:20px 5% 0 0;
+	background:red;
+}
+
+.contact-links{
+	padding:0;
+	li{
+		list-style:none;
+		margin-bottom:8px;
+		padding-left:0;
+	}
+}
+
+[data-icon-email]:before, [data-icon-twitter]:before, [data-icon-github]:before, [data-icon-linkedin]:before, [data-icon-html]:before, [data-icon-css]:before, [data-icon-js]:before, [data-icon-apple]:before, [data-icon-chrome]:before{
+  font-family: 'web-tech'; /* BYO icon font, mapped smartly */
+  speak: none; /* Not to be trusted, but hey. */
+  margin-right:10px;
+  position:relative;
+  font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+[data-icon-email]:before {
+  content: attr(data-icon-email);
+  top:3px;
+}
+
+[data-icon-twitter]:before {
+  content: attr(data-icon-twitter);
+  top:2px;
+}
+
+[data-icon-github]:before {
+  content: attr(data-icon-github);
+  top:2px;
+}
+
+[data-icon-linkedin]:before {
+  content: attr(data-icon-linkedin);
+  top:1px;
+}
+
+[data-icon-html]:before {
+  content: attr(data-icon-html);
+  top:1px;
+}
+
+[data-icon-css]:before {
+  content: attr(data-icon-css);
+  top:1px;
+}
+
+[data-icon-apple]:before {
+  content: attr(data-icon-apple);
+  top:1px;
+}
+
+[data-icon-chrome]:before {
+  content: attr(data-icon-chrome);
+  top:1px;
+}
+
+[data-icon-js]:before {
+  content: attr(data-icon-js);
+  top:1px;
+}
+
+.tech {
+	overflow:hidden;
+	padding:0;
+	li{
+		list-style:none;
+		float:left;
+		margin-right:7%;
+		font-size:50px;
+		color:darken($lightGrey, 10%);
+	}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 580px) {
+	.grid-2 {
+		width: 100%;
+	}
+
+	.title{
+
+	h1{
+		font-size:300%;
+	}
+}
+
+}
+
