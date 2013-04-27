@@ -191,7 +191,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4859,
+				"buffer_size": 4983,
 				"line_ending": "Unix"
 			}
 		},
@@ -199,7 +199,7 @@
 			"file": "/Users/Jamie/Downloads/fontello-47e4961b/demo.html",
 			"settings":
 			{
-				"buffer_size": 4961,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -248,14 +248,6 @@
 			"settings":
 			{
 				"buffer_size": 25,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "CNAME",
-			"settings":
-			{
-				"buffer_size": 17,
 				"line_ending": "Unix"
 			}
 		}
@@ -364,6 +356,7 @@
 	},
 	"file_history":
 	[
+		"/Users/Jamie/Documents/MAMP/jamieholliday.com/CNAME",
 		"/Users/Jamie/Downloads/fontello-47e4961b/css/fontello.css",
 		"/Users/Jamie/Documents/MAMP Websites/ievent/www/js/app.js",
 		"/Users/Jamie/Documents/MAMP Websites/ievent/www/css/style.scss",
@@ -529,7 +522,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -537,15 +530,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 4859,
+						"buffer_size": 4983,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4553,
-								4553
+								2073,
+								2073
 							]
 						],
 						"settings":
@@ -555,7 +548,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 322.0,
+						"translation.y": 579.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -565,15 +558,15 @@
 					"file": "/Users/Jamie/Downloads/fontello-47e4961b/demo.html",
 					"settings":
 					{
-						"buffer_size": 4961,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								139
+								0,
+								0
 							]
 						],
 						"settings":
@@ -740,32 +733,6 @@
 						"settings":
 						{
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "CNAME",
-					"settings":
-					{
-						"buffer_size": 17,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								17
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
