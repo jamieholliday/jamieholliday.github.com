@@ -4,4 +4,4 @@ v2 website/*
 .sass-cache/*
 jh.sublime-project
 jh.sublime-workspace
-
+js/config.js
