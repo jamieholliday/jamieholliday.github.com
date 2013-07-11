@@ -2,10 +2,15 @@
   "name": "jamieholliday.com",
   "version": "2.0.0",
   "description": "Portfolio",
-  "main": "Gruntfile.js",
+
   "dependencies": {
-   
+    "express": "3.0.0",
+    "passport": ">=0.1.17",
+    "passport-local": ">= 0.0.0",
+    "connect-flash": "~0.1.0",
+    "mongojs": "~0.7.7"
   },
+  
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-livereload": "~0.1.2",
