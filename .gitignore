@@ -1,7 +1,5 @@
 node_modules/*
-v2 website/*
 .DS_Store
 .sass-cache/*
 jh.sublime-project
 jh.sublime-workspace
-js/config.js
