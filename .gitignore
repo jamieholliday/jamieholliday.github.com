@@ -1,5 +1,6 @@
-node_modules/*
+logs/*
+node_modules/
+public/bower_components/
+public/css
+public/js
 .DS_Store
-.sass-cache/*
-jh.sublime-project
-jh.sublime-workspace
