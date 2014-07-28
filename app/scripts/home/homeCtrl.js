@@ -1,0 +1,4 @@
+angular.module('jhApp')
+.controller('homeCtrl', function($scope) {
+	$scope.test = 'from controller';
+});

@@ -1,9 +1,13 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
+    less = require('gulp-less'),
+    minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
-    clean = require('gulp-clean'),
-    sass = require('gulp-sass'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    uglify = require('gulp-uglify')
+    minifyHtml = require('gulp-minify-html'),
+    sourceMaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer');
 
 // Modules for webserver and livereload
@@ -26,18 +30,27 @@ server.all('/*', function(req, res) {
   res.sendfile('index.html', { root: 'public' });
 });
 
+var paths = {
+    js : [
+      'app/vendor/angular/angular.js',
+      'app/vendor/angular-ui-router/release/angular-ui-router.js',
+      'app/scripts/**/*.js', 
+      'app/scripts/main.js'
+    ]
+}
+
 // Dev task
-gulp.task('default', ['views', 'styles', 'lint', 'js'], function() {
+gulp.task('default', ['views', 'styles', 'js'], function() {
   // Start webserver
   server.listen(serverport);
   // Start live reload
   lrserver.listen(livereloadport);
   // Run the watch task, to keep taps on changes
   gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],[
-    'lint', 'js'
+    'js'
   ]);
   // Watch our sass files
-  gulp.watch(['app/styles/**/*.scss'], [
+  gulp.watch(['app/styles/**/*.less'], [
     'styles'
   ]);
 
@@ -46,23 +59,24 @@ gulp.task('default', ['views', 'styles', 'lint', 'js'], function() {
     ]);
 });
 
-// JSHint task
-gulp.task('lint', function() {
-  gulp.src('app/scripts/**/*.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
-});
+//Build task
+gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
 
 // Styles task
 gulp.task('styles', function() {
-  gulp.src('app/styles/*.scss')
-  // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
-  .pipe(sass({onError: function(e) { console.log(e); } }))
-  // Optionally add autoprefixer
-  .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
-  // These last two should look familiar now :)
-  .pipe(gulp.dest('public/css/'))
+  gulp.src('app/styles/*.less')
+  .pipe(sourceMaps.init())
+  .pipe(less())
+  .pipe(sourceMaps.write())
+  .pipe(gulp.dest('public/'))
   .pipe(refresh(lrserver));
+});
+
+gulp.task('styles-dist', function() {
+  gulp.src('app/styles/*.less')
+  .pipe(less())
+  .pipe(minifyCss())
+  .pipe(gulp.dest('public/'))
 });
 
 // Views task
@@ -80,10 +94,32 @@ gulp.task('views', function() {
     .pipe(refresh(lrserver));
 });
 
+//Minify Html
+gulp.task('views-dist', function() {
+  gulp.src('app/index.html')
+  .pipe(minifyHtml({empty: true, quotes: true}))
+  .pipe(gulp.dest('public/'));
+
+  gulp.src('app/views/**/*.html')
+  .pipe(minifyHtml({empty: true, quotes: true}))
+  .pipe(gulp.dest('public/views/'));
+});
+
 //JS Task
 gulp.task('js', function() {
-  gulp.src('app/scripts/**/*.js')
-  //Copy to public folder
-  .pipe(gulp.dest('public/scripts'))
+  gulp.src(paths.js)
+  .pipe(sourceMaps.init())
+  .pipe(concat('app.js'))
+  .pipe(ngAnnotate())
+  .pipe(sourceMaps.write())
+  .pipe(gulp.dest('public/'))
   .pipe(refresh(lrserver));
+});
+
+gulp.task('js-dist', function() {
+  gulp.src(paths.js)
+  .pipe(concat('app.js'))
+  .pipe(ngAnnotate())
+  .pipe(uglify())
+  .pipe(gulp.dest('public/'))
 });

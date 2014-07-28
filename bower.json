@@ -2,7 +2,7 @@
   "name": "jamieholliday-portfolio",
   "version": "0.0.1",
   "authors": [
-    "joeeames <jamie@jamieholliday.com>"
+    "jamieholliday <jamie@jamieholliday.com>"
   ],
   "license": "MIT",
   "private": true,
@@ -11,8 +11,8 @@
     "toastr": "~2.0.2",
     "angular": "~1.2.16",
     "angular-resource": "~1.2.16",
-    "angular-route": "~1.2.16",
     "bootstrap": "~3.1.1",
-    "angular-mocks": "~1.2.16"
+    "angular-mocks": "~1.2.16",
+    "angular-ui-router": "~0.2.10"
   }
 }

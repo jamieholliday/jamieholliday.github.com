@@ -1,17 +1,15 @@
 'use strict';
 
-// var jhApp = angular.module('jhApp', ['ui.router']);
+angular.module('jhApp', ['ui.router'])
+.config(function($stateProvider, $urlRouterProvider) {
 
-// jhApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/');
 
-// 	$urlRouterProvider.otherwise('/test');
+	$stateProvider
+		.state('home', {
+			url: '/',
+			templateUrl: 'views/home.html',
+			controller: 'homeCtrl'
+		});
+});
 
-// 	$stateProvider
-// 		.state('home', {
-// 			url: '/',
-// 			templateUrl: 'views/home.html',
-// 			controller: 'homeCtrl'
-// 		});
-// }]);
-
-//app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
