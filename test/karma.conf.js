@@ -8,7 +8,7 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ['jasmine', 'browserify'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
@@ -69,17 +69,17 @@ module.exports = function(config) {
     singleRun: false,
 
     // Browserify config (all optional)
-    browserify: {
-      // extensions: ['.coffee'],
-      // ignore: [],
-      // transform: ['coffeeify'],
-      // debug: true,
-      // noParse: ['jquery'],
-      watch: false,
-    },
+    // browserify: {
+    //   // extensions: ['.coffee'],
+    //   // ignore: [],
+    //   // transform: ['coffeeify'],
+    //   // debug: true,
+    //   // noParse: ['jquery'],
+    //   watch: false,
+    // },
 
     // Add browserify to preprocessors
-    preprocessors: {'unit/*.js': ['browserify']}
+    // preprocessors: {'unit/*.js': ['browserify']}
 
     // Not required if you've installed karma-browserify via npm.
     //plugins: ['karma-*', require('../')]

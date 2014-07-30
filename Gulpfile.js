@@ -1,18 +1,16 @@
+'use strict';
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    jshint = require('gulp-jshint'),
     less = require('gulp-less'),
     minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
     ngAnnotate = require('gulp-ng-annotate'),
-    uglify = require('gulp-uglify')
+    uglify = require('gulp-uglify'),
     minifyHtml = require('gulp-minify-html'),
-    sourceMaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer');
+    flatten = require('gulp-flatter'),
+    sourceMaps = require('gulp-sourcemaps');
 
 // Modules for webserver and livereload
-var embedlr = require('gulp-embedlr'),
-    refresh = require('gulp-livereload'),
+var refresh = require('gulp-livereload'),
     lrserver = require('tiny-lr')(),
     express = require('express'),
     livereload = require('connect-livereload'),
@@ -34,27 +32,27 @@ var paths = {
     js : [
       'app/vendor/angular/angular.js',
       'app/vendor/angular-ui-router/release/angular-ui-router.js',
-      'app/scripts/**/*.js', 
-      'app/scripts/main.js'
+      'app/modules/**/*.js',
+      'app/main.js'
     ]
-}
+};
 
 // Dev task
 gulp.task('default', ['views', 'styles', 'js'], function() {
-  // Start webserver
-  server.listen(serverport);
-  // Start live reload
-  lrserver.listen(livereloadport);
-  // Run the watch task, to keep taps on changes
-  gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],[
-    'js'
-  ]);
-  // Watch our sass files
-  gulp.watch(['app/styles/**/*.less'], [
-    'styles'
-  ]);
+    // Start webserver
+    server.listen(serverport);
+    // Start live reload
+    lrserver.listen(livereloadport);
+    // Run the watch task, to keep taps on changes
+    gulp.watch(['app/main.js', 'app/modules/**/*.js'],[
+        'js'
+    ]);
+    // Watch our sass files
+    gulp.watch(['app/main.less', 'app/modules/**/*.less'], [
+        'styles'
+    ]);
 
-  gulp.watch(['app/**/*.html'], [
+    gulp.watch(['app/modules/**/*.html'], [
         'views'
     ]);
 });
@@ -64,7 +62,7 @@ gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
 
 // Styles task
 gulp.task('styles', function() {
-  gulp.src('app/styles/*.less')
+  gulp.src('app/main.less')
   .pipe(sourceMaps.init())
   .pipe(less())
   .pipe(sourceMaps.write())
@@ -73,10 +71,10 @@ gulp.task('styles', function() {
 });
 
 gulp.task('styles-dist', function() {
-  gulp.src('app/styles/*.less')
+  gulp.src('app/main.less')
   .pipe(less())
   .pipe(minifyCss())
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('public/'));
 });
 
 // Views task
@@ -88,8 +86,9 @@ gulp.task('views', function() {
     .pipe(refresh(lrserver));
 
     // Any other view files from app/views
-    gulp.src('app/views/**/*')
+    gulp.src('app/modules/**/*.html')
     // Will be put in the public/views folder
+    .pipe(flatten())
     .pipe(gulp.dest('public/views/'))
     .pipe(refresh(lrserver));
 });
@@ -100,8 +99,9 @@ gulp.task('views-dist', function() {
   .pipe(minifyHtml({empty: true, quotes: true}))
   .pipe(gulp.dest('public/'));
 
-  gulp.src('app/views/**/*.html')
+  gulp.src('app/modules/**/*.html')
   .pipe(minifyHtml({empty: true, quotes: true}))
+  .pipe(flatten())
   .pipe(gulp.dest('public/views/'));
 });
 
@@ -121,5 +121,5 @@ gulp.task('js-dist', function() {
   .pipe(concat('app.js'))
   .pipe(ngAnnotate())
   .pipe(uglify())
-  .pipe(gulp.dest('public/'))
+  .pipe(gulp.dest('public/'));
 });

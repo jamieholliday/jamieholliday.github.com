@@ -23,6 +23,7 @@
     "describe": false,
     "it": false,
     "res": true,
-    "debug": true
+    "debug": true,
+    "angular": true
   }
 }
