@@ -1,12 +1,13 @@
 'use strict';
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     less = require('gulp-less'),
     minifyCss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
     ngAnnotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
     minifyHtml = require('gulp-minify-html'),
-    flatten = require('gulp-flatter'),
+    flatten = require('gulp-flatten'),
     sourceMaps = require('gulp-sourcemaps');
 
 // Modules for webserver and livereload
@@ -32,8 +33,8 @@ var paths = {
     js : [
       'app/vendor/angular/angular.js',
       'app/vendor/angular-ui-router/release/angular-ui-router.js',
-      'app/modules/**/*.js',
-      'app/main.js'
+      'app/main.js',
+      'app/modules/**/*.js'
     ]
 };
 
@@ -43,16 +44,16 @@ gulp.task('default', ['views', 'styles', 'js'], function() {
     server.listen(serverport);
     // Start live reload
     lrserver.listen(livereloadport);
-    // Run the watch task, to keep taps on changes
+    // Run the watch task, to keep tags on changes
     gulp.watch(['app/main.js', 'app/modules/**/*.js'],[
         'js'
     ]);
-    // Watch our sass files
+    // Watch our less files
     gulp.watch(['app/main.less', 'app/modules/**/*.less'], [
         'styles'
     ]);
 
-    gulp.watch(['app/modules/**/*.html'], [
+    gulp.watch(['app/index.html', 'app/modules/**/*.html'], [
         'views'
     ]);
 });
@@ -64,7 +65,7 @@ gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
 gulp.task('styles', function() {
   gulp.src('app/main.less')
   .pipe(sourceMaps.init())
-  .pipe(less())
+  .pipe(less().on('error', gutil.log))
   .pipe(sourceMaps.write())
   .pipe(gulp.dest('public/'))
   .pipe(refresh(lrserver));
