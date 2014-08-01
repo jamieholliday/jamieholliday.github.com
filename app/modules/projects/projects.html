@@ -3,8 +3,14 @@
 	<div class="row">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil fugit fuga, minima, minus possimus debitis delectus dicta non, suscipit, eligendi officiis. Amet architecto debitis earum natus nesciunt dicta, culpa repellat!</p>
 		<ul class="projects">
-			<li ng-repeat="project in projects">
-				{{project.name}}
+			<li ng-repeat="project in projects" class="col-md-4 col-sm-4">
+
+				<div class="project-details">
+					<div class="project-img"></div>
+					<div class="project-description">
+						{{project.name}}
+					</div>
+				</div>
 			</li>
 		</ul>
 	</div>
