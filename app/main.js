@@ -12,10 +12,25 @@ angular.module('jhApp', ['ui.router'])
 			templateUrl: 'views/projects.html',
 			controller: 'projectsCtrl'
 		})
-		.state('admin', {
+		.state('dashboard', {
 			url: '/admin',
-			templateUrl: 'admin/dashboard.html',
-			controller: 'adminCtrl'
+			templateUrl: 'views/dashboard.html',
+			controller: 'dashboardCtrl'
+		})
+		.state('adminProjects', {
+			url: '/admin/projects',
+			templateUrl: 'views/adminProjects.html',
+			controller: 'adminProjectsCtrl'
+		})
+		.state('adminPosts', {
+			url: '/admin/posts',
+			templateUrl: 'views/adminPosts.html',
+			controller: 'adminPostsCtrl'
+		})
+		.state('adminCv', {
+			url: '/admin/cv',
+			templateUrl: 'views/adminCv.html',
+			controller: 'adminCvCtrl'
 		});
 });
 
