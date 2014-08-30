@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('static-favicon');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -10,7 +10,7 @@ var routes = require('./server/routes/index');
 
 var app = express();
 
-app.use(favicon('public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 // Only use logger for development environment
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));

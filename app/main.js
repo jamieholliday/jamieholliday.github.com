@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('jhApp', ['ui.router'])
+angular.module('jhApp', ['ui.router', 'ngResource'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise('/');
+
 
 	$stateProvider
 		.state('projects', {
@@ -12,18 +13,28 @@ angular.module('jhApp', ['ui.router'])
 			templateUrl: 'views/projects.html',
 			controller: 'projectsCtrl'
 		})
-		.state('adminProjects', {
-			url: '/admin/projects',
+		.state('adminprojects', {
+			url: '/adminprojects',
 			templateUrl: 'views/adminProjects.html',
 			controller: 'adminProjectsCtrl'
 		})
-		.state('adminPosts', {
-			url: '/admin/posts',
+		.state('adminprojectsdetails', {
+			url: '/adminprojects/:id',
+			templateUrl: 'views/adminProjectsDetails.html',
+			controller: 'adminProjectsDetailsCtrl'
+		})
+		.state('adminprojectsedit', {
+			url: '/adminprojects/edit',
+			templateUrl: 'views/adminProjectsDetails.html',
+			controller: 'adminProjectsDetailsCtrl'
+		})
+		.state('adminposts', {
+			url: '/adminposts',
 			templateUrl: 'views/adminPosts.html',
 			controller: 'adminPostsCtrl'
 		})
 		.state('adminCv', {
-			url: '/admin/cv',
+			url: '/admincv',
 			templateUrl: 'views/adminCv.html',
 			controller: 'adminCvCtrl'
 		})

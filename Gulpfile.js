@@ -33,6 +33,7 @@ var paths = {
     js : [
       'app/vendor/angular/angular.js',
       'app/vendor/angular-ui-router/release/angular-ui-router.js',
+      'app/vendor/angular-resource/angular-resource.js',
       'app/main.js',
       'app/modules/**/*.js'
     ]
