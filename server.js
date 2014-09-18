@@ -6,6 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('my-application');
 
+var env = process.env.NODE_ENV = 'development';
+
+var config = require('./server/config/config')[env]
+
 var routes = require('./server/config/routes');
 
 var app = express();
@@ -14,7 +18,7 @@ var router = express.Router();
 app.use(favicon(__dirname + '/public/favicon.ico'));
 // Only use logger for development environment
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
+    app.use(logger('dev'));
 }
 app.use(express.static(path.join(__dirname, 'public')));
 
