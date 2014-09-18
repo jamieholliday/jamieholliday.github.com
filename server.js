@@ -5,10 +5,19 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('my-application');
+var fs = require('fs');
 
 var env = process.env.NODE_ENV = 'development';
 
-var config = require('./server/config/config')[env]
+var config = require('./server/config/config')[env];
+
+var models_path = __dirname + '/server/models'
+fs.readdirSync(models_path).forEach(function (file) {
+  if (~file.indexOf('.js')) { 
+  	require(models_path + '/' + file);
+  	console.log(file);
+  }
+})
 
 var routes = require('./server/config/routes');
 
@@ -24,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('port', process.env.PORT || 3000);
 
+require('./server/config/mongoose')(config);
 require('./server/config/routes')(router);
 app.use('/', router);
 
