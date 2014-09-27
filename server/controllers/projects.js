@@ -10,6 +10,6 @@ exports.getProjects = function(req, res) {
 exports.getProjectById = function(req, res) {
 	console.log(req.params.id);
 	Project.find({_id:req.params.id}).exec(function(err, course) {
-		res.send(course);
+		res.send(course[0]);
 	});
 } 

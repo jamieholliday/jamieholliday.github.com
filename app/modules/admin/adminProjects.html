@@ -7,10 +7,10 @@
 					<span title="Reorder"></span>
 				</div>
 				<div class="project-description">
-					{{project.name}}
+					<a ui-sref="adminprojectsdetails({id: project._id})">{{project.name}}</a>
 				</div>
 				<div class="project-actions clearfix">
-					<a ui-sref="adminprojectsdetails({id: project.id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a ui-sref="adminprojectsdetails({id: project._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
 					<a href="" class="delete btn btn-default" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				<div class="project-status">Published</div>
