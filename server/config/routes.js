@@ -7,6 +7,7 @@ module.exports = function(router) {
 	//Projects
 	router.get('/api/projects', projects.getProjects);
 	router.get('/api/projects/:id', projects.getProjectById);
+	router.put('/api/projects/:id', projects.updateProject);
 
 	router.all('/api/*', function(req, res) {
 		console.log('404');

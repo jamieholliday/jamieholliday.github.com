@@ -25,6 +25,7 @@ var app = express();
 var router = express.Router();
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(bodyParser.json());
 // Only use logger for development environment
 if (process.env.NODE_ENV === 'development') {
     app.use(logger('dev'));

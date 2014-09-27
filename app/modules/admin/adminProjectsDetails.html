@@ -4,19 +4,20 @@
 		<form role="form" class="project-details clearfix">
 			<div class="form-group">
 				<div class="btn-group pull-right publish">
-				  <button type="button" class="btn btn-success">{{project.getPublished()}}</button>
-				  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+				  <button type="button" class="btn" ng-class="project.published ? 'btn-success' : 'btn-danger'">{{project.published ? 'Published' : 'Draft'}}</button>
+				  <button type="button" class="btn dropdown-toggle" ng-class="project.published ? 'btn-success' : 'btn-danger'" data-toggle="dropdown">
 				    <span class="caret"></span>
 				    <span class="sr-only">Toggle Dropdown</span>
 				  </button>
 				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Publish</a></li>
-				    <li><a href="#">Unpublish</a></li>
+				    <li><a href="" ng-click="publish(true)">Publish</a></li>
+				    <li><a href="" ng-click="publish(false)">Unpublish</a></li>
 				  </ul>
 				</div>
-				<input type="text" name="title" class="form-control" value="{{project.name}}" placeholder="Title">
-				<textarea name="description" class="form-control" rows="10" placeholder="Description"></textarea>
-				<input type="text" name="tags" class="form-control" value="" placeholder="Tags">
+				<input type="text" name="title" class="form-control" ng-model="project.name" placeholder="Title">
+				<textarea name="description" class="form-control" rows="10" placeholder="Description" ng-model="project.description"></textarea>
+				<input type="text" name="tags" class="form-control" ng-model="project.tags" placeholder="Tags">
+				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm()">
 			</div>
 		</form>
 	</section>

@@ -4,7 +4,12 @@ angular.module('jhApp')
 	var project = projects.get({id:$stateParams.id});
 	$scope.project = project;
 
-	$scope.getPublished = function() {
-		return project.published ? 'Published' : 'Draft';
-	}
+	$scope.publish = function(bool) {
+		project.published = bool;
+	};
+
+	$scope.saveForm = function() {
+		console.log($scope.project);
+		projects.update({id:project._id}, project);
+	};
 });
