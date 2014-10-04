@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyHtml = require('gulp-minify-html'),
     flatten = require('gulp-flatten'),
-    sourceMaps = require('gulp-sourcemaps');
+    sourceMaps = require('gulp-sourcemaps'),
+    plumber = require('gulp-plumber');
 
 // Modules for webserver and livereload
 var refresh = require('gulp-livereload'),
@@ -67,6 +68,7 @@ gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
 // Styles task
 gulp.task('styles', function() {
   gulp.src('app/main.less')
+  .pipe(plumber())
   .pipe(sourceMaps.init())
   .pipe(less().on('error', gutil.log))
   .pipe(sourceMaps.write())
@@ -85,6 +87,7 @@ gulp.task('styles-dist', function() {
 gulp.task('views', function() {
     // Get our index.html
     gulp.src('app/index.html')
+    .pipe(plumber())
     // And put it in the public folder
     .pipe(gulp.dest('public/'))
     .pipe(refresh(lrserver));
@@ -112,6 +115,7 @@ gulp.task('views-dist', function() {
 //JS Task
 gulp.task('js', function() {
   gulp.src(paths.js)
+  .pipe(plumber())
   .pipe(sourceMaps.init())
   .pipe(concat('app.js'))
   .pipe(ngAnnotate())
