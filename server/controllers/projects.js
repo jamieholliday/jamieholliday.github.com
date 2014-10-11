@@ -2,7 +2,11 @@ var Project = require('mongoose').model('Project');
 
 exports.getProjects = function(req, res) {
 	Project.find({}).exec(function(err, collection) {
-		res.send(collection);
+		if(err) {
+			res.send({error: err, message: 'Error'});
+		} else {
+			res.send(collection);
+		}
 	});
 };
 
@@ -16,14 +20,22 @@ exports.newProject = function(req, res) {
 		permalink: req.body.permalink
 	};
 	Project.create(projectData, function(err, project) {
-		res.send(project);
+		if(err) {
+			res.send({error: err, message: 'Error'});
+		} else {
+			res.send(project);
+		}
 	});
 };
 
 exports.getProjectById = function(req, res) {
 	console.log(req.params.id);
 	Project.find({_id:req.params.id}).exec(function(err, project) {
-		res.send(project[0]);
+		if(err) {
+			res.send({error: err, message: 'Error'});
+		} else {
+			res.send(project[0]);
+		}
 	});
 };
 
@@ -42,6 +54,23 @@ exports.updateProject = function(req, res) {
 			res.send({error: err, message: 'Error'});
 		} else {
 			res.send({message: 'Success'});	
+		}
+	});
+};
+
+exports.deleteProject = function(req, res) {
+	Project.remove({_id:req.params.id}).exec(function(err, bool) {
+		if(err) {
+			res.send({error: err, message: 'Error Deleting'})
+		} else {
+			success = {
+				deleted: false,
+				_id: req.params.id
+			};
+			if(bool === 1) {
+				success.deleted = true;
+			}
+			res.send(success);
 		}
 	});
 }

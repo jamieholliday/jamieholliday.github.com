@@ -19,6 +19,9 @@
 				<input type="file" name="image" class="form-control" ng-model="project.img" placeholder="Upload an image">
 				<input type="text" name="tags" class="form-control" ng-model="project.tags" placeholder="Tags">
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm(projectDetails.$valid)" ng-disabled="projectDetails.$invalid">
+				<div ng-show="project._id" class="btn-group pull-left delete-btn">
+					<button type="button" class="btn btn-warning" ng-click="delete()">Delete</button>
+				</div>
 			</div>
 		</form>
 	</section>

@@ -32,6 +32,14 @@ angular.module('jhApp')
 		}
 	};
 
+	$scope.delete = function() {
+		projects.delete({id:project._id}, function(responceData) {
+			if(responceData.deleted === true) {
+				$location.path('/adminprojects');
+			}
+		});
+	}
+
 	//Private
 	_updatePost = function() {
 		projects.update({id:project._id}, project);
