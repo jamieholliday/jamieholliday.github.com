@@ -1,16 +1,29 @@
 var Project = require('mongoose').model('Project');
 
 exports.getProjects = function(req, res) {
-	console.log('all projects');
 	Project.find({}).exec(function(err, collection) {
 		res.send(collection);
 	});
 };
 
+exports.newProject = function(req, res) {
+	var projectData = {
+		name: req.body.name,
+		description: req.body.description,
+		tags: req.body.tags,
+		published: req.body.published,
+		date: new Date(),
+		permalink: req.body.permalink
+	};
+	Project.create(projectData, function(err, project) {
+		res.send(project);
+	});
+};
+
 exports.getProjectById = function(req, res) {
 	console.log(req.params.id);
-	Project.find({_id:req.params.id}).exec(function(err, course) {
-		res.send(course[0]);
+	Project.find({_id:req.params.id}).exec(function(err, project) {
+		res.send(project[0]);
 	});
 };
 

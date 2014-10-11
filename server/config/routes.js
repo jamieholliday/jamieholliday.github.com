@@ -6,6 +6,7 @@ module.exports = function(router) {
 
 	//Projects
 	router.get('/api/projects', projects.getProjects);
+	router.post('/api/projects', projects.newProject);
 	router.get('/api/projects/:id', projects.getProjectById);
 	router.put('/api/projects/:id', projects.updateProject);
 

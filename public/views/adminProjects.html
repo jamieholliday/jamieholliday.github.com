@@ -1,6 +1,13 @@
 <ng-include src="'views/adminHeader.html'"></ng-include>
 <div class="container">
 	<section class="row">
+	<form role="form" class="project-details clearfix">
+			<div class="form-group">
+				<div class="btn-group pull-right">
+				  <a class="btn btn-default" ui-sref="adminprojectsdetails">New</a>
+				 </div>
+			 </div>
+	 </form>
 		<ul class="admin-projects">
 			<li ng-repeat="project in projects" class="project-list-item clearfix">
 				<div class="project-reorder">
