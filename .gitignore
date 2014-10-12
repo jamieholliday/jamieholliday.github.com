@@ -1,6 +1,6 @@
 logs/*
 node_modules/
-public/vendor
+app/vendor
 public/css
 public/js
 .DS_Store

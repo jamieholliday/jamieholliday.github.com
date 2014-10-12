@@ -15,8 +15,16 @@
 				  </ul>
 				</div>
 				<input type="text" name="title" class="form-control" ng-model="project.name" placeholder="Title" required>
-				<textarea name="description" class="form-control" rows="10" placeholder="Description" ng-model="project.description"></textarea>
-				<input type="file" name="image" class="form-control" ng-model="project.img" placeholder="Upload an image">
+				<textarea name="description" class="form-control" rows="10" placeholder="Description" ng-model="project.description" ng-wig="content"></textarea>
+				<div class="img-upload">
+					<input type="file" name="image" class="form-control" ng-model="project.img" placeholder="Upload an image">
+					<div class="progress" ng-show="project.upload">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+					    60%
+					  </div>
+					</div>
+				</div>
+
 				<input type="text" name="url" class="form-control" ng-model="project.url" placeholder="Url">
 				<select name="type" id="" ng-model="project.type" class="form-control">	
 					<option value="">[Project Type - Select one]</option>
