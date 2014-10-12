@@ -4,9 +4,11 @@ var projectSchema = mongoose.Schema({
 	name: {type: String, required: '{PATH} is required'},
 	description: String,
 	tags: String,
+	url: String,
 	published: {type: Boolean, required: '{PATH} is required'},
 	date: {type: Date, required: '{PATH} is required'},
-	permalink: String
+	//permalink: String,
+	type: String
 });
 
 var Project = mongoose.model('Project', projectSchema);
@@ -20,6 +22,7 @@ exports.createDefaultProjects = function() {
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aspernatur, inventore repudiandae? Ab itaque quaerat, maxime, adipisci voluptatibus doloremque et necessitatibus, ipsam voluptas ut eaque. A facilis obcaecati, assumenda vero.',
 				tags: 'Tag1, Tag2',
 				published: true,
+				url: 'http://www.google.com',
 				date: new Date('10/1/2014'),
 				permalink: 'test1'
 			});
@@ -28,6 +31,7 @@ exports.createDefaultProjects = function() {
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aspernatur, inventore repudiandae? Ab itaque quaerat, maxime, adipisci voluptatibus doloremque et necessitatibus, ipsam voluptas ut eaque. A facilis obcaecati, assumenda vero.',
 				tags: 'Tag1, Tag2',
 				published: true,
+				url: 'http://www.google.com',
 				date: new Date('10/2/2014'),
 				permalink: ''
 			});
