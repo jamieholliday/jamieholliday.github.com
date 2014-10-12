@@ -1,1 +1,28 @@
-posts
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container">
+	<section class="row">
+	<form role="form" class="post-details clearfix">
+			<div class="form-group">
+				<div class="btn-group pull-right">
+				  <a class="btn btn-success" ui-sref="adminpostsdetails">New</a>
+				 </div>
+			 </div>
+	 </form>
+		<ul class="admin-posts">
+			<li ng-repeat="post in posts" class="post-list-item clearfix">
+				<div class="post-reorder">
+					<span title="Reorder"></span>
+				</div>
+				<div class="post-description">
+					<a ui-sref="adminpostsdetails({id: post._id})">{{post.name}}</a>
+				</div>
+				<div class="post-actions clearfix">
+					<a ui-sref="adminpostsdetails({id: post._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a class="delete btn btn-default" title="Delete" ng-click="delete(post)"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				<div class="post-status" ng-class="post.published ? 'published' : 'draft'">{{post.published ? 'Published' : 'Draft'}}</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>

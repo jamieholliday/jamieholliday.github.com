@@ -33,6 +33,16 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			templateUrl: 'views/adminPosts.html',
 			controller: 'adminPostsCtrl'
 		})
+		.state('adminpostsdetails', {
+			url: '/adminposts/:id',
+			templateUrl: 'views/adminPostsDetails.html',
+			controller: 'adminPostsDetailsCtrl'
+		})
+		.state('adminpostsedit', {
+			url: '/adminposts/edit',
+			templateUrl: 'views/adminPostsDetails.html',
+			controller: 'adminPostsDetailsCtrl'
+		})
 		.state('adminCv', {
 			url: '/admincv',
 			templateUrl: 'views/adminCv.html',

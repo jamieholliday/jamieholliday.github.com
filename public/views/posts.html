@@ -1,0 +1,27 @@
+<ng-include src="'views/header.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<div class="col-md-12">
+			<div class="about">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil fugit fuga, minima, minus possimus debitis delectus dicta non, suscipit, eligendi officiis. Amet architecto debitis earum natus nesciunt dicta, culpa repellat!</p>
+			</div>
+		</div>
+	</section>
+	<section class="row">
+		<ul class="projects">
+			<li ng-repeat="project in projects" class="col-md-4 col-sm-4">
+
+				<div class="project-details">
+					<div class="project-img"></div>
+					<div class="project-description">
+						<h2>{{project.name}}</h2>
+						<p>{{project.description}}</p>
+						<p>{{project.tags}}</p>
+						<a href="{{project.url}}">{{project.url}}</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>
