@@ -28,6 +28,11 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			templateUrl: 'views/adminProjectsDetails.html',
 			controller: 'adminProjectsDetailsCtrl'
 		})
+		.state('posts', {
+			url: '/',
+			templateUrl: 'views/posts.html',
+			controller: 'postsCtrl'
+		})
 		.state('adminposts', {
 			url: '/adminposts',
 			templateUrl: 'views/adminPosts.html',
@@ -43,6 +48,26 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			templateUrl: 'views/adminPostsDetails.html',
 			controller: 'adminPostsDetailsCtrl'
 		})
+		.state('pages', {
+			url: '/',
+			templateUrl: 'views/pages.html',
+			controller: 'pagesCtrl'
+		})
+		.state('adminpages', {
+			url: '/adminpages',
+			templateUrl: 'views/adminPages.html',
+			controller: 'adminPagesCtrl'
+		})
+		.state('adminpagesdetails', {
+			url: '/adminpages/:id',
+			templateUrl: 'views/adminPagesDetails.html',
+			controller: 'adminPagesDetailsCtrl'
+		})
+		.state('adminpagesedit', {
+			url: '/adminpages/edit',
+			templateUrl: 'views/adminPagesDetails.html',
+			controller: 'adminPagesDetailsCtrl'
+		})
 		.state('adminCv', {
 			url: '/admincv',
 			templateUrl: 'views/adminCv.html',
@@ -54,4 +79,3 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			controller: 'dashboardCtrl'
 		});
 });
-

@@ -1,0 +1,28 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container">
+	<section class="row">
+	<form role="form" class="page-details clearfix">
+			<div class="form-group">
+				<div class="btn-group pull-right">
+				  <a class="btn btn-success" ui-sref="adminpagesdetails">New</a>
+				 </div>
+			 </div>
+	 </form>
+		<ul class="admin-pages">
+			<li ng-repeat="page in pages" class="page-list-item clearfix">
+				<div class="page-reorder">
+					<span title="Reorder"></span>
+				</div>
+				<div class="page-description">
+					<a ui-sref="adminpagesdetails({id: page._id})">{{page.name}}</a>
+				</div>
+				<div class="page-actions clearfix">
+					<a ui-sref="adminpagesdetails({id: page._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a class="delete btn btn-default" title="Delete" ng-click="delete(page)"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				<div class="page-status" ng-class="page.published ? 'published' : 'draft'">{{page.published ? 'Published' : 'Draft'}}</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>

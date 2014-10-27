@@ -1,5 +1,6 @@
 var	projects = require('../controllers/projects');
 var	posts = require('../controllers/posts');
+var pages = require('../controllers/pages');
 
 module.exports = function(router) {
 	//Users
@@ -18,6 +19,13 @@ module.exports = function(router) {
 	router.get('/api/posts/:id', posts.getPostById);
 	router.put('/api/posts/:id', posts.updatePost);
 	router.delete('/api/posts/:id', posts.deletePost);
+
+	//Pages
+	router.get('/api/pages', pages.getPages);
+	router.post('/api/pages', pages.newPage);
+	router.get('/api/pages/:id', pages.getPageById);
+	router.put('/api/pages/:id', pages.updatePage);
+	router.delete('/api/pages/:id', pages.deletePage);
 
 	router.all('/api/*', function(req, res) {
 		console.log('404');
