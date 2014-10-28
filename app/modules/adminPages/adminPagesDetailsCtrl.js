@@ -4,7 +4,7 @@ angular.module('jhApp')
 
 	var _updatePage,
 		_newPage,
-		post;
+		page;
 
 	//Setup
 	page = {
@@ -24,7 +24,10 @@ angular.module('jhApp')
 	};
 
 	$scope.saveForm = function(isValid) {
-		if (!isValid) return;
+		if (!isValid) {
+			return;
+		}
+
 		if(page._id) {
 			_updatePage();
 		} else {
@@ -38,12 +41,12 @@ angular.module('jhApp')
 				$location.path('/adminpages');
 			}
 		});
-	}
+	};
 
 	//Private
 	_updatePage = function() {
 		pages.update({id:page._id}, page);
-	}
+	};
 
 	_newPage = function() {
 		//TODO use promise here
@@ -52,5 +55,5 @@ angular.module('jhApp')
 				$location.path('/adminpages/' + responceData._id);
 			}
 		});
-	}
+	};
 });

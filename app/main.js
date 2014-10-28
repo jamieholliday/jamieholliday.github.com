@@ -29,9 +29,14 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			controller: 'adminProjectsDetailsCtrl'
 		})
 		.state('posts', {
-			url: '/',
+			url: '/blog',
 			templateUrl: 'views/posts.html',
 			controller: 'postsCtrl'
+		})
+		.state('postsdetails', {
+			url: '/blog/:id',
+			templateUrl: 'views/postsDetails.html',
+			controller: 'postsDetailsCtrl'
 		})
 		.state('adminposts', {
 			url: '/adminposts',
@@ -77,5 +82,10 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/admin',
 			templateUrl: 'views/dashboard.html',
 			controller: 'dashboardCtrl'
+		})
+		.state('login', {
+			url: '/login',
+			templateUrl: 'views/adminLogin.html',
+			controller: 'adminLoginCtrl'
 		});
 });

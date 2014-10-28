@@ -1,7 +1,5 @@
 logs/*
 node_modules/
 app/vendor
-public/css
-public/js
-public/views
+public
 .DS_Store
