@@ -1,10 +1,22 @@
-var	projects = require('../controllers/projects');
-var	posts = require('../controllers/posts');
-var pages = require('../controllers/pages');
+'use strict';
+var	projects = require('../controllers/projects'),
+	posts = require('../controllers/posts'),
+	pages = require('../controllers/pages'),
+	users = require('../controllers/users'),
+	auth = require('./auth');
 
 module.exports = function(router) {
 	//Users
-	// router.get('/api/users')
+	router.get('/api/users', auth.requiresRole('admin'), users.getUsers);
+	router.post('/api/users', users.createUser);
+	router.put('/api/users', users.updateUser);
+	//router.delete('/api/users', users.deleteUser);
+
+	router.post('/login', auth.authenticate);
+	router.post('/logout', function(req, res) {
+		req.logout();
+		res.end();
+	});
 
 	//Projects
 	router.get('/api/projects', projects.getProjects);
@@ -32,4 +44,4 @@ module.exports = function(router) {
 		res.send(404);
 	});
 
-}
+};

@@ -3,3 +3,4 @@ node_modules/
 app/vendor
 public
 .DS_Store
+server/config/config.js
