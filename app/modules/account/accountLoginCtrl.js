@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminLoginCtrl', function($scope, $http){
+.controller('accountLoginCtrl', function($scope, $http){
 
     var login = $scope.login;
 
