@@ -58,7 +58,6 @@ angular.module('jhApp')
             return dfd.promise;
         },
         authorizeCurrentUserForRoute: function(role) {
-            debugger
           if(jhIdentity.isAuthorized(role)) {
             return true;
           } else {

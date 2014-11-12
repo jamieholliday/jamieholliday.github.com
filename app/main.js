@@ -8,11 +8,9 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 
 	var routeRoleChecks = {
     	admin: function(jhAuth) {
-      		return jhAuth.authorizeCurrentUserForRoute('admin');
-    	},
-    	user: {auth: function(jhAuth) {
-	      	return jhAuth.authorizeAuthenticatedUserForRoute();
-    	}}
+      		//return jhAuth.authorizeCurrentUserForRoute('admin');
+      		return true;
+    	}
 	};
 
 	$stateProvider
@@ -25,19 +23,19 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/adminprojects',
 			templateUrl: 'views/adminProjects.html',
 			controller: 'adminProjectsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('adminprojectsdetails', {
 			url: '/adminprojects/:id',
 			templateUrl: 'views/adminProjectsDetails.html',
 			controller: 'adminProjectsDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('adminprojectsedit', {
 			url: '/adminprojects/edit',
 			templateUrl: 'views/adminProjectsDetails.html',
 			controller: 'adminProjectsDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('posts', {
 			url: '/blog',
@@ -53,19 +51,19 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/adminposts',
 			templateUrl: 'views/adminPosts.html',
 			controller: 'adminPostsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('adminpostsdetails', {
 			url: '/adminposts/:id',
 			templateUrl: 'views/adminPostsDetails.html',
 			controller: 'adminPostsDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('adminpostsedit', {
 			url: '/adminposts/edit',
 			templateUrl: 'views/adminPostsDetails.html',
 			controller: 'adminPostsDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('pages', {
 			url: '/',
@@ -76,29 +74,30 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/adminpages',
 			templateUrl: 'views/adminPages.html',
 			controller: 'adminPagesCtrl',
-			resolve:{
-				admin: function(jhAuth) {
-					return jhAuth.authorizeCurrentUserForRoute('admin');
-				}
-			}
+			// resolve:{
+			// 	admin: function(jhAuth) {
+			// 		// return jhAuth.authorizeCurrentUserForRoute('admin');
+			// 	}
+			// }
+			resolve: routeRoleChecks
 		})
 		.state('adminpagesdetails', {
 			url: '/adminpages/:id',
 			templateUrl: 'views/adminPagesDetails.html',
 			controller: 'adminPagesDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('adminpagesedit', {
 			url: '/adminpages/edit',
 			templateUrl: 'views/adminPagesDetails.html',
 			controller: 'adminPagesDetailsCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('dashboard', {
 			url: '/admin',
 			templateUrl: 'views/dashboard.html',
 			controller: 'dashboardCtrl',
-			resolve: routeRoleChecks.admin
+			resolve: routeRoleChecks
 		})
 		.state('login', {
 			url: '/login',
@@ -107,7 +106,7 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 		});
 })
 .run(function($rootScope, $location) {
-  $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
-    console.log(event, unfoundState, fromState, fromParams);
-});
+ 	$rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
+    	console.log(event, unfoundState, fromState, fromParams);
+	});
 });
