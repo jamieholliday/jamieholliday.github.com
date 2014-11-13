@@ -49,8 +49,7 @@ angular.module('jhApp')
 		//TODO use promise here
 		posts.save(post, function(responceData) {
 			if(responceData._id) {
-				debugger
-				//$location.path('/adminposts/' + responceData._id);
+				$location.path('/adminposts/' + responceData._id);
 			}
 		});
 	}
