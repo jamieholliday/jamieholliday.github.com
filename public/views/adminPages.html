@@ -5,7 +5,7 @@
 			<h1>Pages</h1>
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-6">
-			<form role="form" class="page-details clearfix">
+			<form role="form" class="details clearfix">
 					<div class="form-group">
 						<div class="btn-group pull-right">
 						  <a class="btn btn-success" ui-sref="adminpagesdetails">New</a>
@@ -16,19 +16,19 @@
 	 </section>
 	 <section class="row">
 	 	<div class="col-md-12">
-			<ul class="admin-pages-list">
-				<li ng-repeat="page in pages" class="page-list-item clearfix">
-					<div class="page-reorder">
+			<ul class="admin-pages-list admin-list">
+				<li ng-repeat="page in pages" class="list-item clearfix">
+					<div class="reorder">
 						<span title="Reorder"></span>
 					</div>
-					<div class="page-description">
+					<div class="description">
 						<a ui-sref="adminpagesdetails({id: page._id})">{{page.name}}</a>
 					</div>
-					<div class="page-actions clearfix">
+					<div class="actions clearfix">
 						<a ui-sref="adminpagesdetails({id: page._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
 						<a class="delete btn btn-default" title="Delete" ng-click="delete(page)"><span class="glyphicon glyphicon-trash"></span></a>
 					</div>
-					<div class="page-status" ng-class="page.published ? 'published' : 'draft'">{{page.published ? 'Published' : 'Draft'}}</div>
+					<div class="status" ng-class="page.published ? 'published' : 'draft'">{{page.published ? 'Published' : 'Draft'}}</div>
 				</li>
 			</ul>
 	 	</div>
