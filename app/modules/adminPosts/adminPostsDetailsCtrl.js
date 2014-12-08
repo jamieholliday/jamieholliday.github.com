@@ -42,7 +42,9 @@ angular.module('jhApp')
 
 	//Private
 	_updatePost = function() {
-		posts.update({id:post._id}, post);
+		posts.update({id:post._id}, post, function(responceData) {
+			
+		});
 	}
 
 	_newPost = function() {

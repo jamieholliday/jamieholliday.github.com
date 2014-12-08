@@ -36,6 +36,7 @@ var paths = {
       'app/vendor/angular-resource/angular-resource.js',
       'app/vendor/jquery/dist/jquery.js',
       'app/vendor/bootstrap/dist/js/bootstrap.js',
+      'app/vendor/toastr/toastr.js',
       'app/main.js',
       'app/modules/**/*.js'
     ]

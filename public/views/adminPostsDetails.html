@@ -14,9 +14,9 @@
 				    <li><a href="" ng-click="publish(false)">Unpublish</a></li>
 				  </ul>
 				</div>
-				<input type="text" name="title" class="form-control" ng-model="post.name" placeholder="Title - Required" required>
-				<textarea name="content" class="form-control" rows="10" placeholder="Content - Required" ng-model="post.content" required></textarea>
-				<input type="text" name="tags" class="form-control" ng-model="post.tags" placeholder="Tags">
+				<input type="text" title="Title" name="title" class="form-control" ng-model="post.name" placeholder="Title - Required" required>
+				<textarea name="content" title="Content" class="form-control" rows="10" placeholder="Content - Required" ng-model="post.content" required></textarea>
+				<input type="text" title="Tags" name="tags" class="form-control" ng-model="post.tags" placeholder="Tags">
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm(postDetails.$valid)" ng-disabled="postDetails.$invalid">
 				<div ng-show="post._id" class="btn-group pull-left delete-btn">
 					<button type="button" class="btn btn-warning" ng-click="delete()">Delete</button>

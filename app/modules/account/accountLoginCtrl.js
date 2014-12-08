@@ -1,19 +1,34 @@
 'use strict';
 angular.module('jhApp')
-.controller('accountLoginCtrl', function($scope, $http){
+.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $location){
 
-    var login = $scope.login;
+    $scope.identity = jhIdentity;
 
-    $scope.submit = function(details) {
+    $scope.signin = function(details, username, password) {
         if(!details) {
             return;
         }
 
-        if($scope.login.username && $scope.login.password) {
-            $http.post('api/login').then(function() {
-                console.log('login');
+        jhAuth.authenticateUser(username, password).
+            then(function(success) {
+                if(success) {
+                    //notify
+                } else {
+                    //notify
+                }
             });
-        }
-    };
+    }
+
+    // $scope.submit = function(details) {
+    //     if(!details) {
+    //         return;
+    //     }
+
+    //     if($scope.login.username && $scope.login.password) {
+    //         $http.post('login').then(function() {
+    //             console.log('login');
+    //         });
+    //     }
+    // };
 
 });

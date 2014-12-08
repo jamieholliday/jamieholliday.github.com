@@ -8,7 +8,7 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 
 	var routeRoleChecks = {
     	admin: function(jhAuth) {
-      		//return jhAuth.authorizeCurrentUserForRoute('admin');
+      		return jhAuth.authorizeCurrentUserForRoute('admin');
       		return true;
     	}
 	};
@@ -74,11 +74,6 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/adminpages',
 			templateUrl: 'views/adminPages.html',
 			controller: 'adminPagesCtrl',
-			// resolve:{
-			// 	admin: function(jhAuth) {
-			// 		// return jhAuth.authorizeCurrentUserForRoute('admin');
-			// 	}
-			// }
 			resolve: routeRoleChecks
 		})
 		.state('adminpagesdetails', {
@@ -101,12 +96,12 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 		})
 		.state('login', {
 			url: '/login',
-			templateUrl: 'views/adminLogin.html',
-			controller: 'adminLoginCtrl'
+			templateUrl: 'views/accountLogin.html',
+			controller: 'accountLoginCtrl'
 		});
 })
-.run(function($rootScope, $location) {
- 	$rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
-    	console.log(event, unfoundState, fromState, fromParams);
+.run(function($rootScope, $state) {
+	$rootScope.$on('$stateChangeError', function(event, unfoundState, fromState, fromParams) {
+		$state.go('login');
 	});
 });
