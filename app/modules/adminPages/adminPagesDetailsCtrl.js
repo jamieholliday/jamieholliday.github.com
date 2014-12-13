@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminPagesDetailsCtrl', function($scope, $stateParams, $location, pages) {
+.controller('adminPagesDetailsCtrl', function($scope, $stateParams, $location, cachedPages) {
 
 	var _updatePage,
 		_newPage,
@@ -13,7 +13,7 @@ angular.module('jhApp')
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		page = pages.get({id:$stateParams.id});
+		page = cachedPages.get({id:$stateParams.id});
 	}
 
 	$scope.page = page;
@@ -36,7 +36,7 @@ angular.module('jhApp')
 	};
 
 	$scope.delete = function() {
-		pages.delete({id:page._id}, function(responceData) {
+		cachedPages.delete({id:page._id}, function(responceData) {
 			if(responceData.deleted === true) {
 				$location.path('/adminpages');
 			}
@@ -45,12 +45,12 @@ angular.module('jhApp')
 
 	//Private
 	_updatePage = function() {
-		pages.update({id:page._id}, page);
+		cachedPages.update({id:page._id}, page);
 	};
 
 	_newPage = function() {
 		//TODO use promise here
-		pages.save(page, function(responceData) {
+		cachedPages.save(page, function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminpages/' + responceData._id);
 			}

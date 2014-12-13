@@ -1,12 +1,12 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminPagesCtrl', function($scope, pages) {
-	$scope.pages = pages.query();
+.controller('adminPagesCtrl', function($scope, cachedPages) {
+	$scope.pages = cachedPages.query();
 
 	$scope.delete = function(page) {
-		pages.delete({id:page._id}, function(responceData) {
+		cachedPages.delete({id:page._id}, function(responceData) {
 			if(responceData.deleted === true) {
-				$scope.pages = pages.query();
+				$scope.pages = cachedPages.query();
 			}
 		});
 	};
