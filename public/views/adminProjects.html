@@ -11,7 +11,7 @@
 				</div>
 				<div class="project-actions clearfix">
 					<a ui-sref="adminprojectsdetails({id: project._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
-					<a href="" class="delete btn btn-default" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
+					<jh-deleteitem></jh-deleteitem>
 				</div>
 				<div class="project-status" ng-class="project.published ? 'published' : 'draft'">{{project.published ? 'Published' : 'Draft'}}</div>
 			</li>
