@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminPostsDetailsCtrl', function($scope, $stateParams, $location, posts) {
+.controller('adminPostsDetailsCtrl', function($scope, $stateParams, $location, resourceCache) {
 
 	var _updatePost,
 		_newPost,
@@ -13,7 +13,7 @@ angular.module('jhApp')
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		post = posts.get({id:$stateParams.id});
+		post = resourceCache.get('post', {id:$stateParams.id});
 	}
 
 	$scope.post = post;
@@ -33,7 +33,7 @@ angular.module('jhApp')
 	};
 
 	$scope.delete = function() {
-		posts.delete({id:post._id}, function(responceData) {
+		resourceCache.delete('post', {id:post._id}, function(responceData) {
 			if(responceData.deleted === true) {
 				$location.path('/adminposts');
 			}
@@ -42,14 +42,14 @@ angular.module('jhApp')
 
 	//Private
 	_updatePost = function() {
-		posts.update({id:post._id}, post, function(responceData) {
+		resourceCache.update('post', {id:post._id}, post, function(responceData) {
 			
 		});
 	}
 
 	_newPost = function() {
 		//TODO use promise here
-		posts.save(post, function(responceData) {
+		resourceCache.save('post', post, function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminposts/' + responceData._id);
 			}

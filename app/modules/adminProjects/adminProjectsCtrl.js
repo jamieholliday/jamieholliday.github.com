@@ -1,12 +1,12 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminProjectsCtrl', function($scope, projects) {
-	$scope.projects = projects.query();
+.controller('adminProjectsCtrl', function($scope, resourceCache) {
+	$scope.projects = resourceCache.query('project');
 
 	$scope.delete = function(project) {
-		projects.delete({id:project._id}, function(responceData) {
+		resourceCache.delete('project', {id:project._id}, function(responceData) {
 			if(responceData.deleted === true) {
-				$scope.projects = projects.query();
+				$scope.projects = resourceCache.query('project');
 			}
 		});
 	}

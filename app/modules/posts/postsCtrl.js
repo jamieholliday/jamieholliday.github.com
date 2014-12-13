@@ -1,5 +1,5 @@
 'use strict';
 angular.module('jhApp')
-.controller('postsCtrl', function($scope, posts) {
-	$scope.posts = posts.query();
+.controller('postsCtrl', function($scope, resourceCache) {
+	$scope.posts = resourceCache.query('posts');
 });
