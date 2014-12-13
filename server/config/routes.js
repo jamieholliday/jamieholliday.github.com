@@ -5,7 +5,7 @@ var	projects = require('../controllers/projects'),
 	users = require('../controllers/users'),
 	auth = require('./auth');
 
-module.exports = function(router) {
+module.exports = function(router, config) {
 	//Users
 	router.get('/api/users', auth.requiresRole('admin'), users.getUsers);
 	router.post('/api/users', users.createUser);
@@ -42,6 +42,10 @@ module.exports = function(router) {
 	router.all('/api/*', function(req, res) {
 		console.log('404');
 		res.send(404);
+	});
+
+	router.get('/*', function(req, res) {
+	  res.sendfile(config.rootPath + '/public/index.html');
 	});
 
 };

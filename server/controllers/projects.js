@@ -21,7 +21,7 @@ exports.newProject = function(req, res) {
 		url: req.body.url,
 		type: req.body.type
 	};
-	console.log(projectData);
+
 	Project.create(projectData, function(err, project) {
 		if(err) {
 			res.send({error: err, message: 'Error'});

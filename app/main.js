@@ -8,8 +8,8 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 
 	var routeRoleChecks = {
     	admin: function(jhAuth) {
-      		//return jhAuth.authorizeCurrentUserForRoute('admin');
-      		return true;
+      		return jhAuth.authorizeCurrentUserForRoute('admin');
+      		// return true;
     	}
 	};
 
