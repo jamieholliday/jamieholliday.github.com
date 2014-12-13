@@ -1,6 +1,7 @@
 logs/*
 node_modules/
 app/vendor
-public
+public/views
+public/app.js
 .DS_Store
 server/config/config.js
