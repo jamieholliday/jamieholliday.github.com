@@ -1,0 +1,16 @@
+<ng-include src="'views/header.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<ul class="posts">
+			<li ng-repeat="post in posts" class="col-md-12">
+				<div class="post-details">
+					<div class="post-description">
+						<h2><a ui-sref="postsdetails({id: post._id})">{{post.name}}</a></h2>
+						<p>{{post.content}}</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>

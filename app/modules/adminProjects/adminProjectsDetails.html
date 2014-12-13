@@ -1,0 +1,43 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<form role="form" class="details clearfix" name="projectDetails" novalidate>
+			<div class="form-group">
+				<div class="btn-group pull-right publish">
+				  <button type="button" class="btn" ng-class="project.published ? 'btn-success' : 'btn-danger'">{{project.published ? 'Published' : 'Draft'}}</button>
+				  <button type="button" class="btn dropdown-toggle" ng-class="project.published ? 'btn-success' : 'btn-danger'" data-toggle="dropdown">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="" ng-click="publish(true)">Publish</a></li>
+				    <li><a href="" ng-click="publish(false)">Unpublish</a></li>
+				  </ul>
+				</div>
+				<input type="text" name="title" title="Title" class="form-control" ng-model="project.name" placeholder="Title - Required" required>
+				<textarea name="description" title="Description" class="form-control" rows="10" placeholder="Description" ng-model="project.description" ng-wig="content"></textarea>
+				<div class="img-upload">
+					<input type="file" title="Image" name="image" class="form-control" ng-model="project.img" placeholder="Upload an image">
+					<div class="progress" ng-show="project.upload">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+					    60%
+					  </div>
+					</div>
+				</div>
+
+				<input type="text" title="Url" name="url" class="form-control" ng-model="project.url" placeholder="Url">
+				<select name="type" title="Project Type" id="" ng-model="project.type" class="form-control">	
+					<option value="">[Project Type - Select one]</option>
+					<option value="private">Private</option>
+					<option value="employer">Employer</option>
+				</select>
+				<input type="text" title="Tags" name="tags" class="form-control" ng-model="project.tags" placeholder="Tags">
+				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm(projectDetails.$valid)" ng-disabled="projectDetails.$invalid">
+				<div ng-show="project._id" class="btn-group pull-left delete-btn">
+					<button type="button" class="btn btn-warning" ng-click="delete()">Delete</button>
+				</div>
+			</div>
+		</form>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>

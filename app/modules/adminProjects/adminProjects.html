@@ -1,0 +1,37 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container admin-projects">
+	<section class="row">
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<h1>Projects</h1>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6 clearfix">
+			<form role="form" class="details clearfix">
+					<div class="form-group">
+						<div class="btn-group pull-right">
+						  <a class="btn btn-success" ui-sref="adminprojectsdetails">New</a>
+						 </div>
+					 </div>
+			 </form>
+		</div>
+	 </section>
+	 <section class="row">
+		 <div class="col-md-12">
+			<ul class="admin-list">
+				<li ng-repeat="project in projects" class="list-item clearfix">
+					<div class="reorder">
+						<span title="Reorder"></span>
+					</div>
+					<div class="description">
+						<a ui-sref="adminprojectsdetails({id: project._id})">{{project.name}}</a>
+					</div>
+					<div class="actions clearfix">
+						<a ui-sref="adminprojectsdetails({id: project._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="delete btn btn-default" title="Delete" ng-click="delete(project)"><span class="glyphicon glyphicon-trash"></span></a>
+					</div>
+					<div class="status" ng-class="project.published ? 'published' : 'draft'">{{project.published ? 'Published' : 'Draft'}}</div>
+				</li>
+			</ul>
+		 </div>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>
