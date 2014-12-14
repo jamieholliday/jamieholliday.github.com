@@ -3,20 +3,21 @@ angular.module('jhApp')
 .controller('adminPostsDetailsCtrl', function($scope, $stateParams, $location, resourceCache) {
 
 	var _updatePost,
-		_newPost,
-		post;
+		_newPost;
 
-	//Setup
+	//setup
 	post = {
 		published: false
 	};
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		post = resourceCache.get('post', {id:$stateParams.id});
+		resourceCache.get('post', {id:$stateParams.id}).then(function(obj) {
+			$scope.post = post = obj;
+		});
+	} else {
+		$scope.post = post;
 	}
-
-	$scope.post = post;
 
 	//Public
 	$scope.publish = function(bool) {

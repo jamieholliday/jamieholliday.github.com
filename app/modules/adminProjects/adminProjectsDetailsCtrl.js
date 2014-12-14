@@ -6,17 +6,19 @@ angular.module('jhApp')
 		_newPost,
 		project;
 
-	//Setup
+	//setup
 	project = {
 		published: false
 	};
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		project = resourceCache.get('project', {id:$stateParams.id});
+		resourceCache.get('project', {id:$stateParams.id}).then(function(obj) {
+			$scope.project = project = obj;
+		});
+	} else {
+		$scope.project = project;
 	}
-
-	$scope.project = project;
 
 	//Public
 	$scope.publish = function(bool) {
@@ -25,7 +27,7 @@ angular.module('jhApp')
 
 	$scope.saveForm = function(isValid) {
 		if (!isValid) return;
-		if(project._id) {
+		if($scope.project._id) {
 			_updatePost();
 		} else {
 			_newPost();
@@ -42,7 +44,9 @@ angular.module('jhApp')
 
 	//Private
 	_updatePost = function() {
-		resourceCache.update('project', {id:project._id}, project);
+		resourceCache.update('project', {id:project._id}, project).then(function(responceData) {
+			console.log(responceData.message);
+		});
 	}
 
 	_newPost = function() {

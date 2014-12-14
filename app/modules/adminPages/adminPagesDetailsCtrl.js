@@ -6,17 +6,19 @@ angular.module('jhApp')
 		_newPage,
 		page;
 
-	//Setup
+	//setup
 	page = {
 		published: false
 	};
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		page = resourceCache.get('page', {id:$stateParams.id});
+		resourceCache.get('page', {id:$stateParams.id}).then(function(obj) {
+			$scope.page = page = obj;
+		});
+	} else {
+		$scope.page = page;
 	}
-
-	$scope.page = page;
 
 	//Public
 	$scope.publish = function(bool) {

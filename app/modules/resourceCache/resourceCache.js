@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jhApp')
-.factory('resourceCache', function(pages, projects, posts) {
+.factory('resourceCache', function(pages, projects, posts, $q) {
 	var cache = {},
 		resource = {
 			page: pages,
@@ -34,18 +34,21 @@ angular.module('jhApp')
 		},
 		update: function(type, opts, obj) {
 			cache[type] = null;
-			return resource[type].update(opts, obj);
+			return resource[type].update(opts, obj).$promise;
 		},
 		get: function(type, opts) {
 			if(cache[type]) {
-				return cache[type].filter(function(elem) {
-					return elem.id === opts.id;
+				var item = cache[type].filter(function(elem) {
+					return elem._id === opts.id;
 				});
+				//return a promise here because the caller is expecting a promise
+				var dfd = $q.defer();
+				dfd.resolve(item[0]);
+				return dfd.promise;
+				
 			} else {
-				return resource[type].get(opts);
+				return resource[type].get(opts).$promise;
 			}
 		}
 	}
 });
-
-//TODO this is not currently working correctly!!!!!!
