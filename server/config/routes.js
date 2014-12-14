@@ -40,7 +40,6 @@ module.exports = function(router, config) {
 	router.delete('/api/pages/:id', pages.deletePage);
 
 	router.all('/api/*', function(req, res) {
-		console.log('404');
 		res.send(404);
 	});
 

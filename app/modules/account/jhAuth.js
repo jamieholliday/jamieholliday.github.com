@@ -12,7 +12,7 @@ angular.module('jhApp')
                 if(responce.data.success) {
                     var user = new jhUser();
                     angular.extend(user, responce.data.user);
-                    jhIdentity.currentUser = user;
+                    jhIdentity.setCurrentUser(user);
                     dfd.resolve(true);
                 } else {
                     dfd.resolve(false);
@@ -26,7 +26,7 @@ angular.module('jhApp')
             var dfd = $q.defer();
 
             newUser.$save().then(function() {
-                jhIdentity.currentUser = newUser;
+                jhIdentity.setCurrentUser(newUser);
                 dfd.resolve();
             }, function(responce) {
                 dfd.reject(responce.data.reason);
@@ -41,7 +41,7 @@ angular.module('jhApp')
             var clone = angular.copy(jhIdentity.currentUser);
             angular.extend(clone, newUserData);
             clone.$update().then(function() {
-                jhIdentity.currentUser = clone;
+                jhIdentity.setCurrentUser(clone);
                 dfd.resolve();
             }, function(responce) {
                 dfd.reject(responce.data.reason);
@@ -52,7 +52,7 @@ angular.module('jhApp')
         logoutUser: function() {
             var dfd = $q.defer();
             $http.post('/logout', {logout: true}).then(function() {
-                jhIdentity.currentUser = undefined;
+                jhIdentity.setCurrentUser(undefined);
                 dfd.resolve();
             });
             return dfd.promise;

@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-	projectModel = require('../models/Project');
+	projectModel = require('../models/Project'),
+	userModel = require('../models/Users');
 
 module.exports = function(config) {
 	mongoose.connect(config.db);
@@ -10,4 +11,5 @@ module.exports = function(config) {
 	});
 
 	projectModel.createDefaultProjects();
+	userModel.createDefaultUsers();
 };

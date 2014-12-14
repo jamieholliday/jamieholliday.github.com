@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $location){
+.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $state){
 
     $scope.identity = jhIdentity;
 
@@ -12,7 +12,7 @@ angular.module('jhApp')
         jhAuth.authenticateUser(username, password).
             then(function(success) {
                 if(success) {
-                    //notify
+                    $state.go('adminposts');
                 } else {
                     //notify
                 }

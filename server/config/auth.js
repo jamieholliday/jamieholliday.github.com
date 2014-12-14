@@ -19,7 +19,12 @@ exports.authenticate = function(req, res, next) {
             }
             res.send({
                 success: true,
-                user: user
+                user: {
+                    id: user.id,
+                    firstName: user.firstName,
+                    lastname: user.lastName,
+                    roles: user.roles
+                }
             });
         });
     });

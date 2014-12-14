@@ -34,10 +34,16 @@ exports.createDefaultUsers = function() {
             User.create({
                 firstName: 'first',
                 lastName: 'last',
-                userName: 'changeme',
+                username: 'changeme',
                 salt: salt,
                 hashedPwd: hash,
                 roles: ['superadmin', 'admin']
+            }, function(err, user) {
+                if(err) {
+                    console.log(err);
+                } else {
+                    console.log(user);
+                }
             });
         }
     });
