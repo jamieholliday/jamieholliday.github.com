@@ -17,20 +17,18 @@ angular.module('jhApp')
 			return cache[type];
 		},
 		delete: function(type, opts, cb) {
-			resource[type].delete(opts, function(responceData) {
-				if(responceData.deleted === true) {
-					cache[type] = null;
-				}
-				cb(responceData);
-			});
+			// resource[type].delete(opts, function(responceData) {
+			// 	if(responceData.deleted === true) {
+			// 		cache[type] = null;
+			// 	}
+			// 	cb(responceData);
+			// });
+			cache[type] = null;
+			return resource[type].delete(opts).$promise;
 		},
 		save: function(type, obj, cb) {
-			resource[type].save(obj, function(responceData) {
-				if(responceData._id) {
-					cache[type] = null;
-				}
-				cb(responceData);
-			});
+			cache[type] = null;
+			return resource[type].save(obj).$promise;
 		},
 		update: function(type, opts, obj) {
 			cache[type] = null;

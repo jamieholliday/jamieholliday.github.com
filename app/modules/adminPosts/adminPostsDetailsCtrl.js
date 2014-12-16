@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminPostsDetailsCtrl', function($scope, $stateParams, $location, resourceCache) {
+.controller('adminPostsDetailsCtrl', function($scope, $stateParams, $location, resourceCache, jhNotifier) {
 
 	var _updatePost,
 		_newPost;
@@ -34,7 +34,7 @@ angular.module('jhApp')
 	};
 
 	$scope.delete = function() {
-		resourceCache.delete('post', {id:post._id}, function(responceData) {
+		resourceCache.delete('post', {id:post._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
 				$location.path('/adminposts');
 			}
@@ -43,16 +43,18 @@ angular.module('jhApp')
 
 	//Private
 	_updatePost = function() {
-		resourceCache.update('post', {id:post._id}, post, function(responceData) {
-			
+		resourceCache.update('post', {id:post._id}, post).then(function(responceData) {
+			if(responceData.message === 'Success') {
+				jhNotifier.notify('Updated post');
+			}
 		});
 	}
 
 	_newPost = function() {
-		//TODO use promise here
-		resourceCache.save('post', post, function(responceData) {
+		resourceCache.save('post', post).then(function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminposts/' + responceData._id);
+				jhNotifier.notify('Saved page');
 			}
 		});
 	}
