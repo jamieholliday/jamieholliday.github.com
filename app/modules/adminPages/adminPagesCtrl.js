@@ -7,7 +7,7 @@ angular.module('jhApp')
 		resourceCache.delete('page', {id:page._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
 				$scope.pages = resourceCache.query('page');
-				jhNotifier.notify('Page Deleted');
+				jhNotifier.notify('Page deleted');
 			}
 		});
 	};

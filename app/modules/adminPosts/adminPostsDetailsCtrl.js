@@ -54,7 +54,7 @@ angular.module('jhApp')
 		resourceCache.save('post', post).then(function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminposts/' + responceData._id);
-				jhNotifier.notify('Saved page');
+				jhNotifier.notify('Saved post');
 			}
 		});
 	}
