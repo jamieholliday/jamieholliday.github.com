@@ -17,12 +17,6 @@ angular.module('jhApp')
 			return cache[type];
 		},
 		delete: function(type, opts, cb) {
-			// resource[type].delete(opts, function(responceData) {
-			// 	if(responceData.deleted === true) {
-			// 		cache[type] = null;
-			// 	}
-			// 	cb(responceData);
-			// });
 			cache[type] = null;
 			return resource[type].delete(opts).$promise;
 		},
