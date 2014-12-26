@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     minifyHtml = require('gulp-minify-html'),
     flatten = require('gulp-flatten'),
     sourceMaps = require('gulp-sourcemaps'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    nodemon = require('gulp-nodemon'),
+    child_process = require('child_process');
 
 // Modules for webserver and livereload
 var refresh = require('gulp-livereload'),
@@ -44,7 +46,12 @@ var paths = {
 };
 
 // Dev task
-gulp.task('default', ['views', 'styles', 'js'], function() {
+gulp.task('default', ['nodemon', 'views', 'styles', 'js'], function() {
+    //Start Mongo
+    child_process.exec('mongod', function(err, stdout, stderr) {
+        console.log(stdout);
+    });
+
     // Start webserver
     server.listen(serverport);
     // Start live reload
@@ -131,4 +138,11 @@ gulp.task('js-dist', function() {
   .pipe(ngAnnotate())
   .pipe(uglify())
   .pipe(gulp.dest('public/'));
+});
+
+gulp.task('nodemon', function() {
+  nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development'}, ignore: ['./app/**', './public/**', './test/**']})
+  .on('restart', function() {
+    console.log('restarted');
+  })
 });
