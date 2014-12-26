@@ -88,6 +88,18 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			controller: 'adminPagesDetailsCtrl',
 			resolve: routeRoleChecks
 		})
+		.state('adminusers', {
+			url: '/adminusers',
+			templateUrl: 'views/adminUsers.html',
+			controller: 'adminUsersCtrl',
+			resolve: routeRoleChecks
+		})
+		.state('adminusersdetails', {
+			url: '/adminusers/:id',
+			templateUrl: 'views/adminUsersDetails.html',
+			controller: 'adminUsersDetailsCtrl',
+			resolve: routeRoleChecks
+		})
 		.state('dashboard', {
 			url: '/admin',
 			templateUrl: 'views/dashboard.html',

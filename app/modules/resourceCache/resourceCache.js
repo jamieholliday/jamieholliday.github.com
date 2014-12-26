@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('jhApp')
-.factory('resourceCache', function(pages, projects, posts, $q) {
+.factory('resourceCache', function(pages, projects, posts, users, $q) {
 	var cache = {},
 		resource = {
 			page: pages,
 			project: projects,
-			post: posts
+			post: posts,
+			user: users
 		};
 
 	return {
