@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $state){
+.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $state, jhNotifier){
 
     $scope.identity = jhIdentity;
 
@@ -14,21 +14,9 @@ angular.module('jhApp')
                 if(success) {
                     $state.go('adminposts');
                 } else {
-                    //notify
+                    jhNotifier.error('Incorrect login details');
                 }
             });
     }
-
-    // $scope.submit = function(details) {
-    //     if(!details) {
-    //         return;
-    //     }
-
-    //     if($scope.login.username && $scope.login.password) {
-    //         $http.post('login').then(function() {
-    //             console.log('login');
-    //         });
-    //     }
-    // };
 
 });

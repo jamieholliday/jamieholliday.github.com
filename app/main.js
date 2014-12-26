@@ -110,6 +110,10 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/login',
 			templateUrl: 'views/accountLogin.html',
 			controller: 'accountLoginCtrl'
+		})
+		.state('logout', {
+			url: '/logout',
+			controller: 'accountLogoutCtrl'
 		});
 })
 .run(function($rootScope, $state) {

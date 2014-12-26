@@ -11,7 +11,11 @@ angular.module('jhApp').service('jhIdentity', function($window, jhUser) {
             return !!this.currentUser && this.currentUser.roles.indexOf(role) > -1;
         },
         setCurrentUser: function(user) {
-            $window.sessionStorage.setItem('currentUser', JSON.stringify(user));
+            if(user) {
+                $window.sessionStorage.setItem('currentUser', JSON.stringify(user));
+            } else {
+                $window.sessionStorage.removeItem('currentUser');
+            }
             this.currentUser = user;
         },
         getCurrentUser: function() {
