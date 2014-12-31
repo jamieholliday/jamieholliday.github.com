@@ -144,7 +144,7 @@ gulp.task('js-dist', function() {
 });
 
 gulp.task('nodemon', function() {
-  nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development'}, ignore: ['./app/**', './public/**', './test/**']})
+  nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development'}, ignore: ['app/modules/**/*.js', 'public/**/*.js', 'test/**/*.js']})
   .on('restart', function() {
     console.log('restarted');
   })

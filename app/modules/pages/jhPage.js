@@ -5,7 +5,7 @@ angular.module('jhApp')
 	return {
 		restrict: 'A',
 		link: linker,
-		template: '{{content}}'
+		template: '<div ng-bind-html="content"></div>'
 	}
 
 	function linker(scope, elem, attrs) {
