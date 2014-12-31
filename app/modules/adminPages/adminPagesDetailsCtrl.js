@@ -47,7 +47,6 @@ angular.module('jhApp')
 
 	//Private
 	_updatePage = function() {
-		console.log('update');
 		resourceCache.update('page', {id:page._id}, page).then(function(responceData) {
 			if(responceData.message === 'Success') {
 				jhNotifier.notify('Updated page');

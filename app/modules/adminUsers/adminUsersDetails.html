@@ -7,8 +7,8 @@
 				<input type="text" name="lastName" title="Last Name" class="form-control" ng-model="user.lastName" placeholder="Last Name - Required" required>
 				<input type="text" name="username" title="Username" class="form-control" ng-model="user.username" placeholder="Username - Required" required>
 				<span>Change Password</span>
-				<input type="text" name="password" title="Password" class="form-control" ng-model="user.password" jh-equals="{{user.passwordconfirm}}" placeholder="Password">
-				<input type="text" name="newpasswordconfirm" title="Confirm Password" class="form-control" ng-model="user.passwordconfirm" jh-equals="{{user.password}}" placeholder="Confirm Password">
+				<input type="password" name="password" title="Password" class="form-control" ng-model="user.password" jh-equals="{{user.passwordconfirm}}" placeholder="Password">
+				<input type="password" name="newpasswordconfirm" title="Confirm Password" class="form-control" ng-model="user.passwordconfirm" jh-equals="{{user.password}}" placeholder="Confirm Password">
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm(userDetails.$valid)" ng-disabled="userDetails.$invalid">
 			</div>
 		</form>
