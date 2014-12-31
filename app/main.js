@@ -9,7 +9,6 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 	var routeRoleChecks = {
     	admin: function(jhAuth) {
       		return jhAuth.authorizeCurrentUserForRoute('admin');
-      		// return true;
     	}
 	};
 
@@ -115,6 +114,26 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/logout',
 			controller: 'accountLogoutCtrl'
 		});
+})
+.factory('jhAuthInterceptor', function($q, $location, $window) {
+	return {
+		response: function(responce) {
+			if(responce.status === 403) {
+				console.log('403');
+			}
+			return responce || $q.when(responce);
+		},
+		responseError: function(rejection) {
+			if(rejection.status === 403) {
+				$window.sessionStorage.clear();
+				$location.path('/login');
+			}
+			return $q.reject(rejection);
+		}
+	}
+})
+.config(function($httpProvider) {
+	$httpProvider.interceptors.push('jhAuthInterceptor');
 })
 .run(function($rootScope, $state) {
 	$rootScope.$on('$stateChangeError', function(event, unfoundState, fromState, fromParams) {

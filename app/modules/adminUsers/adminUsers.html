@@ -19,13 +19,11 @@
 			<ul class="admin-list">
 				<li ng-repeat="user in users" class="list-item clearfix">
 					<div class="description">
-						<a ui-sref="adminusersdetails({id: user._id})">{{user.name}}</a>
+						<a ui-sref="adminusersdetails({id: user._id})">{{user.firstName}} {{user.lastName}}</a>
 					</div>
 					<div class="actions clearfix">
 						<a ui-sref="adminusersdetails({id: user._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="delete btn btn-default" title="Delete" ng-click="delete(user)"><span class="glyphicon glyphicon-trash"></span></a>
 					</div>
-					<div class="status" ng-class="user.published ? 'published' : 'draft'">{{user.published ? 'Published' : 'Draft'}}</div>
 				</li>
 			</ul>
 		 </div>
