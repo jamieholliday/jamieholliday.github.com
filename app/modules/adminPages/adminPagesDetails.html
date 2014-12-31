@@ -17,7 +17,7 @@
 				<p class="page-id">ID: {{page._id}}</p>
 				<input type="text" title="Title" name="title" class="form-control" ng-model="page.name" placeholder="Title - Required" required>
 				<input type="text" title="Permalink" name="permalink" class="form-control form-permalink" ng-model="page.permalink" placeholder="Permalink">
-				<textarea name="content" title="Content" class="form-control" rows="10" placeholder="Content - Required" ng-model="page.content" required></textarea>
+				<div name="content" title="Content" ng-model="page.content" required text-angular></div>
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="saveForm(pageDetails.$valid)" ng-disabled="pageDetails.$invalid">
 				<div ng-show="page._id" class="btn-group pull-left delete-btn">
 					<button type="button" class="btn btn-warning" ng-click="delete()">Delete</button>

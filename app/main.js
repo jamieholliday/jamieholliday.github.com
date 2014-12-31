@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('jhApp', ['ui.router', 'ngResource'])
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module('jhApp', ['ui.router', 'ngResource', 'textAngular'])
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, $provide) {
 
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise('/');
@@ -114,6 +114,15 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			url: '/logout',
 			controller: 'accountLogoutCtrl'
 		});
+
+		$provide.decorator('taOptions', ['$delegate', function(taOptions) {
+			taOptions.toolbar = [
+				['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
+                ['bold', 'italics', 'underline', 'ul', 'ol', 'redo', 'undo', 'clear'],
+                ['html', 'insertImage', 'insertLink']
+			];
+			return taOptions;
+		}]);
 })
 .factory('jhAuthInterceptor', function($q, $location, $window) {
 	return {

@@ -40,6 +40,9 @@ var paths = {
       'app/vendor/jquery/dist/jquery.js',
       'app/vendor/bootstrap/dist/js/bootstrap.js',
       'app/vendor/toastr/toastr.js',
+      'app/vendor/textAngular/dist/textAngular-sanitize.min.js',
+      'app/vendor/textAngular/dist/textAngular-rangy.min.js',
+      'app/vendor/textAngular/dist/textAngular.min.js',
       'app/main.js',
       'app/modules/**/*.js'
     ]
