@@ -42,7 +42,7 @@ angular.module('jhApp', ['ui.router', 'ngResource'])
 			controller: 'postsCtrl'
 		})
 		.state('postsdetails', {
-			url: '/blog/:id',
+			url: '/blog/:id/:permalink',
 			templateUrl: 'views/postsDetails.html',
 			controller: 'postsDetailsCtrl'
 		})

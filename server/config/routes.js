@@ -8,9 +8,9 @@ var	projects = require('../controllers/projects'),
 module.exports = function(router, config) {
 	//Users
 	router.get('/api/users', auth.requiresRole('admin'), users.getUsers);
-	//router.post('/api/users', auth.requiresRole('admin'), users.createUser);
 	router.get('/api/users/:id', auth.requiresRole('admin'), users.getUserById);
 	router.put('/api/users/:id', auth.requiresRole('admin'), users.updateUser);
+	//router.post('/api/users', auth.requiresRole('admin'), users.createUser);
 	//router.delete('/api/users', users.deleteUser);
 
 	router.post('/login', auth.authenticate);
