@@ -1,6 +1,6 @@
 'use strict';
-angular.module('jhApp').service('jhIdentity', function($window, jhUser) {
-
+angular.module('jhApp')
+.factory('jhIdentity', function($window, jhUser) {
     return {
         currentUser: JSON.parse($window.sessionStorage.getItem('currentUser')) || null,
 

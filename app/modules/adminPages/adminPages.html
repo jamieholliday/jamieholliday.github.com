@@ -24,6 +24,9 @@
 					<div class="description">
 						<a ui-sref="adminpagesdetails({id: page._id})">{{page.name}}</a>
 					</div>
+					<div class="pages-list-id">
+						ID: {{page._id}}
+					</div>
 					<div class="actions clearfix">
 						<a ui-sref="adminpagesdetails({id: page._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
 						<a class="delete btn btn-default" title="Delete" ng-click="delete(page)"><span class="glyphicon glyphicon-trash"></span></a>
