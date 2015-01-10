@@ -8,13 +8,13 @@
 			<form role="form" class="details clearfix">
 				<div class="form-group">
 					<div class="btn-group pull-right">
-					  <button class="btn btn-success" ng-click="showUploadForm()">New</button>
+					  <button class="btn btn-success" ng-click="adminMedia.showUploadForm()">New</button>
 					 </div>
 				 </div>
 			 </form>
 		</div>
 	 </section>
-	 <section class="row" ng-show="showUpload">
+	 <section class="row" ng-show="adminMedia.showUpload">
 	 	<div class="col-md-12">
 	 		<form role="form">
 	 			<div class="formgroup">
@@ -22,7 +22,7 @@
 	 			</div>
 	 			<div class="form-group">
 					<div class="btn-group">
-					  <a class="btn btn-success" ng-click="upload(media)">Upload</a>
+					  <a class="btn btn-success" ng-click="adminMedia.upload(media)">Upload</a>
 					 </div>
 				 </div>
 	 			<div class="progress" ng-show="uploading">
@@ -35,7 +35,7 @@
 	 <section class="row">
  		 <div class="col-md-12">
  			<ul class="media-list">
- 				<li ng-repeat="img in imgs" class="list-item clearfix">
+ 				<li ng-repeat="img in adminMedia.imgs" class="list-item clearfix">
  					<div class="description">
 						{{img.filename}}
  					</div>

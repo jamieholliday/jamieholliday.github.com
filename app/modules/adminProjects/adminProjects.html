@@ -17,18 +17,18 @@
 	 <section class="row">
 		 <div class="col-md-12">
 			<ul class="admin-list">
-				<li ng-repeat="project in projects" class="list-item clearfix">
+				<li ng-repeat="item in adminProjects.items" class="list-item clearfix">
 					<div class="reorder">
 						<span title="Reorder"></span>
 					</div>
 					<div class="description">
-						<a ui-sref="adminprojectsdetails({id: project._id})">{{project.name}}</a>
+						<a ui-sref="adminprojectsdetails({id: item._id})">{{item.name}}</a>
 					</div>
 					<div class="actions clearfix">
-						<a ui-sref="adminprojectsdetails({id: project._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
-						<a class="delete btn btn-default" title="Delete" ng-click="delete(project)"><span class="glyphicon glyphicon-trash"></span></a>
+						<a ui-sref="adminprojectsdetails({id: item._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="delete btn btn-default" title="Delete" ng-click="adminProjects.delete(item)"><span class="glyphicon glyphicon-trash"></span></a>
 					</div>
-					<div class="status" ng-class="project.published ? 'published' : 'draft'">{{project.published ? 'Published' : 'Draft'}}</div>
+					<div class="status" ng-class="item.published ? 'published' : 'draft'">{{item.published ? 'Published' : 'Draft'}}</div>
 				</li>
 			</ul>
 		 </div>

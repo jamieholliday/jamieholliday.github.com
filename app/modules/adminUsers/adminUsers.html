@@ -17,12 +17,12 @@
 	 <section class="row">
 		 <div class="col-md-12">
 			<ul class="admin-list">
-				<li ng-repeat="user in users" class="list-item clearfix">
+				<li ng-repeat="item in adminUsers.items" class="list-item clearfix">
 					<div class="description">
-						<a ui-sref="adminusersdetails({id: user._id})">{{user.firstName}} {{user.lastName}}</a>
+						<a ui-sref="adminusersdetails({id: item._id})">{{item.firstName}} {{item.lastName}}</a>
 					</div>
 					<div class="actions clearfix">
-						<a ui-sref="adminusersdetails({id: user._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a ui-sref="adminusersdetails({id: item._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
 					</div>
 				</li>
 			</ul>

@@ -1,13 +1,13 @@
 'use strict';
 angular.module('jhApp')
 .controller('adminMediaCtrl', function($scope) {
-	$scope.showUpload = false;
+	this.showUpload = false;
 
-	$scope.showUploadForm = function() {
-		$scope.showUpload = true;
+	this.showUploadForm = function() {
+		this.showUpload = true;
 	}	
 
-	// $scope.upload = function() {
+	// this.upload = function() {
 	// 	var status_elem = document.getElementById("status");
 	//     var url_elem = document.getElementById("avatar_url");
 	//     var preview_elem = document.getElementById("preview");
@@ -31,7 +31,7 @@ angular.module('jhApp')
 	//     });
 	// }
 
-	$scope.upload = function(media) {
+	this.upload = function(media) {
 		console.log(media);
 	}
 });

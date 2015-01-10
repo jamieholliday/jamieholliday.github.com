@@ -7,15 +7,15 @@
 	</section>
 	<section class="row">
 		<ul class="projects">
-			<li ng-repeat="project in projects" class="col-md-6 col-sm-6">
+			<li ng-repeat="item in projects.items" class="col-md-6 col-sm-6">
 
 				<div class="project-details">
 					<div class="project-img"></div>
 					<div class="project-description">
-						<h2>{{project.name}}</h2>
-						<p>{{project.description}}</p>
-						<p>{{project.tags}}</p>
-						<a href="{{project.url}}">{{project.url}}</a>
+						<h2>{{item.name}}</h2>
+						<p>{{item.description}}</p>
+						<p>{{item.tags}}</p>
+						<a href="{{project.url}}">{{item.url}}</a>
 					</div>
 				</div>
 			</li>

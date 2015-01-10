@@ -1,5 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.controller('projectsCtrl', function($scope, resourceCache) {
-	$scope.projects = resourceCache.query('project');
+.controller('projectsCtrl', function(resourceCache) {
+    var projects = this;
+	projects.items = resourceCache.query('project');
 });

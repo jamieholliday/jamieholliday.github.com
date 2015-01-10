@@ -2,11 +2,11 @@
 <div class="container">
 	<section class="row">
 		<ul class="posts">
-			<li ng-repeat="post in posts" class="col-md-12">
+			<li ng-repeat="item in posts.items" class="col-md-12">
 				<div class="post-details">
 					<div class="post-description">
-						<h2><a ui-sref="postsdetails({id: post._id, permalink: post.permalink})">{{post.name}}</a></h2>
-						<p>{{post.content}}</p>
+						<h2><a ui-sref="postsdetails({id: item._id, permalink: item.permalink})">{{item.name}}</a></h2>
+						<p>{{item.content}}</p>
 					</div>
 				</div>
 			</li>

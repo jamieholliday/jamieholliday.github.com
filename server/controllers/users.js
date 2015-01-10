@@ -3,8 +3,7 @@ var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption');
 
 exports.getUsers = function(req, res) {
-    // User.find({}, {'firstName':1, 'lastName':1, 'roles':1, 'username':1})
-    User.find({})
+    User.find({}, {'firstName':1, 'lastName':1, 'roles':1, 'username':1})
     .exec(function(err, users) {
         res.send(users);
     });
@@ -15,6 +14,7 @@ exports.getUserById = function(req, res) {
         if(err) {
             res.send({error: err, message: 'Error'});
         } else {
+            console.log(user);
             res.send(user[0]);
         }
     });

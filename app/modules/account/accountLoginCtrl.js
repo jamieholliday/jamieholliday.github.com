@@ -1,10 +1,10 @@
 'use strict';
 angular.module('jhApp')
-.controller('accountLoginCtrl', function($scope, $http, jhIdentity, jhAuth, $state, jhNotifier){
+.controller('accountLoginCtrl', function($http, jhIdentity, jhAuth, $state, jhNotifier){
+    var accountLogin = this;
+    accountLogin.identity = jhIdentity;
 
-    $scope.identity = jhIdentity;
-
-    $scope.signin = function(details, username, password) {
+    accountLogin.signin = function(details, username, password) {
         if(!details) {
             return;
         }

@@ -1,10 +1,11 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminProjectsDetailsCtrl', function($scope, $stateParams, $location, resourceCache, jhNotifier) {
+.controller('adminProjectsDetailsCtrl', function($stateParams, $location, resourceCache, jhNotifier) {
 
 	var _updatePost,
 		_newPost,
-		project;
+		project,
+        adminProjectsDetails = this;
 
 	//setup
 	project = {
@@ -14,27 +15,27 @@ angular.module('jhApp')
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
 		resourceCache.get('project', {id:$stateParams.id}).then(function(obj) {
-			$scope.project = project = obj;
+			adminProjectsDetails.project = project = obj;
 		});
 	} else {
-		$scope.project = project;
+		adminProjectsDetails.project = project;
 	}
 
 	//Public
-	$scope.publish = function(bool) {
+	adminProjectsDetails.publish = function(bool) {
 		project.published = bool;
 	};
 
-	$scope.saveForm = function(isValid) {
+	adminProjectsDetails.saveForm = function(isValid) {
 		if (!isValid) return;
-		if($scope.project._id) {
+		if(adminProjectsDetails.project._id) {
 			_updatePost();
 		} else {
 			_newPost();
 		}
 	};
 
-	$scope.delete = function() {
+	adminProjectsDetails.delete = function() {
 		resourceCache.delete('project', {id:project._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
 				$location.path('/adminprojects');

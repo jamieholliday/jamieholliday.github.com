@@ -16,108 +16,108 @@ angular.module('jhApp', ['ui.router', 'ngResource', 'textAngular'])
 		.state('projects', {
 			url: '/',
 			templateUrl: 'views/projects.html',
-			controller: 'projectsCtrl'
+			controller: 'projectsCtrl as projects'
 		})
 		.state('adminprojects', {
 			url: '/adminprojects',
 			templateUrl: 'views/adminProjects.html',
-			controller: 'adminProjectsCtrl',
+			controller: 'adminProjectsCtrl as adminProjects',
 			resolve: routeRoleChecks
 		})
 		.state('adminprojectsdetails', {
 			url: '/adminprojects/:id',
 			templateUrl: 'views/adminProjectsDetails.html',
-			controller: 'adminProjectsDetailsCtrl',
+			controller: 'adminProjectsDetailsCtrl as adminProjectsDetails',
 			resolve: routeRoleChecks
 		})
 		.state('adminprojectsedit', {
 			url: '/adminprojects/edit',
 			templateUrl: 'views/adminProjectsDetails.html',
-			controller: 'adminProjectsDetailsCtrl',
+			controller: 'adminProjectsDetailsCtrl as adminProjectsDetails',
 			resolve: routeRoleChecks
 		})
 		.state('posts', {
 			url: '/blog',
 			templateUrl: 'views/posts.html',
-			controller: 'postsCtrl'
+			controller: 'postsCtrl as posts'
 		})
 		.state('postsdetails', {
 			url: '/blog/:id/:permalink',
 			templateUrl: 'views/postsDetails.html',
-			controller: 'postsDetailsCtrl'
+			controller: 'postsDetailsCtrl as postsDetails'
 		})
 		.state('adminposts', {
 			url: '/adminposts',
 			templateUrl: 'views/adminPosts.html',
-			controller: 'adminPostsCtrl',
+			controller: 'adminPostsCtrl as adminPosts',
 			resolve: routeRoleChecks
 		})
 		.state('adminpostsdetails', {
 			url: '/adminposts/:id',
 			templateUrl: 'views/adminPostsDetails.html',
-			controller: 'adminPostsDetailsCtrl',
+			controller: 'adminPostsDetailsCtrl as adminPostsDetails',
 			resolve: routeRoleChecks
 		})
 		.state('adminpostsedit', {
 			url: '/adminposts/edit',
 			templateUrl: 'views/adminPostsDetails.html',
-			controller: 'adminPostsDetailsCtrl',
+			controller: 'adminPostsDetailsCtrl as adminPostsDetails',
 			resolve: routeRoleChecks
 		})
 		.state('pages', {
 			url: '/',
 			templateUrl: 'views/pages.html',
-			controller: 'pagesCtrl'
+			controller: 'pagesCtrl as pages'
 		})
 		.state('adminpages', {
 			url: '/adminpages',
 			templateUrl: 'views/adminPages.html',
-			controller: 'adminPagesCtrl',
+			controller: 'adminPagesCtrl as adminPages',
 			resolve: routeRoleChecks
 		})
 		.state('adminpagesdetails', {
 			url: '/adminpages/:id',
 			templateUrl: 'views/adminPagesDetails.html',
-			controller: 'adminPagesDetailsCtrl',
+			controller: 'adminPagesDetailsCtrl as adminPagesDetails',
 			resolve: routeRoleChecks
 		})
 		.state('adminpagesedit', {
 			url: '/adminpages/edit',
 			templateUrl: 'views/adminPagesDetails.html',
-			controller: 'adminPagesDetailsCtrl',
+			controller: 'adminPagesDetailsCtrl as adminPagesDetails',
 			resolve: routeRoleChecks
 		})
 		.state('adminusers', {
 			url: '/adminusers',
 			templateUrl: 'views/adminUsers.html',
-			controller: 'adminUsersCtrl',
+			controller: 'adminUsersCtrl as adminUsers',
 			resolve: routeRoleChecks
 		})
 		.state('adminusersdetails', {
 			url: '/adminusers/:id',
 			templateUrl: 'views/adminUsersDetails.html',
-			controller: 'adminUsersDetailsCtrl',
+			controller: 'adminUsersDetailsCtrl as adminUsersDetails',
 			resolve: routeRoleChecks
 		})
 		.state('dashboard', {
 			url: '/admin',
 			templateUrl: 'views/dashboard.html',
-			controller: 'dashboardCtrl',
+			controller: 'dashboardCtrl as dashboard',
 			resolve: routeRoleChecks
 		})
 		.state('login', {
 			url: '/login',
 			templateUrl: 'views/accountLogin.html',
-			controller: 'accountLoginCtrl'
+			controller: 'accountLoginCtrl as accountLogin'
 		})
 		.state('logout', {
 			url: '/logout',
-			controller: 'accountLogoutCtrl'
+			controller: 'accountLogoutCtrl as accountLogin'
 		})
 		.state('adminmedia', {
 			url: '/media',
 			templateUrl: 'views/adminMedia.html',
-			controller: 'adminMediaCtrl',
+			controller: 'adminMediaCtrl as adminMedia',
 			resolve: routeRoleChecks
 		});
 

@@ -1,9 +1,10 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminUsersCtrl', function($scope, users, jhNotifier) {
-	$scope.users = users.query();
+.controller('adminUsersCtrl', function(users, jhNotifier) {
+    var adminUsers = this;
+	adminUsers.items = users.query();
 
-	$scope.delete = function(user) {
+	adminUsers.delete = function(user) {
 		users.delete({id:user._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
 				jhNotifier.notify('User deleted');

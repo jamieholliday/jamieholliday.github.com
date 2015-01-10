@@ -1,15 +1,16 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminUsersDetailsCtrl', function($scope, $stateParams, $location, users, jhNotifier) {
+.controller('adminUsersDetailsCtrl', function($stateParams, $location, users, jhNotifier) {
 
 	var _updateUser,
-		user;
+        adminUsersDetails = this;
 
 	users.get({id:$stateParams.id}).$promise.then(function(obj) {
-		$scope.user = user = obj;
+        console.log(obj);
+		adminUsersDetails.user = obj;
 	});
 
-	$scope.saveForm = function(isValid) {
+	adminUsersDetails.saveForm = function(isValid) {
 		if (!isValid) return;
 		_updateUser();
 	};
