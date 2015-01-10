@@ -113,6 +113,12 @@ angular.module('jhApp', ['ui.router', 'ngResource', 'textAngular'])
 		.state('logout', {
 			url: '/logout',
 			controller: 'accountLogoutCtrl'
+		})
+		.state('adminmedia', {
+			url: '/media',
+			templateUrl: 'views/adminMedia.html',
+			controller: 'adminMediaCtrl',
+			resolve: routeRoleChecks
 		});
 
 		$provide.decorator('taOptions', ['$delegate', function(taOptions) {

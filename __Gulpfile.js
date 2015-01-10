@@ -12,28 +12,30 @@
         sourceMaps = require('gulp-sourcemaps'),
         plumber = require('gulp-plumber'),
         nodemon = require('gulp-nodemon'),
-        child_process = require('child_process'),
+        childProcess = require('child_process'),
+        browserSync = require('browser-sync'),
+        reload = browserSync.reload,
+        paths;
 
     // Modules for webserver and livereload
-        refresh = require('gulp-livereload'),
-        lrserver = require('tiny-lr')(),
-        express = require('express'),
-        livereload = require('connect-livereload'),
-        livereloadport = 35729,
-        serverport = 8080,
-        paths,
-        server;
+//        refresh = require('gulp-livereload'),
+//        lrserver = require('tiny-lr')(),
+//        express = require('express'),
+//        livereload = require('connect-livereload'),
+//        livereloadport = 35729,
+//        serverport = 8080,
+//        paths,
 
     // Set up an express server (not starting it yet)
-    server = express();
+       // server = express();
     // Add live reload
-    server.use(livereload({port: livereloadport}));
+    //server.use(livereload({port: livereloadport}));
     // Use our 'public' folder as rootfolder
-    server.use(express.static('./public'));
+    //server.use(express.static('./public'));
     // Because I like HTML5 pushstate .. this redirects everything back to our index.html
-    server.all('/*', function (req, res) {
-        res.sendfile('index.html', { root: 'public' });
-    });
+//    server.all('/*', function (req, res) {
+//        res.sendfile('index.html', { root: 'public' });
+//    });
 
     paths = {
         js : [
@@ -53,16 +55,16 @@
     };
 
     // Dev task
-    gulp.task('default', ['nodemon', 'views', 'styles', 'js'], function () {
+    gulp.task('default', ['browser-sync', 'nodemon', 'views', 'styles', 'js'], function () {
         //Start Mongo
-        child_process.exec('mongod', function (err, stdout, stderr) {
+        childProcess.exec('mongod', function (err, stdout, stderr) {
             console.log(stdout);
         });
 
         // Start webserver
-        server.listen(serverport);
+//        server.listen(serverport);
         // Start live reload
-        lrserver.listen(livereloadport);
+//        lrserver.listen(livereloadport);
         // Run the watch task, to keep tags on changes
         gulp.watch(['app/main.js', 'app/modules/**/*.js'], ['js']);
         // Watch our less files
@@ -77,6 +79,13 @@
 
     //Build task
     gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
+    
+    gulp.task('browser-sync', function() {
+       browserSync.init(null, {
+		proxy: "http://localhost:3000",
+            port: 7000
+        });
+    });
 
     // Styles task
     gulp.task('styles', function () {
@@ -86,7 +95,8 @@
             .pipe(less().on('error', gutil.log))
             .pipe(sourceMaps.write())
             .pipe(gulp.dest('public/'))
-            .pipe(refresh(lrserver));
+//            .pipe(reload({stream: true}));
+//            .pipe(refresh(lrserver));
     });
 
     gulp.task('styles-dist', function () {
@@ -103,14 +113,18 @@
         .pipe(plumber())
         // And put it in the public folder
         .pipe(gulp.dest('public/'))
-        .pipe(refresh(lrserver));
+//        .pipe(refresh(lrserver));
+//        .pipe(reload({stream: true}));
+
 
         // Any other view files from app/views
         gulp.src('app/modules/**/*.html')
         // Will be put in the public/views folder
         .pipe(flatten())
         .pipe(gulp.dest('public/views/'))
-        .pipe(refresh(lrserver));
+//        .pipe(refresh(lrserver));
+//        .pipe(reload({stream: true}));
+
     });
 
     //Minify Html
@@ -134,7 +148,9 @@
 //      .pipe(ngAnnotate())
       .pipe(sourceMaps.write())
       .pipe(gulp.dest('public/'))
-      .pipe(refresh(lrserver));
+//      .pipe(refresh(lrserver));
+//      .pipe(reload({stream: true}));
+
     });
 
     gulp.task('js-dist', function() {
@@ -149,6 +165,6 @@
       nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development'}, ignore: ['app/**/*.js', 'public/**/*.js', 'test/**/*.js']})
       .on('restart', function() {
         console.log('restarted');
-      })
+      });
     });
 })();

@@ -3,6 +3,7 @@ var	projects = require('../controllers/projects'),
 	posts = require('../controllers/posts'),
 	pages = require('../controllers/pages'),
 	users = require('../controllers/users'),
+	aws = require('../controllers/aws'),
 	auth = require('./auth');
 
 module.exports = function(router, config) {
@@ -39,6 +40,9 @@ module.exports = function(router, config) {
 	router.get('/api/pages/:id', pages.getPageById);
 	router.put('/api/pages/:id', pages.updatePage);
 	router.delete('/api/pages/:id', pages.deletePage);
+
+	//Aws
+	router.get('/api/aws', aws.getCreds);
 
 	router.all('/api/*', function(req, res) {
 		res.send(404);
