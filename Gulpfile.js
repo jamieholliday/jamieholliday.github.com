@@ -74,6 +74,24 @@
             'views'
         ]);
     });
+    
+    gulp.task('bare', ['views', 'styles', 'js'], function () {
+
+        // Start webserver
+        server.listen(serverport);
+        // Start live reload
+        lrserver.listen(livereloadport);
+        // Run the watch task, to keep tags on changes
+        gulp.watch(['app/main.js', 'app/modules/**/*.js'], ['js']);
+        // Watch our less files
+        gulp.watch(['app/main.less', 'app/modules/**/*.less'], [
+            'styles'
+        ]);
+
+        gulp.watch(['app/index.html', 'app/modules/**/*.html'], [
+            'views'
+        ]);
+    });
 
     //Build task
     gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);

@@ -14,7 +14,6 @@ exports.getUserById = function(req, res) {
         if(err) {
             res.send({error: err, message: 'Error'});
         } else {
-            console.log(user);
             res.send(user[0]);
         }
     });
@@ -53,8 +52,6 @@ exports.updateUser = function(req, res) {
     req.user.firstName = userUpdates.firstName;
     req.user.lastName = userUpdates.lastName;
     req.user.username = userUpdates.username;
-
-    console.log('pw', userUpdates.password);
 
     if(userUpdates.password && userUpdates.password.length > 0) {
         req.user.salt = encrypt.createSalt();

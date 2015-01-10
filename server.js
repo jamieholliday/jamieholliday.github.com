@@ -1,5 +1,5 @@
 var express = require('express');
-var env = process.env.NODE_ENV = 'development';
+var env = process.env.NODE_ENV || 'development';
 var app = express();
 var router = express.Router();
 var config = require('./server/config/config')[env];
@@ -12,7 +12,7 @@ require('./server/config/passport')();
 require('./server/config/routes')(router, config);
 
 var server = app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + server.address().port);
+  console.log('Express server listening on port ' + server.address().port + 'mode: ' + env);
 });
 
 
