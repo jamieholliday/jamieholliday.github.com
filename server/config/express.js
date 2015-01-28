@@ -5,7 +5,8 @@ var express = require('express'),
 	session = require('express-session'),
 	passport = require('passport'),
 	path = require('path'),
-	favicon = require('serve-favicon');
+	favicon = require('serve-favicon'),
+    MongoStore = require('connect-mongo')(session);
 
 module.exports = function(app, config, router) {
 	app.use(express.static(path.join(config.rootPath, 'public')));
@@ -13,11 +14,11 @@ module.exports = function(app, config, router) {
 	app.use(logger('dev'));
 	app.use(cookieParser());
 	app.use(bodyParser.json());
-	app.use(session({
-		secret: config.secret,
-		saveUninitialized: true,
-		resave: true
-	}));
+    app.use(session({
+        secret: config.secret,
+        maxAge: new Date(Date.now() + 3600000),
+        store: new MongoStore({url: config.db})
+    }))
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.set('port', config.port);

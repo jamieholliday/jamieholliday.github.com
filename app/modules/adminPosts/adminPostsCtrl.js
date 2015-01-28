@@ -1,12 +1,13 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminPostsCtrl', function($scope, resourceCache, jhNotifier) {
-	$scope.posts = resourceCache.query('post');
+.controller('adminPostsCtrl', function(resourceCache, jhNotifier) {
+    var adminPosts = this;
+	adminPosts.items = resourceCache.query('post');
 
-	$scope.delete = function(post) {
+	adminPosts.delete = function(post) {
 		resourceCache.delete('post', {id:post._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
-				$scope.posts = resourceCache.query('post');
+				adminPosts.items = resourceCache.query('post');
 				jhNotifier.notify('Post Deleted');
 			}
 		});

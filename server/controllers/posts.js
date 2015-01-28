@@ -17,7 +17,7 @@ exports.newPost = function(req, res) {
 		tags: req.body.tags,
 		published: req.body.published,
 		date: new Date(),
-		//permalink: req.body.permalink,
+		permalink: req.body.permalink,
 	};
 	Post.create(postData, function(err, post) {
 		if(err) {
@@ -39,28 +39,25 @@ exports.getPostById = function(req, res) {
 };
 
 exports.updatePost = function(req, res) {
-	var postUpdates = {
-		name: req.body.name,
-		content: req.body.content,
-		tags: req.body.tags,
-		published: req.body.published,
-		date: new Date(),
-		//permalink: req.body.permalink,
-	};
-
-	//remove undefined values
-	for(var key in postUpdates) {
-		if(postUpdates.hasOwnProperty(key) && !postUpdates[key]) {
-			delete postUpdates[key];
-		}
-	}
-
-	Post.update({_id:req.params.id}, postUpdates, function(err, numberAffected, raw) {
+	Post.findOne({_id:req.params.id}, function(err, post) {
 		if(err) {
 			res.send({error: err, message: 'Error'});
-		} else {
-			res.send({message: 'Success'});	
 		}
+
+		post.name = req.body.name;
+		post.content = req.body.content;
+		post.tags = req.body.tags;
+		post.published = req.body.published;
+		post.permalink = req.body.permalink;
+
+		post.save(function(err) {
+			if(err) {
+				res.send({error: err, message: 'Error'});
+			} else {
+				res.send({message: 'Success'});
+			}
+		});
+		
 	});
 };
 

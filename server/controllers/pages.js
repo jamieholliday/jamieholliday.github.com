@@ -16,7 +16,7 @@ exports.newPage = function(req, res) {
 		content: req.body.content,
 		published: req.body.published,
 		date: new Date(),
-		//permalink: req.body.permalink,
+		permalink: req.body.permalink,
 	};
 	Page.create(pageData, function(err, page) {
 		if(err) {
@@ -38,27 +38,24 @@ exports.getPageById = function(req, res) {
 };
 
 exports.updatePage = function(req, res) {
-	var pageUpdates = {
-		name: req.body.name,
-		content: req.body.content,
-		published: req.body.published,
-		date: new Date(),
-		//permalink: req.body.permalink,
-	};
-
-	//remove undefined values
-	for(var key in pageUpdates) {
-		if(pageUpdates.hasOwnProperty(key) && !pageUpdates[key]) {
-			delete pageUpdates[key];
-		}
-	}
-
-	Page.update({_id:req.params.id}, pageUpdates, function(err, numberAffected, raw) {
+	Page.findOne({_id:req.params.id}, function(err, page) {
 		if(err) {
 			res.send({error: err, message: 'Error'});
-		} else {
-			res.send({message: 'Success'});
 		}
+
+		page.name = req.body.name;
+		page.content = req.body.content;
+		page.published = req.body.published;
+		page.permalink = req.body.permalink;
+
+		page.save(function(err) {
+			if(err) {
+				res.send({error: err, message: 'Error'});
+			} else {
+				res.send({message: 'Success'});
+			}
+		});
+		
 	});
 };
 

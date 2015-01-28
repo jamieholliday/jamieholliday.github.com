@@ -2,30 +2,51 @@
 	background: @dark-grey;
 	color: #fff;
 	text-transform: uppercase;
-	padding: 16px 0;
 
 	nav {
 		float: right;
 
 		a {
 			color: #fff;
+            display: block;
+            padding: 40px;
+		}
+
+		.logout a {
+			color: @hl-blue;
 		}
 
 		a:hover,
 		a:active {
-			color: lighten(@hl-blue, 10%);
+			background: lighten(@hl-blue, 10%);
 			text-decoration: none;
 		}
-	}
+        
+        ul {
+            margin: 0;
+        }
+        
+        li {
+            float: left;
+            list-style: none;
+            font-size: 1rem;
 
-	nav li {
-		float: left;
-		list-style: none;
-		margin-left: 1rem;
-		font-size: 1rem;
+            
+            &.active a {
+                background: @hl-blue;
+            }
+        }
 	}
 
 	.logo {
 		float: left;
+        font-size: 6rem;
+        line-height: 6rem;
+        max-height: 100px;
+        padding-top: 2px;
+        
+        a {
+            color: lighten(@dark-grey, 15%);
+        }
 	}
 }

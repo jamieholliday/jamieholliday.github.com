@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var permalink = require('mongoose-permalink');
 
 var projectSchema = mongoose.Schema({
 	name: {type: String, required: '{PATH} is required'},
@@ -7,8 +8,12 @@ var projectSchema = mongoose.Schema({
 	url: String,
 	published: {type: Boolean, required: '{PATH} is required'},
 	date: {type: Date, required: '{PATH} is required'},
-	//permalink: String,
+	permalink: String,
 	type: String
+});
+
+projectSchema.plugin(permalink, {
+	sources: ['name']
 });
 
 var Project = mongoose.model('Project', projectSchema);

@@ -3,13 +3,15 @@ var	projects = require('../controllers/projects'),
 	posts = require('../controllers/posts'),
 	pages = require('../controllers/pages'),
 	users = require('../controllers/users'),
+	aws = require('../controllers/aws'),
 	auth = require('./auth');
 
 module.exports = function(router, config) {
 	//Users
 	router.get('/api/users', auth.requiresRole('admin'), users.getUsers);
-	router.post('/api/users', auth.requiresRole('admin'), users.createUser);
-	router.put('/api/users', auth.requiresRole('admin'), users.updateUser);
+	router.get('/api/users/:id', auth.requiresRole('admin'), users.getUserById);
+	router.put('/api/users/:id', auth.requiresRole('admin'), users.updateUser);
+	//router.post('/api/users', auth.requiresRole('admin'), users.createUser);
 	//router.delete('/api/users', users.deleteUser);
 
 	router.post('/login', auth.authenticate);
@@ -38,6 +40,9 @@ module.exports = function(router, config) {
 	router.get('/api/pages/:id', pages.getPageById);
 	router.put('/api/pages/:id', pages.updatePage);
 	router.delete('/api/pages/:id', pages.deletePage);
+
+	//Aws
+	router.get('/api/aws', aws.getCreds);
 
 	router.all('/api/*', function(req, res) {
 		res.send(404);

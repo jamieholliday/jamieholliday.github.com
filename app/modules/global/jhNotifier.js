@@ -6,6 +6,9 @@ angular.module('jhApp')
 	return {
 	  notify: function(msg) {
 	    jhToastr.success(msg);
+	  },
+	  error: function(msg) {
+	  	jhToastr.error(msg);
 	  }
 	}
 });
