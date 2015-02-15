@@ -23,7 +23,10 @@
     "describe": false,
     "it": false,
     "res": true,
-    "debug": true,
-    "angular": true
+    "debug": false,
+    "angular": false,
+    "beforeEach": false,
+    "inject": false,
+    "spyOn": false
   }
 }

@@ -2,44 +2,41 @@
 angular.module('jhApp')
 .controller('adminPagesDetailsCtrl', function($stateParams, $location, resourceCache, jhNotifier) {
 
-	var _updatePage,
-		_newPage,
-		page,
-        adminPagesDetails = this;
+	var adminPagesDetails = this;
 
 	//setup
-	page = {
+	adminPagesDetails.page = {
 		published: false
 	};
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		resourceCache.get('page', {id:$stateParams.id}).then(function(obj) {
-			adminPagesDetails.page = page = obj;
+		resourceCache.get('page', {id:$stateParams.id})
+		.then(function(obj) {
+			adminPagesDetails.page = obj;
 		});
-	} else {
-		adminPagesDetails.page = page;
-	}
+	} 
 
 	//Public
 	adminPagesDetails.publish = function(bool) {
-		page.published = bool;
+		adminPagesDetails.page.published = bool;
 	};
 
 	adminPagesDetails.saveForm = function(isValid) {
 		if (!isValid) {
-			return;
+			return false;
 		}
 
-		if(page._id) {
-			_updatePage();
+		if(adminPagesDetails.page._id) {
+			adminPagesDetails._updatePage();
 		} else {
-			_newPage();
+			adminPagesDetails._newPage();
 		}
 	};
 
 	adminPagesDetails.delete = function() {
-		resourceCache.delete('page', {id:page._id}).then(function(responceData) {
+		resourceCache.delete('page', {id:adminPagesDetails.page._id})
+		.then(function(responceData) {
 			if(responceData.deleted === true) {
 				$location.path('/adminpages');
 			}
@@ -47,16 +44,18 @@ angular.module('jhApp')
 	};
 
 	//Private
-	_updatePage = function() {
-		resourceCache.update('page', {id:page._id}, page).then(function(responceData) {
+	adminPagesDetails._updatePage = function() {
+		resourceCache.update('page', {id:adminPagesDetails.page._id}, adminPagesDetails.page)
+		.then(function(responceData) {
 			if(responceData.message === 'Success') {
 				jhNotifier.notify('Updated page');
 			}
 		});
 	};
 
-	_newPage = function() {
-		resourceCache.save('page', page).then(function(responceData) {
+	adminPagesDetails._newPage = function() {
+		resourceCache.save('page', adminPagesDetails.page)
+		.then(function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminpages/' + responceData._id);
 				jhNotifier.notify('Saved page');
