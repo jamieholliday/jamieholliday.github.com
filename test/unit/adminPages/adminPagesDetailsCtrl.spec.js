@@ -1,14 +1,15 @@
 describe('adminPagesDetailsCtrl', function() {
 	'use strict';
 
-    var createController, $rootScope, deferred, resourceCache, scope, jhNotifier, page, adminPagesDetails, deleteResponce;
+    var createController, $rootScope, deferred, resourceCache, scope, jhNotifier, adminPagesDetails, deleteResponce, $location;
 
     beforeEach(module('jhApp'));
 
-    beforeEach(inject(function($controller, _$rootScope_, $q) {
+    beforeEach(inject(function($controller, _$rootScope_, $q, _$location_) {
         $rootScope = _$rootScope_;
+        $location = _$location_;
         scope = $rootScope.$new();
-            deferred = $q.defer();
+        deferred = $q.defer();
 
         resourceCache = {
             query: function(){},
@@ -25,10 +26,14 @@ describe('adminPagesDetailsCtrl', function() {
             message: 'Success'
         };
 
+
+        // $location
+
         createController = function() {
             return $controller('adminPagesDetailsCtrl', { 
                 resourceCache: resourceCache, 
-                jhNotifier: jhNotifier
+                jhNotifier: jhNotifier,
+                $location: $location
             } );
         };
 
@@ -40,6 +45,7 @@ describe('adminPagesDetailsCtrl', function() {
         spyOn(adminPagesDetails, '_updatePage');
         spyOn(adminPagesDetails, '_newPage');
         spyOn(jhNotifier, 'notify');
+        spyOn($location, 'path');
     }));
 
     it('should set page status to published', function () {
@@ -74,8 +80,17 @@ describe('adminPagesDetailsCtrl', function() {
     it('should delete a page', function () {
         adminPagesDetails.page._id = 1;
         adminPagesDetails.delete();
-        // deferred.resolve(deleteResponce);
-        // scope.$digest();
         expect(resourceCache.delete).toHaveBeenCalledWith('page', {id:1});
+        deferred.resolve({deleted: true});
+        scope.$digest();
+        expect($location.path).toHaveBeenCalledWith('/adminpages');
+    });
+
+    it('should update the page', function() {
+        adminPagesDetails.page._id = 1;
+        adminPagesDetails._updatePage();
+        //adminPagesDetails._updatePage() is a spy. Need to call through;
+        
+        // expect(resourceCache.update).toHaveBeenCalledWith('page', {id: 1}, adminPagesDetails.page);
     });
 });

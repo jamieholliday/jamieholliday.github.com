@@ -45,7 +45,7 @@ angular.module('jhApp')
 
 	//Private
 	adminPagesDetails._updatePage = function() {
-		resourceCache.update('page', {id:adminPagesDetails.page._id}, adminPagesDetails.page)
+		resourceCache.update('page', {id: adminPagesDetails.page._id}, adminPagesDetails.page)
 		.then(function(responceData) {
 			if(responceData.message === 'Success') {
 				jhNotifier.notify('Updated page');
