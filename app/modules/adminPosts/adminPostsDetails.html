@@ -16,7 +16,7 @@
 				</div>
 				<input type="text" title="Title" name="title" class="form-control" ng-model="adminPostsDetails.post.name" placeholder="Title - Required" required>
 				<input type="text" title="Permalink" name="permalink" class="form-control form-permalink" ng-model="adminPostsDetails.post.permalink" placeholder="Permalink">
-				<textarea name="content" title="Content" class="form-control" rows="10" placeholder="Content - Required" ng-model="adminPostsDetails.post.content" required></textarea>
+				<div name="content" title="Content" ng-model="adminPostsDetails.post.content" placeholder="Content - Required" required text-angular></div>
 				<input type="text" title="Tags" name="tags" class="form-control" ng-model="adminPostsDetails.post.tags" placeholder="Tags">
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="adminPostsDetails.saveForm(postDetails.$valid)" ng-disabled="postDetails.$invalid">
 				<div ng-show="post._id" class="btn-group pull-left delete-btn">

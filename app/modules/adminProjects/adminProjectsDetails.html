@@ -16,7 +16,7 @@
 				</div>
 				<input type="text" name="title" title="Title" class="form-control" ng-model="adminProjectsDetails.project.name" placeholder="Title - Required" required>
 				<input type="text" title="Permalink" name="permalink" class="form-control form-permalink" ng-model="adminProjectsDetails.project.permalink" placeholder="Permalink">
-				<textarea name="description" title="Description" class="form-control" rows="10" placeholder="Description" ng-model="adminProjectsDetails.project.description" ng-wig="content"></textarea>
+				<div name="content" title="Content" ng-model="adminProjectsDetails.project.description" placeholder="Description" required text-angular></div>
 				<div class="img-upload">
 					<input type="file" title="Image" name="image" class="form-control" ng-model="adminProjectsDetails.project.img" placeholder="Upload an image">
 					<div class="progress" ng-show="adminProjectsDetails.project.upload">
