@@ -6,7 +6,6 @@ angular.module('jhApp')
         adminUsersDetails = this;
 
 	users.get({id:$stateParams.id}).$promise.then(function(obj) {
-        console.log(obj);
 		adminUsersDetails.user = obj;
 	});
 
@@ -16,7 +15,7 @@ angular.module('jhApp')
 	};
 
 	_updateUser = function() {
-		users.update({id:user._id}, user).$promise.then(function(responceData) {
+		users.update({id:adminUsersDetails.user._id}, adminUsersDetails.user).$promise.then(function(responceData) {
 			if(responceData.message === 'Success') {
 				jhNotifier.notify('Updated user');
 			}
