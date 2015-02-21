@@ -42,20 +42,18 @@ describe('adminPagesDetailsCtrl', function() {
         spyOn(resourceCache, 'save').and.returnValue(deferred.promise);
         spyOn(resourceCache, 'update').and.returnValue(deferred.promise);
         spyOn(resourceCache, 'delete').and.returnValue(deferred.promise);
-        spyOn(adminPagesDetails, '_updatePage');
+        spyOn(adminPagesDetails, '_updatePage').and.callThrough();
         spyOn(adminPagesDetails, '_newPage');
         spyOn(jhNotifier, 'notify');
         spyOn($location, 'path');
     }));
 
     it('should set page status to published', function () {
-
         adminPagesDetails.publish(true); 
         expect(adminPagesDetails.page.published).toEqual(true);
     });
 
-    it('should save the page if it is a new page', function() {
-        
+    it('should save the page if it is a new page', function() {  
         adminPagesDetails.page._id = null;
         adminPagesDetails.saveForm(true);
 
@@ -63,7 +61,6 @@ describe('adminPagesDetailsCtrl', function() {
     });
 
     it('should update the page if it is an exisiting page', function() {
-
         adminPagesDetails.page._id = 1;
         adminPagesDetails.saveForm(true);
 
