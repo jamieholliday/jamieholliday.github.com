@@ -41,34 +41,6 @@ exports.getProjectById = function(req, res) {
 	});
 };
 
-// exports.updateProject = function(req, res) {
-// 	var projectUpdates = {
-// 		name: req.body.name,
-// 		description: req.body.description,
-// 		tags: req.body.tags,
-// 		published: req.body.published,
-// 		date: new Date(),
-// 		//permalink: req.body.permalink,
-// 		url: req.body.url,
-// 		type: req.body.type
-// 	};
-
-// 	//remove undefined values
-// 	for(var key in projectUpdates) {
-// 		if(projectUpdates.hasOwnProperty(key) && !projectUpdates[key]) {
-// 			delete projectUpdates[key];
-// 		}
-// 	}
-
-// 	Project.update({_id:req.params.id}, projectUpdates, function(err, numberAffected, raw) {
-// 		if(err) {
-// 			res.send({error: err, message: 'Error'});
-// 		} else {
-// 			res.send({message: 'Success'});	
-// 		}
-// 	});
-// };
-
 exports.updateProject = function(req, res) {
 	Project.findOne({_id:req.params.id}, function(err, project) {
 		if(err) {
@@ -82,6 +54,7 @@ exports.updateProject = function(req, res) {
 		project.permalink = req.body.permalink;
 		project.url = req.body.url;
 		project.type = req.body.typ;
+		project.img = req.body.img;
 
 		project.save(function(err) {
 			if(err) {

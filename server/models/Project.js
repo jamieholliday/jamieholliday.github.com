@@ -9,7 +9,8 @@ var projectSchema = mongoose.Schema({
 	published: {type: Boolean, required: '{PATH} is required'},
 	date: {type: Date, required: '{PATH} is required'},
 	permalink: String,
-	type: String
+	type: String,
+	img: String
 });
 
 projectSchema.plugin(permalink, {

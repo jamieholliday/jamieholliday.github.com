@@ -6,16 +6,18 @@
 		</div>
 	</section>
 	<section class="row">
-		<ul class="projects">
-			<li ng-repeat="item in projects.items" class="col-md-4 col-sm-4 col-xs-6">
+		<ul class="projects clearfix">
+			<li ng-if="item.published" ng-repeat="item in projects.items" class="col-md-4 col-sm-6 col-xs-6">
 
 				<div class="project-details">
-					<div class="project-img"></div>
+					<div class="project-img">
+						<img ng-if="item.img" ng-src="{{item.img}}" alt="{{item.name}} screenshot">
+					</div>
 					<div class="project-description">
 						<h2>{{item.name}}</h2>
-						<p>{{item.description}}</p>
+						<div ng-bind-html="item.description | jhRawHtml"></div>
 						<p>{{item.tags}}</p>
-						<a href="{{project.url}}">{{item.url}}</a>
+						<a href="{{item.url}}" rel="nofollow">{{item.url}}</a>
 					</div>
 				</div>
 			</li>
