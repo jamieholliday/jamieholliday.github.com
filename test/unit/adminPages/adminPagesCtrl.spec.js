@@ -43,7 +43,7 @@ describe('adminPagesCtrl', function() {
         deferred.resolve({deleted: true});
         scope.$digest();
          
-        expect(resourceCache.delete).toHaveBeenCalledWith('page', {id: page._id});
+        expect(resourceCache.delete).toHaveBeenCalledWith('page', {id: 1});
         expect(resourceCache.query).toHaveBeenCalledWith('page');
         expect(adminPages.items).toEqual(items);
         expect(jhNotifier.notify).toHaveBeenCalledWith('Page deleted');
