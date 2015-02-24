@@ -26,9 +26,6 @@ describe('adminPagesDetailsCtrl', function() {
             message: 'Success'
         };
 
-
-        // $location
-
         createController = function() {
             return $controller('adminPagesDetailsCtrl', { 
                 resourceCache: resourceCache, 
@@ -43,7 +40,7 @@ describe('adminPagesDetailsCtrl', function() {
         spyOn(resourceCache, 'update').and.returnValue(deferred.promise);
         spyOn(resourceCache, 'delete').and.returnValue(deferred.promise);
         spyOn(adminPagesDetails, '_updatePage').and.callThrough();
-        spyOn(adminPagesDetails, '_newPage');
+        spyOn(adminPagesDetails, '_newPage').and.callThrough();
         spyOn(jhNotifier, 'notify');
         spyOn($location, 'path');
     }));
@@ -86,8 +83,19 @@ describe('adminPagesDetailsCtrl', function() {
     it('should update the page', function() {
         adminPagesDetails.page._id = 1;
         adminPagesDetails._updatePage();
-        //adminPagesDetails._updatePage() is a spy. Need to call through;
         
-        // expect(resourceCache.update).toHaveBeenCalledWith('page', {id: 1}, adminPagesDetails.page);
+        expect(resourceCache.update).toHaveBeenCalledWith('page', {id: 1}, adminPagesDetails.page);
+        deferred.resolve({message: 'Success'});
+        scope.$digest();
+        expect(jhNotifier.notify).toHaveBeenCalledWith('Updated page');
+    });
+
+    it('should create a new page', function() {
+        adminPagesDetails._newPage();
+        expect(resourceCache.save).toHaveBeenCalledWith('page', adminPagesDetails.page);
+        deferred.resolve({_id: 1});
+        scope.$digest();
+        expect($location.path).toHaveBeenCalledWith('/adminpages/1');
+        expect(jhNotifier.notify).toHaveBeenCalledWith('Saved page');
     });
 });
