@@ -1,7 +1,6 @@
-node_modules/*
-v2 website/*
+logs/*
+node_modules/
+app/vendor/
+public/*
 .DS_Store
-.sass-cache/*
-jh.sublime-project
-jh.sublime-workspace
-js/config.js
+server/config/config.js
