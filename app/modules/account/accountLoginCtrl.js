@@ -17,6 +17,6 @@ angular.module('jhApp')
                     jhNotifier.error('Incorrect login details');
                 }
             });
-    }
+    };
 
 });
