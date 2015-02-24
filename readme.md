@@ -1,12 +1,14 @@
-# angular-seed — Seed project for starting angular apps
+# jamieholliday.com personal portfolio
 
-By default comes with 
+This site is a basic home rolled cms system based on the following tech:
 
 * Angular
 * Node
 * Express
+* Mongodb
+
+And put together using the following tools:
 * Gulp
 * Karma
 * Jasmine
-* Protractor
 
