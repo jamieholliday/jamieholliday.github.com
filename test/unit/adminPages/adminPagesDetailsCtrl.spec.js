@@ -26,9 +26,6 @@ describe('adminPagesDetailsCtrl', function() {
             message: 'Success'
         };
 
-
-        // $location
-
         createController = function() {
             return $controller('adminPagesDetailsCtrl', { 
                 resourceCache: resourceCache, 

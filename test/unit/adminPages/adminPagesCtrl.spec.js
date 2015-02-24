@@ -25,40 +25,27 @@ describe('adminPagesCtrl', function() {
                 jhNotifier: jhNotifier 
             } );
         };
+
     }));
 
     it('deletes a page', function() {
-        //Arrange
-        var controller = createController();
-        var page = {
-          _id: 1
-        };
-
-        var response = {
-          deleted: true
-        };
+        var adminPages = createController();
 
         var items = [{
           test: 'test'
         }];
-
-        var expectedDeleteParam = {
-          id: page._id
-        };
      
         spyOn(resourceCache, 'delete').and.returnValue(deferred.promise);
         spyOn(resourceCache, 'query').and.returnValue(items);
         spyOn(jhNotifier, 'notify');
          
-        //Act
-        controller.delete(page);
-        deferred.resolve(response);
+        adminPages.delete({_id: 1});
+        deferred.resolve({deleted: true});
         scope.$digest();
          
-        //Assert
-        expect(resourceCache.delete).toHaveBeenCalledWith('page', expectedDeleteParam);
+        expect(resourceCache.delete).toHaveBeenCalledWith('page', {id: page._id});
         expect(resourceCache.query).toHaveBeenCalledWith('page');
-        expect(controller.items).toEqual(items);
+        expect(adminPages.items).toEqual(items);
         expect(jhNotifier.notify).toHaveBeenCalledWith('Page deleted');
     });
 });
