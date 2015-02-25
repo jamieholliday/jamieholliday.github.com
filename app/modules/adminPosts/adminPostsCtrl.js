@@ -8,8 +8,8 @@ angular.module('jhApp')
 		resourceCache.delete('post', {id:post._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
 				adminPosts.items = resourceCache.query('post');
-				jhNotifier.notify('Post Deleted');
+				jhNotifier.notify('Post deleted');
 			}
 		});
-	}
+	};
 });
