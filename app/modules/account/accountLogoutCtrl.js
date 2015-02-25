@@ -1,8 +1,14 @@
 'use strict';
 angular.module('jhApp')
 .controller('accountLogoutCtrl', function($state, jhAuth) {
-	jhAuth.logoutUser()
+	var accountLogout = this;
+
+	accountLogout.logoutUser = function() {
+		jhAuth.logoutUser()
 		.then(function(status) {
-			$state.go('projects');
-		});
+				$state.go('projects');
+			});
+	};
+
+	accountLogout.logoutUser();
 });
