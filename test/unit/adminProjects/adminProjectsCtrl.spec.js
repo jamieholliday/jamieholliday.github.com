@@ -1,4 +1,4 @@
-describe('adminPostsCtrl', function() {
+describe('adminProjectsCtrl', function() {
     'use strict';
     var createController, 
         $rootScope, 
@@ -25,7 +25,7 @@ describe('adminPostsCtrl', function() {
 
 
         createController = function() {
-            return $controller('adminPostsCtrl', { 
+            return $controller('adminProjectsCtrl', { 
                 resourceCache: resourceCache, 
                 jhNotifier: jhNotifier 
             } );
@@ -33,8 +33,8 @@ describe('adminPostsCtrl', function() {
 
     }));
 
-    it('deletes a post', function() {
-        var adminPosts = createController();
+    it('deletes a project', function() {
+        var adminProjects = createController();
 
         var items = [{
           test: 'test'
@@ -44,13 +44,13 @@ describe('adminPostsCtrl', function() {
         spyOn(resourceCache, 'query').and.returnValue(items);
         spyOn(jhNotifier, 'notify');
          
-        adminPosts.delete({_id: 1});
+        adminProjects.delete({_id: 1});
         deferred.resolve({deleted: true});
         scope.$digest();
          
-        expect(resourceCache.delete).toHaveBeenCalledWith('post', {id: 1});
-        expect(resourceCache.query).toHaveBeenCalledWith('post');
-        expect(adminPosts.items).toEqual(items);
-        expect(jhNotifier.notify).toHaveBeenCalledWith('Post deleted');
+        expect(resourceCache.delete).toHaveBeenCalledWith('project', {id: 1});
+        expect(resourceCache.query).toHaveBeenCalledWith('project');
+        expect(adminProjects.items).toEqual(items);
+        expect(jhNotifier.notify).toHaveBeenCalledWith('Project deleted');
     });
 });
