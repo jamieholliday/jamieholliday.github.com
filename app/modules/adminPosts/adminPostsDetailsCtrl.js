@@ -4,6 +4,7 @@ angular.module('jhApp')
 
 	var _updatePost,
 		_newPost,
+		post,
         adminPostsDetails = this;
 
 	//setup
@@ -26,7 +27,7 @@ angular.module('jhApp')
 	};
 
 	adminPostsDetails.saveForm = function(isValid) {
-		if (!isValid) return;
+		if (!isValid) { return; }
 		if(post._id) {
 			_updatePost();
 		} else {
@@ -40,7 +41,7 @@ angular.module('jhApp')
 				$location.path('/adminposts');
 			}
 		});
-	}
+	};
 
 	//Private
 	_updatePost = function() {
@@ -49,7 +50,7 @@ angular.module('jhApp')
 				jhNotifier.notify('Updated post');
 			}
 		});
-	}
+	};
 
 	_newPost = function() {
 		resourceCache.save('post', post).then(function(responceData) {
@@ -58,5 +59,5 @@ angular.module('jhApp')
 				jhNotifier.notify('Saved post');
 			}
 		});
-	}
+	};
 });

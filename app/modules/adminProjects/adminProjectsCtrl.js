@@ -11,5 +11,5 @@ angular.module('jhApp')
 				jhNotifier.notify('Project deleted');
 			}
 		});
-	}
+	};
 });
