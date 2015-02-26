@@ -2,8 +2,7 @@
 angular.module('jhApp')
 .controller('adminPostsDetailsCtrl', function($stateParams, $location, resourceCache, jhNotifier) {
 
-	var post,
-        adminPostsDetails = this;
+	var adminPostsDetails = this;
 
 	//setup
 	adminPostsDetails.post = {
