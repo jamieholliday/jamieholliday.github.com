@@ -44,7 +44,7 @@ angular.module('jhApp')
 
 	//Private
 	adminPostsDetails._updatePost = function() {
-		resourceCache.update('post', {id:post._id}, post)
+		resourceCache.update('post', {id:adminPostsDetails.post._id}, adminPostsDetails.post)
 		.then(function(responceData) {
 			if(responceData.message === 'Success') {
 				jhNotifier.notify('Updated post');
@@ -53,7 +53,7 @@ angular.module('jhApp')
 	};
 
 	adminPostsDetails._newPost = function() {
-		resourceCache.save('post', post)
+		resourceCache.save('post', adminPostsDetails.post)
 		.then(function(responceData) {
 			if(responceData._id) {
 				$location.path('/adminposts/' + responceData._id);
