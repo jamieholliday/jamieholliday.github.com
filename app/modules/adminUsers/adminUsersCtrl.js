@@ -5,10 +5,11 @@ angular.module('jhApp')
 	adminUsers.items = users.query();
 
 	adminUsers.delete = function(user) {
-		users.delete({id:user._id}).then(function(responceData) {
+		users.delete({id:user._id})
+		.then(function(responceData) {
 			if(responceData.deleted === true) {
 				jhNotifier.notify('User deleted');
 			}
 		});
-	}
+	};
 });
