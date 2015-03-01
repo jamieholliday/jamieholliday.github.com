@@ -15,12 +15,12 @@ module.exports = function(app, config, router) {
 	app.use(cookieParser());
 	app.use(bodyParser.json());
     app.use(session({
-        secret: config.secret,
+        secret: process.env.SESSION_SECRET,
         maxAge: new Date(Date.now() + 3600000),
-        store: new MongoStore({url: config.db})
-    }))
+        store: new MongoStore({url: process.env.DB})
+    }));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.set('port', config.port);
 	app.use('/', router);
-}
+};

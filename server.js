@@ -7,7 +7,7 @@ var path = require('path');
 
 require('./server/config/models')(config);
 require('./server/config/express')(app, config, router);
-require('./server/config/mongoose')(config);
+require('./server/config/mongoose')();
 require('./server/config/passport')();
 require('./server/config/routes')(router, config);
 
