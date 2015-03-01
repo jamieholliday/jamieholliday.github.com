@@ -1,0 +1,13 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<div class="col-md-4">
+			<ul>
+				<li>Total pages: {{dashboard.pages.length}}</li>
+				<li>Published: {{(dashboard.pages | filter:{published:'true'}).length}}</li>
+			</ul>
+		</div>
+		<div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+	</section>
+</div>

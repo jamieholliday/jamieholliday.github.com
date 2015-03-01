@@ -81,8 +81,12 @@
         ]);
     });
     
-    gulp.task('bare', ['views', 'styles', 'js'], function () {
-
+    gulp.task('bare', ['nodemon', 'views', 'styles', 'js'], function () {
+        //Start Mongo
+        childProcess.exec('mongod', function (err, stdout, stderr) {
+            console.log(stdout);
+            console.log(stderr);
+        });
         // Start webserver
         server.listen(serverport);
         // Start live reload

@@ -1,0 +1,28 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container admin-pages-details">
+	<section class="row">
+		<form role="form" class="details clearfix" name="pageDetails" novalidate>
+			<div class="form-group">
+				<div class="btn-group pull-right publish">
+				  <button type="button" class="btn" ng-class="adminPagesDetails.page.published ? 'btn-success' : 'btn-danger'">{{adminPagesDetails.page.published ? 'Published' : 'Draft'}}</button>
+				  <button type="button" class="btn dropdown-toggle" ng-class="adminPagesDetails.page.published ? 'btn-success' : 'btn-danger'" data-toggle="dropdown">
+				    <span class="caret"></span>
+				    <span class="sr-only">Toggle Dropdown</span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu">
+				    <li><a href="" ng-click="adminPagesDetails.publish(true)">Publish</a></li>
+				    <li><a href="" ng-click="adminPagesDetails.publish(false)">Unpublish</a></li>
+				  </ul>
+				</div>
+				<p class="page-id">ID: {{adminPagesDetails.page._id}}</p>
+				<input type="text" title="Title" name="title" class="form-control" ng-model="adminPagesDetails.page.name" placeholder="Title - Required" required>
+				<input type="text" title="Permalink" name="permalink" class="form-control form-permalink" ng-model="adminPagesDetails.page.permalink" placeholder="Permalink">
+				<div name="content" title="Content" ng-model="adminPagesDetails.page.content" required text-angular></div>
+				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="adminPagesDetails.saveForm(pageDetails.$valid)" ng-disabled="pageDetails.$invalid">
+				<div ng-show="page._id" class="btn-group pull-left delete-btn">
+					<button type="button" class="btn btn-warning" ng-click="adminPagesDetails.delete()">Delete</button>
+				</div>
+			</div>
+		</form>
+	</section>
+</div>

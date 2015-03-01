@@ -1,0 +1,39 @@
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container admin-pages">
+	<section class="row">
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<h1>Pages</h1>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<form role="form" class="details clearfix">
+					<div class="form-group">
+						<div class="btn-group pull-right">
+						  <a class="btn btn-success" ui-sref="adminpagesdetails">New</a>
+						 </div>
+					 </div>
+			 </form>
+		 </div>
+	 </section>
+	 <section class="row">
+	 	<div class="col-md-12">
+			<ul class="admin-pages-list admin-list">
+				<li ng-repeat="item in adminPages.items" class="list-item clearfix">
+					<div class="reorder">
+						<span title="Reorder"></span>
+					</div>
+					<div class="description">
+						<a ui-sref="adminpagesdetails({id: item._id})">{{item.name}}</a>
+					</div>
+					<div class="pages-list-id">
+						ID: {{item._id}}
+					</div>
+					<div class="actions clearfix">
+						<a ui-sref="adminpagesdetails({id: item._id})" class="edit btn btn-default" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+						<a class="delete btn btn-default" title="Delete" ng-click="delete(item)"><span class="glyphicon glyphicon-trash"></span></a>
+					</div>
+					<div class="status" ng-class="item.published ? 'published' : 'draft'">{{item.published ? 'Published' : 'Draft'}}</div>
+				</li>
+			</ul>
+	 	</div>
+	</section>
+</div>
