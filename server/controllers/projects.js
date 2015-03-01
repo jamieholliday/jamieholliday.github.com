@@ -1,7 +1,7 @@
 var Project = require('mongoose').model('Project');
 
 exports.getProjects = function(req, res) {
-	Project.find({}).exec(function(err, collection) {
+	Project.find({}).sort({date: 'desc'}).exec(function(err, collection) {
 		if(err) {
 			res.send({error: err, message: 'Error'});
 		} else {
