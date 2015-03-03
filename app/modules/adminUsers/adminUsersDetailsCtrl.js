@@ -1,10 +1,11 @@
 'use strict';
 angular.module('jhApp')
-.controller('adminUsersDetailsCtrl', function($stateParams, $location, users, jhNotifier) {
+.controller('adminUsersDetailsCtrl', function($stateParams, users, jhNotifier) {
 
 	var adminUsersDetails = this;
 
-	users.get({id:$stateParams.id}).$promise.then(function(obj) {
+	users.get({id:$stateParams.id}).$promise
+	.then(function(obj) {
 		adminUsersDetails.user = obj;
 	});
 

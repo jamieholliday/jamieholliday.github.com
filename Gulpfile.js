@@ -12,7 +12,7 @@
         sourceMaps = require('gulp-sourcemaps'),
         plumber = require('gulp-plumber'),
         nodemon = require('gulp-nodemon'),
-        child_process = require('child_process'),
+        childProcess = require('child_process'),
         karma = require('gulp-karma'),
 
     // Modules for webserver and livereload
@@ -60,8 +60,9 @@
     // Dev task
     gulp.task('default', ['nodemon', 'views', 'styles', 'js', 'karma'], function () {
         //Start Mongo
-        child_process.exec('mongod', function (err, stdout, stderr) {
+        childProcess.exec('mongod', function (err, stdout, stderr) {
             console.log(stdout);
+            console.log(stderr);
         });
 
         // Start webserver
@@ -169,10 +170,10 @@
     });
 
     gulp.task('nodemon', function() {
-      nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development'}, ignore: ['app/**/*.js', 'public/**/*.js', 'test/**/*.js']})
+      nodemon({script: 'server.js', ext: 'js', env: {'NODE_ENV': 'development', 'DB': 'mongodb://localhost/jamieholliday', 'SESSION_SECRET': 'development'}, ignore: ['app/**/*.js', 'public/**/*.js', 'test/**/*.js']})
       .on('restart', function() {
         console.log('restarted');
-      })
+      });
     });
     
     gulp.task('karma', function() {
@@ -180,8 +181,8 @@
         .pipe(karma({
             configFile: 'test/karma.conf.js',
             action: 'watch'
-        }))
-    })
+        }));
+    });
     
     gulp.task('test', function() {
         return gulp.src(paths.js.concat(paths.testing))
@@ -192,5 +193,5 @@
         .on('error', function(err){
             throw err;
         });
-    })
+    });
 })();

@@ -34,4 +34,11 @@ angular.module('jhApp')
 			}
 		};
 	}
+	
+	return {
+		restrict: 'A',
+		require: '?ngModel',
+		link: linker
+	};
+
 });
