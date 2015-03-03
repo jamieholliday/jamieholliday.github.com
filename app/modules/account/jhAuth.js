@@ -2,6 +2,7 @@
 angular.module('jhApp')
 .factory('jhAuth', function($http, jhIdentity, $q, jhUser) {
     return {
+        
         authenticateUser: function(username, password) {
             var dfd = $q.defer();
             $http.post('/login', {

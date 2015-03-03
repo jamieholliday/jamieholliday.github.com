@@ -1,6 +1,7 @@
 'use strict';
 angular.module('jhApp')
 .controller('adminPostsCtrl', function(resourceCache, jhNotifier) {
+	
     var adminPosts = this;
 	adminPosts.items = resourceCache.query('post');
 

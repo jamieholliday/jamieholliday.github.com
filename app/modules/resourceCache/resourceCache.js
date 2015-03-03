@@ -2,6 +2,7 @@
 
 angular.module('jhApp')
 .factory('resourceCache', function(pages, projects, posts, $q) {
+	
 	var cache = {},
 		resource = {
 			page: pages,
@@ -16,11 +17,11 @@ angular.module('jhApp')
 			}
 			return cache[type];
 		},
-		delete: function(type, opts, cb) {
+		delete: function(type, opts) {
 			cache[type] = null;
 			return resource[type].delete(opts).$promise;
 		},
-		save: function(type, obj, cb) {
+		save: function(type, obj) {
 			cache[type] = null;
 			return resource[type].save(obj).$promise;
 		},
@@ -42,5 +43,5 @@ angular.module('jhApp')
 				return resource[type].get(opts).$promise;
 			}
 		}
-	}
+	};
 });
