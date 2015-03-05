@@ -2,6 +2,13 @@
 
 angular.module('jhApp')
 .directive('jhEquals', function() {
+	
+	return {
+		restrict: 'A',
+		require: '?ngModel',
+		link: linker
+	};
+
 	function linker(scope, elem, attrs, ngModel) {
 		if(!ngModel) {
 			return false;
@@ -13,7 +20,7 @@ angular.module('jhApp')
 		});
 
 		//observe other value and re-validate on change
-		attrs.$observe('jhEquals', function(val) {
+		attrs.$observe('jhEquals', function() {
 			validate();
 		});
 

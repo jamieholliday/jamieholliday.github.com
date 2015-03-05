@@ -1,6 +1,7 @@
 'use strict';
 angular.module('jhApp')
 .controller('adminProjectsCtrl', function(resourceCache, jhNotifier) {
+	
     var adminProjects = this;
 	adminProjects.items = resourceCache.query('project');
 

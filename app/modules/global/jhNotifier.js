@@ -3,6 +3,7 @@
 angular.module('jhApp')
 .value('jhToastr', toastr)
 .factory('jhNotifier', function(jhToastr) {
+	
 	return {
 	  notify: function(msg) {
 	    jhToastr.success(msg);
@@ -10,5 +11,5 @@ angular.module('jhApp')
 	  error: function(msg) {
 	  	jhToastr.error(msg);
 	  }
-	}
+	};
 });

@@ -1,6 +1,7 @@
 'use strict';
 angular.module('jhApp')
 .controller('adminUsersCtrl', function(users, jhNotifier) {
+	
     var adminUsers = this;
 	adminUsers.items = users.query();
 

@@ -52,7 +52,6 @@ angular.module('jhApp')
 	};
 
 	adminProjectsDetails._newProject = function() {
-		//TODO use promise here
 		resourceCache.save('project', adminProjectsDetails.project)
 		.then(function(responceData) {
 			if(responceData._id) {

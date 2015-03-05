@@ -145,7 +145,7 @@ angular.module('jhApp', ['ui.router', 'ngResource', 'textAngular'])
 			}
 			return $q.reject(rejection);
 		}
-	}
+	};
 })
 .config(function($httpProvider) {
 	$httpProvider.interceptors.push('jhAuthInterceptor');
