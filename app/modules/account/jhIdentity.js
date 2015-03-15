@@ -3,13 +3,11 @@ angular.module('jhApp')
 .factory('jhIdentity', function($window, jhUser) {
     
     return {
-        currentUser: JSON.parse($window.sessionStorage.getItem('currentUser')) || null,
-
         isAuthenticated: function() {
-            return !!this.currentUser;
+            return !!this.getCurrentUser();
         },
         isAuthorized: function(role) {
-            return !!this.currentUser && this.currentUser.roles.indexOf(role) > -1;
+            return !!this.getCurrentUser() && this.getCurrentUser().roles.indexOf(role) > -1;
         },
         setCurrentUser: function(user) {
             if(user) {
@@ -20,7 +18,7 @@ angular.module('jhApp')
             this.currentUser = user;
         },
         getCurrentUser: function() {
-            return this.currentUser;
+            return JSON.parse($window.sessionStorage.getItem('currentUser')) || null
         },
         clearCurrentUser: function() {
             $window.sessionStorage.removeItem('currentUser');
