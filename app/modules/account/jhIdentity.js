@@ -1,6 +1,6 @@
 'use strict';
 angular.module('jhApp')
-.factory('jhIdentity', function($window, jhUser) {
+.factory('jhIdentity', function($window) {
     
     return {
         isAuthenticated: function() {
@@ -18,7 +18,7 @@ angular.module('jhApp')
             this.currentUser = user;
         },
         getCurrentUser: function() {
-            return JSON.parse($window.sessionStorage.getItem('currentUser')) || null
+            return JSON.parse($window.sessionStorage.getItem('currentUser')) || null;
         },
         clearCurrentUser: function() {
             $window.sessionStorage.removeItem('currentUser');
