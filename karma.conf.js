@@ -1,39 +1,42 @@
 // Karma configuration
 
 module.exports = function(config) {
-  config.set({
+    'use strict';
+    config.set({
 
     // base path, that will be used to resolve files and exclude
     basePath: '',
 
+    preprocessors: {
+            'public/**/*.html': ['ng-html2js']
+        },
+
+    ngHtml2JsPreprocessor: {
+       stripPrefix: 'public/',
+       moduleName: 'templates'
+    },
 
     // frameworks to use
     frameworks: ['jasmine'],
 
-
     // list of files / patterns to load in the browser
     files: [
-        
+        'app/vendor/angular/angular.js',
+        'app/vendor/angular-ui-router/release/angular-ui-router.js',
+        'app/vendor/angular-resource/angular-resource.js',
+        'app/vendor/jquery/dist/jquery.js',
+        'app/vendor/bootstrap/dist/js/bootstrap.js',
+        'app/vendor/toastr/toastr.js',
+        'app/vendor/textAngular/dist/textAngular-sanitize.min.js',
+        'app/vendor/textAngular/dist/textAngular-rangy.min.js',
+        'app/vendor/textAngular/dist/textAngular.min.js',
+        'app/vendor/s3Upload/s3Upload.js',
+        'app/main.js',
+        'app/modules/**/*.js',
+        'node_modules/angular-mocks/angular-mocks.js',
+        'test/unit/**/*.js',
+        'public/**/*.html'
     ],
-
-
-    // list of files to exclude
-    exclude: [
-      
-    ],
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
-
-
-    // web server port
-    port: 9876,
-
-
-    // cli runner port
-    runnerPort: 9100,
 
 
     // enable / disable colors in the output (reporters and logs)
@@ -68,21 +71,6 @@ module.exports = function(config) {
     // if true, it capture browsers, run tests and exit
     singleRun: false,
 
-    // Browserify config (all optional)
-    // browserify: {
-    //   // extensions: ['.coffee'],
-    //   // ignore: [],
-    //   // transform: ['coffeeify'],
-    //   // debug: true,
-    //   // noParse: ['jquery'],
-    //   watch: false,
-    // },
 
-    // Add browserify to preprocessors
-    // preprocessors: {'unit/*.js': ['browserify']}
-
-    // Not required if you've installed karma-browserify via npm.
-    //plugins: ['karma-*', require('../')]
-
-  });
+    });
 };

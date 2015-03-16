@@ -13,7 +13,6 @@
         plumber = require('gulp-plumber'),
         nodemon = require('gulp-nodemon'),
         childProcess = require('child_process'),
-        karma = require('gulp-karma'),
 
     // Modules for webserver and livereload
         refresh = require('gulp-livereload'),
@@ -50,15 +49,11 @@
             'app/vendor/s3Upload/s3Upload.js',
             'app/main.js',
             'app/modules/**/*.js'
-        ],
-        testing: [
-            'app/vendor/angular-mocks/angular-mocks.js',
-            'test/unit/**/*.js'
         ]
     };
 
     // Dev task
-    gulp.task('default', ['nodemon', 'views', 'styles', 'js', 'karma'], function () {
+    gulp.task('default', ['nodemon', 'views', 'styles', 'js'], function () {
         //Start Mongo
         childProcess.exec('mongod', function (err, stdout, stderr) {
             console.log(stdout);
@@ -180,22 +175,23 @@
       });
     });
     
-    gulp.task('karma', function() {
-        gulp.src(paths.js.concat(paths.testing))
-        .pipe(karma({
-            configFile: 'test/karma.conf.js',
-            action: 'watch'
-        }));
-    });
+    //NOTE: Run karma tasks from command line beacuse of the html-js preprocessor
+    // gulp.task('karma', function() {
+    //     gulp.src(paths.js.concat(paths.testing))
+    //     .pipe(karma({
+    //         configFile: 'test/karma.conf.js',
+    //         action: 'watch'
+    //     }));
+    // });
     
-    gulp.task('test', function() {
-        return gulp.src(paths.js.concat(paths.testing))
-        .pipe(karma({
-            configFile: 'test/karma.conf.js',
-            action: 'run'
-        }))
-        .on('error', function(err){
-            throw err;
-        });
-    });
+    // gulp.task('test', function() {
+    //     return gulp.src(paths.js.concat(paths.testing))
+    //     .pipe(karma({
+    //         configFile: 'test/karma.conf.js',
+    //         action: 'run'
+    //     }))
+    //     .on('error', function(err){
+    //         throw err;
+    //     });
+    // });
 })();
