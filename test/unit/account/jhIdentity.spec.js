@@ -45,14 +45,20 @@ describe('jhIdentity', function() {
     });
 
     it('should set the currentUser to sessionStorage', function() {
-
+        jhIdentity.setCurrentUser({user: 'john'});
+        expect($window.sessionStorage.setItem).toHaveBeenCalledWith('currentUser', '{"user":"john"}');
+        expect(jhIdentity.currentUser).toEqual({user: 'john'});
     });
 
-    it('should get the  current user from sessionStorage', function() {
-
+    it('should get the  current user from sessionStorage if they exist', function() {
+        var user = jhIdentity.getCurrentUser();
+        expect(user).toEqual({user: 'john', roles: ['admin']});
+        expect($window.sessionStorage.getItem).toHaveBeenCalledWith('currentUser');
     });
+
     it('should clear current user from sessionStorage', function() {
-
+        jhIdentity.clearCurrentUser();
+        expect($window.sessionStorage.removeItem).toHaveBeenCalledWith('currentUser');
     });
     
 });
