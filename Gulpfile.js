@@ -22,7 +22,8 @@
         livereloadport = 35729,
         serverport = 8080,
         paths,
-        server;
+        server,
+        mongod;
 
     // Set up an express server (not starting it yet)
     server = express();
@@ -41,24 +42,26 @@
             'app/vendor/angular-ui-router/release/angular-ui-router.js',
             'app/vendor/angular-resource/angular-resource.js',
             'app/vendor/jquery/dist/jquery.js',
-            'app/vendor/bootstrap/dist/js/bootstrap.js',
             'app/vendor/toastr/toastr.js',
             'app/vendor/textAngular/dist/textAngular-sanitize.min.js',
             'app/vendor/textAngular/dist/textAngular-rangy.min.js',
             'app/vendor/textAngular/dist/textAngular.min.js',
-            'app/vendor/s3Upload/s3Upload.js',
             'app/main.js',
             'app/modules/**/*.js'
         ]
     };
 
-    // Dev task
-    gulp.task('default', ['nodemon', 'views', 'styles', 'js'], function () {
-        //Start Mongo
+    mongod = function() {
         childProcess.exec('mongod', function (err, stdout, stderr) {
             console.log(stdout);
             console.log(stderr);
         });
+    };
+
+    // Dev task
+    gulp.task('default', ['nodemon', 'views', 'styles', 'js'], function () {
+        //Start Mongo
+        mongod();
 
         // Start webserver
         server.listen(serverport);
@@ -78,10 +81,7 @@
     
     gulp.task('bare', ['nodemon', 'views', 'styles', 'js'], function () {
         //Start Mongo
-        childProcess.exec('mongod', function (err, stdout, stderr) {
-            console.log(stdout);
-            console.log(stderr);
-        });
+        mongod();
         // Start webserver
         server.listen(serverport);
         // Start live reload
@@ -100,6 +100,11 @@
 
     //Build task
     gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
+
+    //Server build
+    gulp.task('servebuilt', ['nodemon', 'styles-dist', 'js-dist', 'views-dist'], function() {
+        mongod();
+    });
 
     // Styles task
     gulp.task('styles', function () {
@@ -154,7 +159,6 @@
       .pipe(plumber())
       .pipe(sourceMaps.init())
       .pipe(concat('app.js'))
-//      .pipe(ngAnnotate())
       .pipe(sourceMaps.write())
       .pipe(gulp.dest('public/'))
       .pipe(refresh(lrserver));
@@ -164,7 +168,9 @@
       gulp.src(paths.js)
       .pipe(concat('app.js'))
       .pipe(ngAnnotate())
-      .pipe(uglify())
+      .pipe(uglify({
+            mangle: false
+        }))
       .pipe(gulp.dest('public/'));
     });
 
