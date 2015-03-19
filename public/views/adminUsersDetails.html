@@ -1,1 +1,17 @@
-<ng-include src="'views/adminHeader.html'"></ng-include><div class="container"><section class="row"><form role="form" class="details clearfix" name="userDetails" novalidate><div class="form-group"><input type="text" name="firstName" title="First Name" class="form-control" ng-model="adminUsersDetails.user.firstName" placeholder="First Name - Required" required> <input type="text" name="lastName" title="Last Name" class="form-control" ng-model="adminUsersDetails.user.lastName" placeholder="Last Name - Required" required> <input type="text" name="username" title="Username" class="form-control" ng-model="adminUsersDetails.user.username" placeholder="Username - Required" required> <span>Change Password</span> <input type="password" name="password" title="Password" class="form-control" ng-model="adminUsersDetails.user.password" jh-equals="{{adminUsersDetails.user.passwordconfirm}}" placeholder="Password"> <input type="password" name="newpasswordconfirm" title="Confirm Password" class="form-control" ng-model="adminUsersDetails.user.passwordconfirm" jh-equals="{{adminUsersDetails.user.password}}" placeholder="Confirm Password"> <input type="submit" class="btn btn-success pull-right" value="Save" ng-click="adminUsersDetails.saveForm(userDetails.$valid)" ng-disabled="userDetails.$invalid"></div></form></section></div><ng-include src="'views/footer.html'"></ng-include>
+<ng-include src="'views/adminHeader.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<form role="form" class="details clearfix" name="userDetails" novalidate>
+			<div class="form-group">
+				<input type="text" name="firstName" title="First Name" class="form-control" ng-model="adminUsersDetails.user.firstName" placeholder="First Name - Required" required>
+				<input type="text" name="lastName" title="Last Name" class="form-control" ng-model="adminUsersDetails.user.lastName" placeholder="Last Name - Required" required>
+				<input type="text" name="username" title="Username" class="form-control" ng-model="adminUsersDetails.user.username" placeholder="Username - Required" required>
+				<span>Change Password</span>
+				<input type="password" name="password" title="Password" class="form-control" ng-model="adminUsersDetails.user.password" jh-equals="{{adminUsersDetails.user.passwordconfirm}}" placeholder="Password">
+				<input type="password" name="newpasswordconfirm" title="Confirm Password" class="form-control" ng-model="adminUsersDetails.user.passwordconfirm" jh-equals="{{adminUsersDetails.user.password}}" placeholder="Confirm Password">
+				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="adminUsersDetails.saveForm(userDetails.$valid)" ng-disabled="userDetails.$invalid">
+			</div>
+		</form>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>
