@@ -99,7 +99,7 @@
     });
 
     //Build task
-    gulp.task('build', ['styles-dist', 'js-dist', 'views-dist']);
+    gulp.task('dist', ['styles-dist', 'js-dist', 'views-dist']);
 
     //Server build
     gulp.task('servebuilt', ['nodemon', 'styles-dist', 'js-dist', 'views-dist'], function() {
