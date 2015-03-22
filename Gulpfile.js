@@ -42,6 +42,7 @@
             'app/vendor/angular-ui-router/release/angular-ui-router.js',
             'app/vendor/angular-resource/angular-resource.js',
             'app/vendor/jquery/dist/jquery.js',
+            'app/vendor/bootstrap/js/dropdown.js',
             'app/vendor/toastr/toastr.js',
             'app/vendor/textAngular/dist/textAngular-sanitize.min.js',
             'app/vendor/textAngular/dist/textAngular-rangy.min.js',
