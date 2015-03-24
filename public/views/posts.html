@@ -1,1 +1,16 @@
-<ng-include src="'views/header.html'"></ng-include><div class="container"><section class="row"><ul class="posts"><li ng-repeat="item in posts.items" class="col-md-12"><div class="post-details"><div class="post-description"><h2><a ui-sref="postsdetails({id: item._id, permalink: item.permalink})">{{item.name}}</a></h2><p>{{item.content}}</p></div></div></li></ul></section></div><ng-include src="'views/footer.html'"></ng-include>
+<ng-include src="'views/header.html'"></ng-include>
+<div class="container">
+	<section class="row">
+		<ul class="posts">
+			<li ng-repeat="item in posts.items" class="col-md-12">
+				<div class="post-details">
+					<div class="post-description">
+						<h2><a ui-sref="postsdetails({id: item._id, permalink: item.permalink})">{{item.name}}</a></h2>
+						<p>{{item.content}}</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</div>
+<ng-include src="'views/footer.html'"></ng-include>
