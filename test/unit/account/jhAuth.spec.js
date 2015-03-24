@@ -13,34 +13,29 @@ describe('jhAuth', function() {
         module('jhApp');
         module('templates');
 
+        jhIdentity = {
+            setCurrentUser: function(){}
+        };
+
+        jhUser = function(){
+                return {fn: 'jhUser'};
+            };
+
     	module(function($provide) {
-    		$provide.value('jhUser', function(){});
+    		$provide.value('jhUser', jhUser);
+            $provide.value('jhIdentity', jhIdentity);
     	});
 
-        inject(function(_jhAuth_, _jhIdentity_, _jhUser_, _$q_, _$httpBackend_) {
+        inject(function(_jhAuth_, _$q_, _$httpBackend_) {
         	jhAuth = _jhAuth_;
-            jhIdentity = _jhIdentity_;
-            jhUser = _jhUser_;
             $q = _$q_;
             $httpBackend = _$httpBackend_;
 
-            jhIdentity = {
-                setCurrentUser: function(){}
-            };
-
-            jhUser = function(){};
-
-            // spyOn($window.sessionStorage, 'getItem').and.returnValue(JSON.stringify({user: 'john', roles: ['admin']}));
-            // 
-            spyOn(jhIdentity, 'setCurrentUser');
-
-            deferred = $q.defer();
-
-            $httpBackend.whenPOST('/login')
-            .respond( 200, deferred.promise );
             $httpBackend.expectPOST('/login');
-
         });
+
+        spyOn(jhIdentity, 'setCurrentUser');
+        deferred = $q.defer();
 
     });
 
@@ -51,8 +46,39 @@ describe('jhAuth', function() {
     });
 
     it('should authenticate user', function() {
-        jhAuth.authenticateUser('john', 'password');
+        var user = jhAuth.authenticateUser('john', 'password');
+        $httpBackend.whenPOST('/login').respond( 200, {
+            success: true,
+            user: {
+                firstName: 'fred',
+                lastName: 'smith',
+                id: '1'
+            }   
+        });
         $httpBackend.flush();
+
+        expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith({
+            fn: 'jhUser',
+            firstName: 'fred',
+            lastName: 'smith',
+            id: '1'
+        });
+
+        user.then(function(result) {
+            expect(result).toBe(true);
+        });
+    });
+
+    it('should not authenticate user', function() {
+        var user = jhAuth.authenticateUser('notjohn', 'password');
+        $httpBackend.whenPOST('/login').respond( 200, {
+            success: false,  
+        });
+        $httpBackend.flush();
+        expect(jhIdentity.setCurrentUser).not.toHaveBeenCalled();
+        user.then(function(result) {
+            expect(result).toBe(false);
+        });
     });
     
 });

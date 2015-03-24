@@ -4,8 +4,7 @@ angular.module('jhApp')
     return {
         
         authenticateUser: function(username, password) {
-            var dfd = $q.defer();
-            $http.post('/login', {
+            return $http.post('/login', {
                 username: username,
                 password: password
             })
@@ -14,26 +13,23 @@ angular.module('jhApp')
                     var user = new jhUser();
                     angular.extend(user, responce.data.user);
                     jhIdentity.setCurrentUser(user);
-                    dfd.resolve(true);
+                    return true;
                 } else {
-                    dfd.resolve(false);
+                    return false;
                 }
             });
-            return dfd.promise;
         },
 
         createUser: function(newUserData) {
             var newUser = new jhUser(newUserData);
-            var dfd = $q.defer();
 
-            newUser.$save().then(function() {
+            return newUser.$save()
+            .then(function() {
                 jhIdentity.setCurrentUser(newUser);
-                dfd.resolve();
+                return true;
             }, function(responce) {
-                dfd.reject(responce.data.reason);
+                return (responce.data.reason);
             });
-
-            return dfd.promise;
         },
 
         updateCurrentUser: function(newUserData) {
