@@ -4,6 +4,7 @@ describe('jhAuth', function() {
     var jhAuth,
         jhUser,
         jhIdentity,
+        deferred,
         $q,
         $httpBackend;
 
@@ -27,10 +28,17 @@ describe('jhAuth', function() {
                 setCurrentUser: function(){}
             };
 
+            jhUser = function(){};
 
             // spyOn($window.sessionStorage, 'getItem').and.returnValue(JSON.stringify({user: 'john', roles: ['admin']}));
             // 
             spyOn(jhIdentity, 'setCurrentUser');
+
+            deferred = $q.defer();
+
+            $httpBackend.whenPOST('/login')
+            .respond( 200, deferred.promise );
+            $httpBackend.expectPOST('/login');
 
         });
 
@@ -43,8 +51,8 @@ describe('jhAuth', function() {
     });
 
     it('should authenticate user', function() {
-        // $httpBackend.expectPOST('/login');
-        // $httpBackend.flush();
+        jhAuth.authenticateUser('john', 'password');
+        $httpBackend.flush();
     });
     
 });
