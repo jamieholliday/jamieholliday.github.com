@@ -10,7 +10,8 @@ var projectSchema = mongoose.Schema({
 	date: {type: Date, required: '{PATH} is required'},
 	permalink: String,
 	type: String,
-	img: String
+	img: String,
+	position: Number
 });
 
 projectSchema.plugin(permalink, {

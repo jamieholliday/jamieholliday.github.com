@@ -12,10 +12,14 @@ angular.module('jhApp')
 
 	return {
 		query: function(type) {
-			if(!cache[type]) {
-				cache[type] = resource[type].query();
+			//always return a promise
+			if(cache[type]) {
+				var dfd = $q.defer();
+				dfd.resolve(cache[type]);
+				return dfd.promise;
+			} else {
+				return resource[type].query().$promise;
 			}
-			return cache[type];
 		},
 		delete: function(type, opts) {
 			cache[type] = null;
@@ -34,7 +38,7 @@ angular.module('jhApp')
 				var item = cache[type].filter(function(elem) {
 					return elem._id === opts.id;
 				});
-				//return a promise here because the caller is expecting a promise
+				// always return a promise
 				var dfd = $q.defer();
 				dfd.resolve(item[0]);
 				return dfd.promise;
