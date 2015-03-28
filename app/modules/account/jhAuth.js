@@ -33,26 +33,25 @@ angular.module('jhApp')
         },
 
         updateCurrentUser: function(newUserData) {
-            var dfd  = $q.defer();
 
             var clone = angular.copy(jhIdentity.currentUser);
             angular.extend(clone, newUserData);
-            clone.$update().then(function() {
+
+            return clone.$update()
+            .then(function() {
                 jhIdentity.setCurrentUser(clone);
-                dfd.resolve();
+                return true;
             }, function(responce) {
-                dfd.reject(responce.data.reason);
+                return responce.data.reason;
             });
-            return dfd.promise;
         },
 
         logoutUser: function() {
-            var dfd = $q.defer();
-            $http.post('/logout', {logout: true}).then(function() {
+            return $http.post('/logout', {logout: true})
+            .then(function() {
                 jhIdentity.setCurrentUser(undefined);
-                dfd.resolve();
+                return true;
             });
-            return dfd.promise;
         },
         authorizeCurrentUserForRoute: function(role) {
           if(jhIdentity.isAuthorized(role)) {
