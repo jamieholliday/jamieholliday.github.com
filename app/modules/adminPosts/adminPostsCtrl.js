@@ -3,12 +3,18 @@ angular.module('jhApp')
 .controller('adminPostsCtrl', function(resourceCache, jhNotifier) {
 	
     var adminPosts = this;
-	adminPosts.items = resourceCache.query('post');
+	resourceCache.query('post')
+	.then(function(items) {
+		adminPosts.items = items;
+	});
 
 	adminPosts.delete = function(post) {
 		resourceCache.delete('post', {id:post._id}).then(function(responceData) {
 			if(responceData.deleted === true) {
-				adminPosts.items = resourceCache.query('post');
+				resourceCache.query('post')
+				.then(function(items) {
+					adminPosts.items = items;
+				});
 				jhNotifier.notify('Post deleted');
 			}
 		});

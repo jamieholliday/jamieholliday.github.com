@@ -11,7 +11,8 @@ angular.module('jhApp')
 
 	//if there is an id this edit if not its new
 	if($stateParams && $stateParams.id) {
-		resourceCache.get('project', {id:$stateParams.id}).then(function(obj) {
+		resourceCache.get('project', {id:$stateParams.id})
+		.then(function(obj) {
 			adminProjectsDetails.project = obj;
 		});
 	}

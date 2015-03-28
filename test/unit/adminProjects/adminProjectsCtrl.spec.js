@@ -2,8 +2,8 @@ describe('adminProjectsCtrl', function() {
     'use strict';
     var createController, 
         $rootScope, 
-        deferred1, 
-        deferred2,
+        queryDeferred, 
+        deleteDeferred,
         resourceCache, 
         scope, 
         jhNotifier;
@@ -13,8 +13,8 @@ describe('adminProjectsCtrl', function() {
     beforeEach(inject(function($controller, _$rootScope_, $q) {
         $rootScope = _$rootScope_;
         scope = $rootScope.$new();
-        deferred1 = $q.defer();
-        deferred2 = $q.defer();
+        queryDeferred = $q.defer();
+        deleteDeferred = $q.defer();
 
         resourceCache = {
             delete: function () {},
@@ -33,8 +33,8 @@ describe('adminProjectsCtrl', function() {
             } );
         };
 
-        spyOn(resourceCache, 'query').and.returnValue(deferred1.promise);
-        spyOn(resourceCache, 'delete').and.returnValue(deferred2.promise);
+        spyOn(resourceCache, 'query').and.returnValue(queryDeferred.promise);
+        spyOn(resourceCache, 'delete').and.returnValue(deleteDeferred.promise);
         spyOn(jhNotifier, 'notify');
 
     }));
@@ -46,11 +46,11 @@ describe('adminProjectsCtrl', function() {
           test: 'test'
         }];
 
-        deferred1.resolve(items);
+        queryDeferred.resolve(items);
         scope.$digest();
        
         adminProjects.delete({_id: 1});
-        deferred2.resolve({deleted: true});
+        deleteDeferred.resolve({deleted: true});
         scope.$digest();
          
         expect(resourceCache.delete).toHaveBeenCalledWith('project', {id: 1});

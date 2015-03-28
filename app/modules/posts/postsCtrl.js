@@ -3,5 +3,8 @@ angular.module('jhApp')
 .controller('postsCtrl', function(resourceCache) {
 	
     var posts = this;
-	posts.items = resourceCache.query('post');
+	resourceCache.query('post')
+	.then(function(items) {
+		posts.items = items;
+	});
 });

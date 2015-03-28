@@ -2,7 +2,8 @@ describe('adminPostsCtrl', function() {
     'use strict';
     var createController, 
         $rootScope, 
-        deferred, 
+        queryDeferred,
+        deleteDeferred, 
         resourceCache, 
         scope, 
         jhNotifier;
@@ -12,7 +13,8 @@ describe('adminPostsCtrl', function() {
     beforeEach(inject(function($controller, _$rootScope_, $q) {
         $rootScope = _$rootScope_;
         scope = $rootScope.$new();
-        deferred = $q.defer();
+        deleteDeferred = $q.defer();
+        queryDeferred = $q.defer();
 
         resourceCache = {
             delete: function () {},
@@ -31,6 +33,9 @@ describe('adminPostsCtrl', function() {
             } );
         };
 
+        spyOn(resourceCache, 'delete').and.returnValue(deleteDeferred.promise);
+        spyOn(resourceCache, 'query').and.returnValue(queryDeferred.promise);
+        spyOn(jhNotifier, 'notify');
     }));
 
     it('deletes a post', function() {
@@ -40,12 +45,11 @@ describe('adminPostsCtrl', function() {
           test: 'test'
         }];
      
-        spyOn(resourceCache, 'delete').and.returnValue(deferred.promise);
-        spyOn(resourceCache, 'query').and.returnValue(items);
-        spyOn(jhNotifier, 'notify');
+        queryDeferred.resolve(items);
+        scope.$digest();
          
         adminPosts.delete({_id: 1});
-        deferred.resolve({deleted: true});
+        deleteDeferred.resolve({deleted: true});
         scope.$digest();
          
         expect(resourceCache.delete).toHaveBeenCalledWith('post', {id: 1});
