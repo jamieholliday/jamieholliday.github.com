@@ -2,6 +2,11 @@
 
 angular.module('jhApp')
 .controller('dashboardCtrl', function(resourceCache) {
+
+	var dashboard = this;
 	
-	this.pages = resourceCache.query('page');
+	resourceCache.query('page')
+	.then(function(items) {
+		dashboard.pages = items;
+	});
 });
