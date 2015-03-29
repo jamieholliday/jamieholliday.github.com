@@ -4,7 +4,6 @@ describe('jhAuth', function() {
     var jhAuth,
         jhUser,
         jhIdentity,
-        deferred,
         $q,
         $httpBackend;
 
@@ -14,12 +13,13 @@ describe('jhAuth', function() {
         module('templates');
 
         jhIdentity = {
-            setCurrentUser: function(){}
+            setCurrentUser: function() {},
+            isAuthorized: function() {}
         };
 
         jhUser = function(){
-                return {fn: 'jhUser'};
-            };
+            return {fn: 'jhUser'};
+        };
 
     	module(function($provide) {
     		$provide.value('jhUser', jhUser);
@@ -31,11 +31,10 @@ describe('jhAuth', function() {
             $q = _$q_;
             $httpBackend = _$httpBackend_;
 
-            $httpBackend.expectPOST('/login');
         });
 
         spyOn(jhIdentity, 'setCurrentUser');
-        deferred = $q.defer();
+        
 
     });
 
@@ -47,6 +46,7 @@ describe('jhAuth', function() {
 
     it('should authenticate user', function() {
         var user = jhAuth.authenticateUser('john', 'password');
+        $httpBackend.expectPOST('/login');
         $httpBackend.whenPOST('/login').respond( 200, {
             success: true,
             user: {
@@ -71,6 +71,7 @@ describe('jhAuth', function() {
 
     it('should not authenticate user', function() {
         var user = jhAuth.authenticateUser('notjohn', 'password');
+        $httpBackend.expectPOST('/login');
         $httpBackend.whenPOST('/login').respond( 200, {
             success: false,  
         });
@@ -79,6 +80,36 @@ describe('jhAuth', function() {
         user.then(function(result) {
             expect(result).toBe(false);
         });
+    });
+
+    it('should logout a user', function() {
+        jhAuth.logoutUser();
+        $httpBackend.expectPOST('/logout', {logout: true});
+        $httpBackend.whenPOST('/logout').respond(200);
+        $httpBackend.flush();
+        expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith(undefined);
+    });
+
+    it('should check if user can access route', function() {
+        var authed;
+
+        spyOn(jhIdentity, 'isAuthorized').and.returnValue(true);
+        authed = jhAuth.authorizeCurrentUserForRoute('admin'); 
+
+        expect(jhIdentity.isAuthorized).toHaveBeenCalledWith('admin');
+        expect(authed).toBe(true);
+
+    });
+
+    it('should check if user cant access route', function() {
+        var authed;
+
+        spyOn(jhIdentity, 'isAuthorized').and.returnValue(false);
+        authed = jhAuth.authorizeCurrentUserForRoute('admin'); 
+
+        expect(jhIdentity.isAuthorized).toHaveBeenCalledWith('admin');
+        expect(authed.$$state.status).toBe(2);
+
     });
     
 });

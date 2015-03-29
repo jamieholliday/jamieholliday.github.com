@@ -15,7 +15,6 @@ angular.module('jhApp')
             } else {
                 $window.sessionStorage.removeItem('currentUser');
             }
-            this.currentUser = user;
         },
         getCurrentUser: function() {
             return JSON.parse($window.sessionStorage.getItem('currentUser')) || null;
