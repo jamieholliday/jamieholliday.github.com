@@ -45,8 +45,7 @@ describe('jhAuth', function() {
 
     it('should authenticate user', function() {
         var user = jhAuth.authenticateUser('john', 'password');
-        $httpBackend.expectPOST('/login');
-        $httpBackend.whenPOST('/login').respond( 200, {
+        $httpBackend.expectPOST('/login').respond( 200, {
             success: true,
             user: {
                 firstName: 'fred',
@@ -70,8 +69,7 @@ describe('jhAuth', function() {
 
     it('should not authenticate user', function() {
         var user = jhAuth.authenticateUser('notjohn', 'password');
-        $httpBackend.expectPOST('/login');
-        $httpBackend.whenPOST('/login').respond( 200, {
+        $httpBackend.expectPOST('/login').respond( 200, {
             success: false,  
         });
         $httpBackend.flush();
@@ -83,8 +81,7 @@ describe('jhAuth', function() {
 
     it('should logout a user', function() {
         jhAuth.logoutUser();
-        $httpBackend.expectPOST('/logout', {logout: true});
-        $httpBackend.whenPOST('/logout').respond(200);
+        $httpBackend.expectPOST('/logout', {logout: true}).respond(200);
         $httpBackend.flush();
         expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith(undefined);
     });

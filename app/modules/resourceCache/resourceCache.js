@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('jhApp')
 .factory('resourceCache', function(pages, projects, posts, $q) {
+'use strict';
 	
 	var cache = {},
 		resource = {
@@ -11,15 +10,22 @@ angular.module('jhApp')
 		};
 
 	return {
+		cache: cache,
 		query: function(type) {
-			//always return a promise
+			var dfd = $q.defer();
 			if(cache[type]) {
-				var dfd = $q.defer();
 				dfd.resolve(cache[type]);
-				return dfd.promise;
 			} else {
-				return resource[type].query().$promise;
+				resource[type].query().$promise
+				.then(function(data) {
+					cache[type] = data;
+					dfd.resolve(cache[type]);
+				})
+				.catch(function(err) {
+					dfd.reject(err);
+				});
 			}
+			return dfd.promise;
 		},
 		delete: function(type, opts) {
 			cache[type] = null;
