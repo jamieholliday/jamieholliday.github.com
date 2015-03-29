@@ -33,8 +33,7 @@ describe('jhAuth', function() {
 
         });
 
-        spyOn(jhIdentity, 'setCurrentUser');
-        
+        spyOn(jhIdentity, 'setCurrentUser');  
 
     });
 

@@ -34,6 +34,7 @@ angular.module('jhApp')
           }
         }
 
+        //UNUSED BUT KEEP FOR LATER
         // createUser: function(newUserData) {
         //     var newUser = new jhUser(newUserData);
 
