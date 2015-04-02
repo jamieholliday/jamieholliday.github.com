@@ -37,7 +37,8 @@ angular.module('jhApp')
 
             var clone = angular.copy(jhIdentity.currentUser);
             angular.extend(clone, newUserData);
-            clone.$update().then(function() {
+            clone.$update()
+            .then(function() {
                 jhIdentity.setCurrentUser(clone);
                 dfd.resolve();
             }, function(responce) {

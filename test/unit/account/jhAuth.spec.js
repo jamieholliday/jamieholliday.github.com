@@ -18,24 +18,27 @@ describe('jhAuth', function() {
         };
 
         jhUser = function(){
-                return {fn: 'jhUser'};
+            return {
+                fn: 'jhUser',
+                $save: function() {
+                    return deferred.promise;
+                }
             };
+        };
 
-    	module(function($provide) {
-    		$provide.value('jhUser', jhUser);
+        module(function($provide) {
+            $provide.value('jhUser', jhUser);
             $provide.value('jhIdentity', jhIdentity);
-    	});
-
-        inject(function(_jhAuth_, _$q_, _$httpBackend_) {
-        	jhAuth = _jhAuth_;
-            $q = _$q_;
-            $httpBackend = _$httpBackend_;
-
-            $httpBackend.expectPOST('/login');
         });
 
-        spyOn(jhIdentity, 'setCurrentUser');
+        inject(function(_jhAuth_, _$q_, _$httpBackend_) {
+            jhAuth = _jhAuth_;
+            $q = _$q_;
+            $httpBackend = _$httpBackend_;
+        });
+
         deferred = $q.defer();
+        spyOn(jhIdentity, 'setCurrentUser');
 
     });
 
@@ -47,6 +50,7 @@ describe('jhAuth', function() {
 
     it('should authenticate user', function() {
         var user = jhAuth.authenticateUser('john', 'password');
+        $httpBackend.expectPOST('/login');
         $httpBackend.whenPOST('/login').respond( 200, {
             success: true,
             user: {
@@ -57,12 +61,7 @@ describe('jhAuth', function() {
         });
         $httpBackend.flush();
 
-        expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith({
-            fn: 'jhUser',
-            firstName: 'fred',
-            lastName: 'smith',
-            id: '1'
-        });
+        expect(jhIdentity.setCurrentUser).toHaveBeenCalled();
 
         user.then(function(result) {
             expect(result).toBe(true);
@@ -71,6 +70,7 @@ describe('jhAuth', function() {
 
     it('should not authenticate user', function() {
         var user = jhAuth.authenticateUser('notjohn', 'password');
+        $httpBackend.expectPOST('/login');
         $httpBackend.whenPOST('/login').respond( 200, {
             success: false,  
         });
@@ -79,6 +79,11 @@ describe('jhAuth', function() {
         user.then(function(result) {
             expect(result).toBe(false);
         });
+    });
+
+    it('should create a user', function() {
+        var user = jhAuth.createUser();
+        //ADD EXPECT --------------
     });
     
 });
