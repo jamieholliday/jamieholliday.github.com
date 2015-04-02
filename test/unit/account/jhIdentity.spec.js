@@ -47,7 +47,6 @@ describe('jhIdentity', function() {
     it('should set the currentUser to sessionStorage', function() {
         jhIdentity.setCurrentUser({user: 'john'});
         expect($window.sessionStorage.setItem).toHaveBeenCalledWith('currentUser', '{"user":"john"}');
-        expect(jhIdentity.currentUser).toEqual({user: 'john'});
     });
 
     it('should get the  current user from sessionStorage if they exist', function() {

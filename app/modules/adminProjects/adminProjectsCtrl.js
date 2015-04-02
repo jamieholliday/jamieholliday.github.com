@@ -3,14 +3,22 @@ angular.module('jhApp')
 .controller('adminProjectsCtrl', function(resourceCache, jhNotifier) {
 	
     var adminProjects = this;
-	adminProjects.items = resourceCache.query('project');
+	resourceCache.query('project')
+	.then(function(items) {
+		adminProjects.items = items;
+	});
 
 	adminProjects.delete = function(project) {
-		resourceCache.delete('project', {id:project._id}).then(function(responceData) {
+		resourceCache.delete('project', {id:project._id})
+		.then(function(responceData) {
 			if(responceData.deleted === true) {
-				adminProjects.items = resourceCache.query('project');
+				resourceCache.query('project')
+				.then(function(items) {
+					adminProjects.items = items;
+				});
 				jhNotifier.notify('Project deleted');
 			}
 		});
 	};
+
 });

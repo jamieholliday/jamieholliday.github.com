@@ -17,9 +17,9 @@
 	 <section class="row">
 		 <div class="col-md-12">
 			<ul class="admin-list">
-				<li ng-repeat="item in adminProjects.items" class="list-item clearfix">
-					<div class="reorder">
-						<span title="Reorder"></span>
+				<li ng-repeat="item in adminProjects.items | orderBy:'position'" class="list-item clearfix">
+					<div class="position">
+						{{item.position}}
 					</div>
 					<div class="description">
 						<a ui-sref="adminprojectsdetails({id: item._id})">{{item.name}}</a>

@@ -19,12 +19,11 @@
 				<div name="content" title="Content" ng-model="adminProjectsDetails.project.description" placeholder="Description" required text-angular></div>
 				<input type="text" title="Image" name="image" class="form-control" ng-model="adminProjectsDetails.project.img" placeholder="Path to S3 image">
 				<input type="text" title="Url" name="url" class="form-control" ng-model="adminProjectsDetails.project.url" placeholder="Url">
-				<select name="type" title="Project Type" id="" ng-model="adminProjectsDetails.project.type" class="form-control">	
-					<option value="">[Project Type - Select one]</option>
-					<option value="private">Private</option>
-					<option value="employer">Ignition</option>
-					<option value="employer">Vaimo</option>
+				<select name="type" title="Project Type" ng-model="adminProjectsDetails.project.type" class="form-control">	
+					<option value="project">Project</option>
+					<option value="presentation">Presentation</option>
 				</select>
+				<input type="number" title="position" ng-model="adminProjectsDetails.project.position" class="form-control" placeholder="Position" min="0">
 				<input type="text" title="Tags" name="tags" class="form-control" ng-model="adminProjectsDetails.project.tags" placeholder="Tags">
 				<input type="submit" class="btn btn-success pull-right" value="Save" ng-click="adminProjectsDetails.saveForm(projectDetails.$valid)" ng-disabled="projectDetails.$invalid">
 				<div ng-show="adminProjectsDetails.project._id" class="btn-group pull-left delete-btn">

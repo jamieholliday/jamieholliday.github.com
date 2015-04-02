@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('jhApp')
 .factory('resourceCache', function(pages, projects, posts, $q) {
+'use strict';
 	
 	var cache = {},
 		resource = {
@@ -11,11 +10,22 @@ angular.module('jhApp')
 		};
 
 	return {
+		cache: cache,
 		query: function(type) {
-			if(!cache[type]) {
-				cache[type] = resource[type].query();
+			var dfd = $q.defer();
+			if(cache[type]) {
+				dfd.resolve(cache[type]);
+			} else {
+				resource[type].query().$promise
+				.then(function(data) {
+					cache[type] = data;
+					dfd.resolve(cache[type]);
+				})
+				.catch(function(err) {
+					dfd.reject(err);
+				});
 			}
-			return cache[type];
+			return dfd.promise;
 		},
 		delete: function(type, opts) {
 			cache[type] = null;
@@ -26,6 +36,7 @@ angular.module('jhApp')
 			return resource[type].save(obj).$promise;
 		},
 		update: function(type, opts, obj) {
+			debugger;
 			cache[type] = null;
 			return resource[type].update(opts, obj).$promise;
 		},
@@ -34,7 +45,7 @@ angular.module('jhApp')
 				var item = cache[type].filter(function(elem) {
 					return elem._id === opts.id;
 				});
-				//return a promise here because the caller is expecting a promise
+				// always return a promise
 				var dfd = $q.defer();
 				dfd.resolve(item[0]);
 				return dfd.promise;

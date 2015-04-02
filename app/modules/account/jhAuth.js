@@ -48,12 +48,11 @@ angular.module('jhApp')
         },
 
         logoutUser: function() {
-            var dfd = $q.defer();
-            $http.post('/logout', {logout: true}).then(function() {
+            return $http.post('/logout', {logout: true})
+            .then(function() {
                 jhIdentity.setCurrentUser(undefined);
-                dfd.resolve();
+                return true;
             });
-            return dfd.promise;
         },
         authorizeCurrentUserForRoute: function(role) {
           if(jhIdentity.isAuthorized(role)) {
@@ -61,14 +60,41 @@ angular.module('jhApp')
           } else {
             return $q.reject('not authorized');
           }
-
-        },
-        authorizeAuthenticatedUserForRoute: function() {
-          if(jhIdentity.isAuthenticated()) {
-            return true;
-          } else {
-            return $q.reject('not authorized');
-          }
         }
+
+        //UNUSED BUT KEEP FOR LATER
+        // createUser: function(newUserData) {
+        //     var newUser = new jhUser(newUserData);
+
+        //     return newUser.$save()
+        //     .then(function() {
+        //         jhIdentity.setCurrentUser(newUser);
+        //         return true;
+        //     }, function(responce) {
+        //         return (responce.data.reason);
+        //     });
+        // },
+
+        // updateCurrentUser: function(newUserData) {
+
+        //     var clone = angular.copy(jhIdentity.getCurrentUser());
+        //     angular.extend(clone, newUserData);
+
+        //     return clone.$update()
+        //     .then(function() {
+        //         jhIdentity.setCurrentUser(clone);
+        //         return true;
+        //     }, function(responce) {
+        //         return responce.data.reason;
+        //     });
+        // },
+        // authorizeAuthenticatedUserForRoute: function() {
+        //   if(jhIdentity.isAuthenticated()) {
+        //     return true;
+        //   } else {
+        //     return $q.reject('not authorized');
+        //   }
+        // }
+
     };
 });

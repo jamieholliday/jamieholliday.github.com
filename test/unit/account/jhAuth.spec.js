@@ -4,7 +4,6 @@ describe('jhAuth', function() {
     var jhAuth,
         jhUser,
         jhIdentity,
-        deferred,
         $q,
         $httpBackend;
 
@@ -14,16 +13,12 @@ describe('jhAuth', function() {
         module('templates');
 
         jhIdentity = {
-            setCurrentUser: function(){}
+            setCurrentUser: function() {},
+            isAuthorized: function() {}
         };
 
         jhUser = function(){
-            return {
-                fn: 'jhUser',
-                $save: function() {
-                    return deferred.promise;
-                }
-            };
+            return {fn: 'jhUser'};
         };
 
         module(function($provide) {
@@ -37,8 +32,7 @@ describe('jhAuth', function() {
             $httpBackend = _$httpBackend_;
         });
 
-        deferred = $q.defer();
-        spyOn(jhIdentity, 'setCurrentUser');
+        spyOn(jhIdentity, 'setCurrentUser');  
 
     });
 
@@ -50,8 +44,7 @@ describe('jhAuth', function() {
 
     it('should authenticate user', function() {
         var user = jhAuth.authenticateUser('john', 'password');
-        $httpBackend.expectPOST('/login');
-        $httpBackend.whenPOST('/login').respond( 200, {
+        $httpBackend.expectPOST('/login').respond( 200, {
             success: true,
             user: {
                 firstName: 'fred',
@@ -70,8 +63,7 @@ describe('jhAuth', function() {
 
     it('should not authenticate user', function() {
         var user = jhAuth.authenticateUser('notjohn', 'password');
-        $httpBackend.expectPOST('/login');
-        $httpBackend.whenPOST('/login').respond( 200, {
+        $httpBackend.expectPOST('/login').respond( 200, {
             success: false,  
         });
         $httpBackend.flush();
@@ -81,9 +73,33 @@ describe('jhAuth', function() {
         });
     });
 
-    it('should create a user', function() {
-        var user = jhAuth.createUser();
-        //ADD EXPECT --------------
+    it('should logout a user', function() {
+        jhAuth.logoutUser();
+        $httpBackend.expectPOST('/logout', {logout: true}).respond(200);
+        $httpBackend.flush();
+        expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith(undefined);
+    });
+
+    it('should check if user can access route', function() {
+        var authed;
+
+        spyOn(jhIdentity, 'isAuthorized').and.returnValue(true);
+        authed = jhAuth.authorizeCurrentUserForRoute('admin'); 
+
+        expect(jhIdentity.isAuthorized).toHaveBeenCalledWith('admin');
+        expect(authed).toBe(true);
+
+    });
+
+    it('should check if user cant access route', function() {
+        var authed;
+
+        spyOn(jhIdentity, 'isAuthorized').and.returnValue(false);
+        authed = jhAuth.authorizeCurrentUserForRoute('admin'); 
+
+        expect(jhIdentity.isAuthorized).toHaveBeenCalledWith('admin');
+        expect(authed.$$state.status).toBe(2);
+
     });
     
 });

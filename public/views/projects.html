@@ -19,7 +19,26 @@
 		<section class="row projects">
 			<h2><i class="fa fa-laptop"></i> Projects</h2>
 			<ul class="projects clearfix">
-				<li ng-if="item.published" ng-repeat="item in projects.items" class="col-md-4 col-sm-6 col-xs-6">
+				<li ng-if="item.published" ng-repeat="item in projects.items | orderBy:'position'" class="col-md-4 col-sm-6 col-xs-6">
+
+					<div class="project-details">
+						<div class="project-img">
+							<img ng-if="item.img" ng-src="{{item.img}}" alt="{{item.name}} screenshot">
+						</div>
+						<div class="project-description">
+							<h3>{{item.name}}</h3>
+							<div ng-bind-html="item.description | jhRawHtml"></div>
+							<p>{{item.tags}}</p>
+							<a href="{{item.url}}" rel="nofollow">{{item.url}}</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="row projects" ng-if="projects.presentations.length">
+			<h2><i class="fa fa-file"></i> Presentations</h2>
+			<ul class="projects clearfix">
+				<li ng-if="item.published" ng-repeat="item in projects.presentations | orderBy:'position'" class="col-md-4 col-sm-6 col-xs-6">
 
 					<div class="project-details">
 						<div class="project-img">

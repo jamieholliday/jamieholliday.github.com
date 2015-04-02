@@ -1,3 +1,5 @@
+'use strict';
+
 var Project = require('mongoose').model('Project');
 
 exports.getProjects = function(req, res) {
@@ -19,7 +21,8 @@ exports.newProject = function(req, res) {
 		date: new Date(),
 		permalink: req.body.permalink,
 		url: req.body.url,
-		type: req.body.type
+		type: req.body.type,
+		position: req.body.position || 1
 	};
 
 	Project.create(projectData, function(err, project) {
@@ -53,8 +56,9 @@ exports.updateProject = function(req, res) {
 		project.published = req.body.published;
 		project.permalink = req.body.permalink;
 		project.url = req.body.url;
-		project.type = req.body.typ;
+		project.type = req.body.type;
 		project.img = req.body.img;
+		project.position = req.body.position || 1;
 
 		project.save(function(err) {
 			if(err) {
@@ -68,9 +72,10 @@ exports.updateProject = function(req, res) {
 };
 
 exports.deleteProject = function(req, res) {
+	var success;
 	Project.remove({_id:req.params.id}).exec(function(err, bool) {
 		if(err) {
-			res.send({error: err, message: 'Error Deleting'})
+			res.send({error: err, message: 'Error Deleting'});
 		} else {
 			success = {
 				deleted: false,
@@ -82,4 +87,4 @@ exports.deleteProject = function(req, res) {
 			res.send(success);
 		}
 	});
-}
+};
