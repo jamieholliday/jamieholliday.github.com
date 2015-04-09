@@ -36,7 +36,6 @@ angular.module('jhApp')
 			return resource[type].save(obj).$promise;
 		},
 		update: function(type, opts, obj) {
-			debugger;
 			cache[type] = null;
 			return resource[type].update(opts, obj).$promise;
 		},
