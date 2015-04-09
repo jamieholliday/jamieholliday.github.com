@@ -21,16 +21,15 @@ describe('jhAuth', function() {
             return {fn: 'jhUser'};
         };
 
-    	module(function($provide) {
-    		$provide.value('jhUser', jhUser);
+        module(function($provide) {
+            $provide.value('jhUser', jhUser);
             $provide.value('jhIdentity', jhIdentity);
-    	});
+        });
 
         inject(function(_jhAuth_, _$q_, _$httpBackend_) {
-        	jhAuth = _jhAuth_;
+            jhAuth = _jhAuth_;
             $q = _$q_;
             $httpBackend = _$httpBackend_;
-
         });
 
         spyOn(jhIdentity, 'setCurrentUser');  
@@ -55,12 +54,7 @@ describe('jhAuth', function() {
         });
         $httpBackend.flush();
 
-        expect(jhIdentity.setCurrentUser).toHaveBeenCalledWith({
-            fn: 'jhUser',
-            firstName: 'fred',
-            lastName: 'smith',
-            id: '1'
-        });
+        expect(jhIdentity.setCurrentUser).toHaveBeenCalled();
 
         user.then(function(result) {
             expect(result).toBe(true);

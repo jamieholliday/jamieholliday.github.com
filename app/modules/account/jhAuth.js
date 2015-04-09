@@ -19,6 +19,34 @@ angular.module('jhApp')
                 }
             });
         },
+
+        createUser: function(newUserData) {
+            var newUser = new jhUser(newUserData);
+
+            return newUser.$save()
+            .then(function() {
+                jhIdentity.setCurrentUser(newUser);
+                return true;
+            }, function(responce) {
+                return (responce.data.reason);
+            });
+        },
+
+        updateCurrentUser: function(newUserData) {
+            var dfd  = $q.defer();
+
+            var clone = angular.copy(jhIdentity.currentUser);
+            angular.extend(clone, newUserData);
+            clone.$update()
+            .then(function() {
+                jhIdentity.setCurrentUser(clone);
+                dfd.resolve();
+            }, function(responce) {
+                dfd.reject(responce.data.reason);
+            });
+            return dfd.promise;
+        },
+
         logoutUser: function() {
             return $http.post('/logout', {logout: true})
             .then(function() {
