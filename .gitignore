@@ -1,4 +1,7 @@
-logs/*
+.idea/
 node_modules/
-app/vendor/
-.DS_Store
+dist/
+*.iml
+webpack-assets.json
+webpack-stats.json
+npm-debug.log

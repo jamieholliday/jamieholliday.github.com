@@ -1,76 +1,66 @@
-// Karma configuration
+var webpack = require('webpack');
 
-module.exports = function(config) {
-    'use strict';
-    config.set({
+module.exports = function (config) {
+  config.set({
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+    browsers: ['PhantomJS'],
 
-    preprocessors: {
-            'public/**/*.html': ['ng-html2js']
-        },
+    singleRun: !!process.env.CONTINUOUS_INTEGRATION,
 
-    ngHtml2JsPreprocessor: {
-       stripPrefix: 'public/',
-       moduleName: 'templates'
-    },
+    frameworks: [ 'mocha' ],
 
-    // frameworks to use
-    frameworks: ['jasmine'],
-
-    // list of files / patterns to load in the browser
     files: [
-        'app/vendor/angular/angular.js',
-        'app/vendor/angular-ui-router/release/angular-ui-router.js',
-        'app/vendor/angular-resource/angular-resource.js',
-        'app/vendor/jquery/dist/jquery.js',
-        'app/vendor/bootstrap/dist/js/bootstrap.js',
-        'app/vendor/toastr/toastr.js',
-        'app/vendor/textAngular/dist/textAngular-sanitize.min.js',
-        'app/vendor/textAngular/dist/textAngular-rangy.min.js',
-        'app/vendor/textAngular/dist/textAngular.min.js',
-        'app/vendor/s3Upload/s3Upload.js',
-        'app/main.js',
-        'app/modules/**/*.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        'test/unit/**/*.js',
-        'public/**/*.html'
+      './node_modules/phantomjs-polyfill/bind-polyfill.js',
+      'tests.webpack.js'
     ],
 
+    preprocessors: {
+      'tests.webpack.js': [ 'webpack', 'sourcemap' ]
+    },
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+    reporters: [ 'mocha' ],
 
+    plugins: [
+      require("karma-webpack"),
+      require("karma-mocha"),
+      require("karma-mocha-reporter"),
+      require("karma-phantomjs-launcher"),
+      require("karma-sourcemap-loader")
+    ],
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_DEBUG,
+    webpack: {
+      devtool: 'inline-source-map',
+      module: {
+        loaders: [
+          { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url', query: {limit: 10240} },
+          { test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+          { test: /\.json$/, loader: 'json-loader' },
+          { test: /\.less$/, loader: 'style!css!less' },
+          { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' }
+        ]
+      },
+      resolve: {
+        modulesDirectories: [
+          'src',
+          'node_modules'
+        ],
+        extensions: ['', '.json', '.js']
+      },
+      plugins: [
+        new webpack.IgnorePlugin(/\.json$/),
+        new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+          __CLIENT__: true,
+          __SERVER__: false,
+          __DEVELOPMENT__: true,
+          __DEVTOOLS__: false  // <-------- DISABLE redux-devtools HERE
+        })
+      ]
+    },
 
+    webpackServer: {
+      noInfo: true
+    }
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome'],
-
-
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
-
-
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false,
-
-
-    });
+  });
 };
