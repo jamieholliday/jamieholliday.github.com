@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
-import { InfoBar } from 'components';
+import { InfoBar, Nav } from 'components';
 // import { pushState } from 'redux-router';
 import config from '../../config';
 
@@ -32,6 +32,7 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <DocumentMeta {...config.app}/>
+        <Nav />
         <div className={styles.appContent}>
           {this.props.children}
         </div>

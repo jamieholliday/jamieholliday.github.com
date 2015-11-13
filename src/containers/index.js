@@ -1,3 +1,5 @@
 export App from './App/App';
-export Home from './Home/Home';
+export Portfolio from './Portfolio/Portfolio';
+export About from './About/About';
+export Blog from './Blog/Blog';
 export NotFound from './NotFound/NotFound';

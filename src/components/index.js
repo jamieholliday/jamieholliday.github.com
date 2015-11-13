@@ -6,3 +6,4 @@
  */
 
 export InfoBar from './InfoBar/InfoBar';
+export Nav from './Nav/Nav';
