@@ -1,0 +1,25 @@
+body {
+  color: #424242;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: #2C2C2C;
+}
+a {
+  color: #2A5DAD;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote {
+  padding-left: 16px;
+  border-left: 6px solid lightgray;
+  margin-left: 10px;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+p, a, em {
+  font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+}
