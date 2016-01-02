@@ -21,7 +21,7 @@ const Bio = (props) => {
           height: rhythm(2)
         }}
       />
-    <p>Written by <strong>{props.authorName}</strong>. <a href="https://twitter.com/jamieholliday">I'm on Twitter</a> (a little bit).<br />Site built with <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a></p>
+    <p>Written by <strong>{props.authorName}</strong>. <a href="https://twitter.com/jamieholliday">I'm on Twitter</a>, <a href="https://github.com/jamieholliday">Github</a> and <a href="https://www.linkedin.com/in/jamieholliday">LinkedIn</a><br />Site built with <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a></p>
 </div>
   );
 };
