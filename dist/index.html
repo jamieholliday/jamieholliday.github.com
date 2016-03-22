@@ -7,7 +7,6 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Jamie Holliday - Front End Engineer, Developer, Javascript, London">
-    <base href="/"/>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -15,7 +14,7 @@
     <header>
       <div class="content header_content">
         <div class="logo">
-          logo
+          <div aria-hidden="true" class="logo_icon" data-icon="&#xe005;"></div>
         </div>
         <nav>
           <a class="nav_link" href="http://employjamie.com">CV</a>
@@ -26,26 +25,42 @@
       <main>
         <section class="about">
           <h1>About</h1>
-          I currenty work for <a href="https://www.myjobmatcher.com">MyJobMatcher</a> as a Front End Engineer. My daily work involves building apps focussed on matching users to their perfect job as well helping recruiters find relevant hires. Additionally I am involved with development on internal tools.
+          <div class="about_content">
+            <div class="about_image_container">
+              <img src="https://s3-eu-west-1.amazonaws.com/jamieholliday/jamie.jpg" alt="Jamie Holliday" class="about_image"/>
+            </div>
+            <p>I am Jaime, I currenty work for <a href="https://www.myjobmatcher.com">MyJobMatcher</a> as a Front End Engineer. My daily work involves building apps focussed on matching users to their perfect job and helping recruiters find relevant hires as well as the development of internal tools</p>
+          </div>
         </section>
         <section class="portfolio">
           <h1>Portfolio</h1>
           <p>
-            I have worked on a number of Front End projects in an agency environment, for brands such as, Agent Provocateur, Polarn O Pyret, Bauhaus, Nokia, Toyota, Jaguar LandRover, Honda, Nissan, L'Oréal, Lexus, & Yamaha.
+            I have worked on a number of Front End projects in various agency environments, for brands such as, Agent Provocateur, Polarn O Pyret, Bauhaus, Nokia, Toyota, Jaguar LandRover, Honda, Nissan, L'Oréal, Lexus, & Yamaha.
           </p>
+          <ul class="portfolio_images">
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen2.jpg" alt="Nokia screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen3.jpg" alt="Ignition screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen4.jpg" alt="JCC screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen6.jpg" alt="Jaguar Landrover screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen7.jpg" alt="Pavers screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen8.jpg" alt="IJP screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen9.jpg" alt="PoP screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen10.jpg" alt="Bauhaus Kids screenshot" /></li>
+            <li><img class="portfolio_image" src="https://s3-eu-west-1.amazonaws.com/jamieholliday/screen11.jpg" alt="Victoria Dashboard screenshot" /></li>
+          </ul>
         </section>
         <section>
           <h1>Tools of the trade</h1>
           <p>
-            I try and stay up to date with the ever changing front end techniques and technologies. My current favorite tech stack would include React, Node, Sass, Webpack, ES6.
+            I try and stay up to date with the ever changing front end techniques and technologies. My current favorite tech stack would probably include things like React, Node, Sass, Webpack, ES6, Mocha. <br><a href="http://elm-lang.org/">Elm</a> is interesting, I am learning more about that.
           </p>
         </section>
         <section class="contact">
           <h1>Contact</h1>
           <ul>
-            <li><a href="http://www.twitter.com/jamieholliday">Twitter</a></li>
-            <li><a href="https://github.com/jamieholliday">Github</a></li>
-            <li><a href="http://www.linkedin.com/in/jamieholliday">LinkedIn</a></li>
+            <li class="contact_item"><span aria-hidden="true" class="twitter_icon" data-icon="&#xe000;"></span><a href="http://www.twitter.com/jamieholliday">Twitter</a></li>
+            <li class="contact_item"><span aria-hidden="true" class="github_icon" data-icon="&#xe003;"></span><a href="https://github.com/jamieholliday">Github</a></li>
+            <li class="contact_item"><span aria-hidden="true" class="linkedin_icon" data-icon="&#xe001;"></span><a href="http://www.linkedin.com/in/jamieholliday">LinkedIn</a></li>
           </ul>
         </section>
       </main>

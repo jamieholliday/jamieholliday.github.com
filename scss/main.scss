@@ -2,7 +2,31 @@
   box-sizing: border-box;;
 }
 
+$blue: #428bca;
+$darkBlue: #323a45;
+$lightGrey: #f1f1f1;
 
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot');
+  src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   font-family: 'Source Code Pro', 'Courier New', sans-serif;
@@ -12,8 +36,12 @@ body {
 }
 
 a, a:hover, a:visited {
-  color: #428bca;
+  color: $blue;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 ul {
@@ -32,7 +60,7 @@ li {
 }
 
 header {
-  background-color: #323a45;
+  background-color: $darkBlue;
   color: #fff;
 }
 
@@ -41,7 +69,15 @@ header {
 }
 
 .logo {
-  width: 95px;
+  height: 20px;
+  font-size: 4rem;
+  position: relative;
+  color: #525f71;
+}
+
+.logo_icon {
+  position: absolute;
+  top: -24px;
 }
 
 nav {
@@ -49,15 +85,71 @@ nav {
   text-align: right;
 }
 
-// .nav_link {
-//   color:
-// }
-
 main {
   min-height: calc(100vh - 212px)
+}
+
+.about_content {
+  display: flex;
+}
+
+.about_image {
+  width: 150px;
+  height: 150px;
+  border: 5px solid lighten($darkBlue, 20%);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.portfolio_images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.portfolio_image {
+  max-width: 330px;
+  width: 100%;
+  margin: 5px;
+  border: 3px solid $lightGrey;
+}
+
+.contact_item {
+  position: relative;
+}
+
+.twitter_icon,
+.github_icon,
+.linkedin_icon {
+  font-size: 1.5rem;
+  position: relative;
+  top: 4px;
+  margin-right: 10px;
+  color: $blue;
+}
+
+.linkedin_icon {
+  font-size: 1.4rem;
+  top: 4px;
 }
 
 footer {
   font-size: 0.8rem;
   background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .about_content {
+    display: block;
+  }
+
+  .about_image_container {
+    text-align: center;
+  }
+
+  .about_image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
 }
