@@ -3,13 +3,16 @@
   "version": "0.0.3",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "gh-pages": "^0.11.0",
     "node-sass": "^3.4.2",
     "parallelshell": "^2.0.0"
   },
   "scripts": {
     "dev": "parallelshell 'npm run sass' 'npm run browsersync'",
+    "deploy": "npm run sass && npm run gh-pages",
     "sass": "node-sass --include-path scss scss/main.scss dist/main.css --watch",
-    "browsersync": "browser-sync start --server dist reload --files \"dist/*.css, dist/*.html\""
+    "browsersync": "browser-sync start --server dist reload --files \"dist/*.css, dist/*.html\"",
+    "gh-pages": "node gh-pages"
   },
   "dependencies": {}
 }
