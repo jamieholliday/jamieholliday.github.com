@@ -9,10 +9,11 @@
   },
   "scripts": {
     "dev": "parallelshell 'npm run sass' 'npm run browsersync'",
-    "deploy": "npm run sass && npm run gh-pages",
+    "deploy": "npm run sass-build && npm run gh-pages",
     "sass": "node-sass --include-path scss scss/main.scss dist/main.css --watch",
+    "sass-build": "node-sass --include-path scss scss/main.scss dist/main.css",
     "browsersync": "browser-sync start --server dist reload --files \"dist/*.css, dist/*.html\"",
-    "gh-pages": "node gh-pages"
+    "gh-pages": "gh-pages -d dist"
   },
   "dependencies": {}
 }
