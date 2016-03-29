@@ -70,6 +70,9 @@ main {
 .about_content {
   display: flex; }
 
+.about_image_container {
+  flex-shrink: 0; }
+
 .about_image {
   width: 150px;
   height: 150px;

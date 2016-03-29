@@ -2,18 +2,21 @@
   "name": "jamieholliday-portfolio",
   "version": "0.0.3",
   "devDependencies": {
+    "autoprefixer": "^6.3.5",
     "browser-sync": "^2.11.1",
     "gh-pages": "^0.11.0",
     "node-sass": "^3.4.2",
-    "parallelshell": "^2.0.0"
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1"
   },
   "scripts": {
     "dev": "parallelshell 'npm run sass' 'npm run browsersync'",
-    "deploy": "npm run sass-build && npm run gh-pages",
+    "deploy": "npm run sass-build && npm run autoprefixer && npm run gh-pages",
     "sass": "node-sass --include-path scss scss/main.scss dist/main.css --watch",
     "sass-build": "node-sass --include-path scss scss/main.scss dist/main.css",
     "browsersync": "browser-sync start --server dist reload --files \"dist/*.css, dist/*.html\"",
-    "gh-pages": "gh-pages -d dist"
+    "gh-pages": "gh-pages -d dist",
+    "autoprefixer": "postcss --use autoprefixer dist/*.css -d dist/"
   },
   "dependencies": {}
 }
