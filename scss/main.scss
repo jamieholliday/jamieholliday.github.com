@@ -105,9 +105,17 @@ main {
   margin-right: 20px;
 }
 
+.portfolio_main {
+  padding: 0 5px;
+}
+
+.portfolio_image_main {
+  width: 100%;
+}
+
 .portfolio_images {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -155,5 +163,22 @@ footer {
     width: 100%;
     height: auto;
     max-width: 300px;
+  }
+
+}
+
+@media (max-width: 1074px) {
+  .portfolio_images {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio_main {
+    text-align: center;
+  }
+
+  .portfolio_image_main {
+    width: 330px;
   }
 }
