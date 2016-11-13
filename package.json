@@ -1,6 +1,6 @@
 {
   "name": "jamieholliday-portfolio",
-  "description": "jamieholliday.com website"
+  "description": "jamieholliday.com website",
   "version": "0.0.3",
   "devDependencies": {
     "autoprefixer": "^6.3.5",
