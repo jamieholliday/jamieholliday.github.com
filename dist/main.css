@@ -48,6 +48,8 @@ header {
   color: #fff; }
 
 .header_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .logo {
@@ -61,17 +63,22 @@ header {
   top: -24px; }
 
 nav {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: right; }
 
 main {
   min-height: calc(100vh - 212px); }
 
 .about_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .about_image_container {
-  flex-shrink: 0; }
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
 
 .about_image {
   width: 150px;
@@ -87,9 +94,14 @@ main {
   width: 100%; }
 
 .portfolio_images {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .portfolio_image {
   max-width: 330px;
@@ -129,7 +141,8 @@ footer {
 
 @media (max-width: 1074px) {
   .portfolio_images {
-    justify-content: space-around; } }
+    -ms-flex-pack: distribute;
+        justify-content: space-around; } }
 
 @media (max-width: 600px) {
   .portfolio_main {
