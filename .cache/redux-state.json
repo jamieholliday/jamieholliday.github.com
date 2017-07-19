@@ -1,19 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "component": "/Users/peterfox/Documents/jamieholliday.com/.cache/dev-404-page.js",
       "path": "/dev-404-page/",
-      "componentChunkName": "page-component---cache-dev-404-page-js",
-      "jsonName": "dev-404-page.json",
-      "internalComponentName": "ComponentDev404Page",
-      "context": {},
-      "pluginCreator___NODE": "Plugin dev-404-page",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "cebed10a142bbc84603fdbaa9d8dc3f3",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -1097,14 +1091,12 @@
         "title": "Jamie Holliday - Frontend Developer",
         "author": "Jamie Holliday"
       },
-      "port": "8000",
-      "host": "localhost",
-      "buildTime": "2017-07-19T07:49:41.190Z",
+      "buildTime": "2017-07-19T18:02:25.243Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "7759429cccfee2b4592b47b992be78b6",
+        "contentDigest": "072a843601bfacfd9016eadeb8f71792",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1126,7 +1118,7 @@
       "size": 1919,
       "prettySize": "1.92 kB",
       "modifiedTime": "2017-07-18T17:03:25.000Z",
-      "accessTime": "2017-07-18T17:03:26.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
       "changeTime": "2017-07-18T17:03:25.000Z",
       "birthTime": "2017-07-12T17:23:27.000Z",
       "root": "/",
@@ -1143,7 +1135,7 @@
       "blksize": 4096,
       "ino": 74453730,
       "blocks": 8,
-      "atime": "2017-07-18T17:03:26.000Z",
+      "atime": "2017-07-19T18:02:27.000Z",
       "mtime": "2017-07-18T17:03:25.000Z",
       "ctime": "2017-07-18T17:03:25.000Z",
       "birthtime": "2017-07-12T17:23:27.000Z"
@@ -1165,7 +1157,7 @@
       "size": 4515,
       "prettySize": "4.51 kB",
       "modifiedTime": "2017-07-18T17:59:35.000Z",
-      "accessTime": "2017-07-18T17:59:35.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
       "changeTime": "2017-07-18T17:59:35.000Z",
       "birthTime": "2017-07-11T13:59:24.000Z",
       "root": "/",
@@ -1182,7 +1174,7 @@
       "blksize": 4096,
       "ino": 74074487,
       "blocks": 16,
-      "atime": "2017-07-18T17:59:35.000Z",
+      "atime": "2017-07-19T18:02:27.000Z",
       "mtime": "2017-07-18T17:59:35.000Z",
       "ctime": "2017-07-18T17:59:35.000Z",
       "birthtime": "2017-07-11T13:59:24.000Z"
@@ -1204,7 +1196,7 @@
       "size": 1001,
       "prettySize": "1 kB",
       "modifiedTime": "2017-07-13T07:54:26.000Z",
-      "accessTime": "2017-07-13T07:55:31.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
       "changeTime": "2017-07-13T07:55:31.000Z",
       "birthTime": "2017-07-13T07:54:26.000Z",
       "root": "/",
@@ -1221,7 +1213,7 @@
       "blksize": 4096,
       "ino": 74461618,
       "blocks": 8,
-      "atime": "2017-07-13T07:55:31.000Z",
+      "atime": "2017-07-19T18:02:27.000Z",
       "mtime": "2017-07-13T07:54:26.000Z",
       "ctime": "2017-07-13T07:55:31.000Z",
       "birthtime": "2017-07-13T07:54:26.000Z"
@@ -1243,7 +1235,7 @@
       "size": 24,
       "prettySize": "24 B",
       "modifiedTime": "2017-07-11T14:52:33.000Z",
-      "accessTime": "2017-07-12T18:43:18.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
       "changeTime": "2017-07-11T14:52:33.000Z",
       "birthTime": "2017-07-11T14:52:33.000Z",
       "root": "/",
@@ -1260,7 +1252,7 @@
       "blksize": 4096,
       "ino": 74224388,
       "blocks": 8,
-      "atime": "2017-07-12T18:43:18.000Z",
+      "atime": "2017-07-19T18:02:27.000Z",
       "mtime": "2017-07-11T14:52:33.000Z",
       "ctime": "2017-07-11T14:52:33.000Z",
       "birthtime": "2017-07-11T14:52:33.000Z"
@@ -1284,7 +1276,7 @@
       "size": 3616,
       "prettySize": "3.62 kB",
       "modifiedTime": "2017-07-19T07:55:37.000Z",
-      "accessTime": "2017-07-19T07:55:37.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
       "changeTime": "2017-07-19T07:55:37.000Z",
       "birthTime": "2017-07-11T14:52:33.000Z",
       "root": "/",
@@ -1301,10 +1293,102 @@
       "blksize": 4096,
       "ino": 74224380,
       "blocks": 8,
-      "atime": "2017-07-19T07:55:37.000Z",
+      "atime": "2017-07-19T18:02:27.000Z",
       "mtime": "2017-07-19T07:55:37.000Z",
       "ctime": "2017-07-19T07:55:37.000Z",
       "birthtime": "2017-07-11T14:52:33.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file",
+      "children": [
+        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "71398f35e56a75e49e6d77a726ea514c",
+        "mediaType": "text/x-markdown",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md",
+      "relativePath": "17-07-2017-drive-a-digger/index.md",
+      "extension": "md",
+      "size": 1710,
+      "prettySize": "1.71 kB",
+      "modifiedTime": "2017-07-19T08:10:36.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
+      "changeTime": "2017-07-19T08:10:36.000Z",
+      "birthTime": "2017-07-19T07:47:09.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74779112,
+      "blocks": 8,
+      "atime": "2017-07-19T18:02:27.000Z",
+      "mtime": "2017-07-19T08:10:36.000Z",
+      "ctime": "2017-07-19T08:10:36.000Z",
+      "birthtime": "2017-07-19T07:47:09.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
+      "children": [
+        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
+        "mediaType": "image/jpeg",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg",
+      "relativePath": "17-07-2017-drive-a-digger/drive-a-digger.jpg",
+      "extension": "jpg",
+      "size": 221907,
+      "prettySize": "222 kB",
+      "modifiedTime": "2017-07-19T07:52:59.000Z",
+      "accessTime": "2017-07-19T18:02:27.000Z",
+      "changeTime": "2017-07-19T07:52:59.000Z",
+      "birthTime": "2017-07-19T07:52:59.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
+      "base": "drive-a-digger.jpg",
+      "ext": ".jpg",
+      "name": "drive-a-digger",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74779843,
+      "blocks": 440,
+      "atime": "2017-07-19T18:02:27.000Z",
+      "mtime": "2017-07-19T07:52:59.000Z",
+      "ctime": "2017-07-19T07:52:59.000Z",
+      "birthtime": "2017-07-19T07:52:59.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp",
+      "children": [],
+      "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
+      "internal": {
+        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
     },
     "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark",
@@ -1326,47 +1410,6 @@
       },
       "fileAbsolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md"
     },
-    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file": {
-      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file",
-      "children": [
-        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark"
-      ],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "71398f35e56a75e49e6d77a726ea514c",
-        "mediaType": "text/x-markdown",
-        "type": "File",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "pages",
-      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md",
-      "relativePath": "17-07-2017-drive-a-digger/index.md",
-      "extension": "md",
-      "size": 1710,
-      "prettySize": "1.71 kB",
-      "modifiedTime": "2017-07-19T08:10:36.000Z",
-      "accessTime": "2017-07-19T08:10:36.000Z",
-      "changeTime": "2017-07-19T08:10:36.000Z",
-      "birthTime": "2017-07-19T07:47:09.000Z",
-      "root": "/",
-      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
-      "base": "index.md",
-      "ext": ".md",
-      "name": "index",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4096,
-      "ino": 74779112,
-      "blocks": 8,
-      "atime": "2017-07-19T08:10:36.000Z",
-      "mtime": "2017-07-19T08:10:36.000Z",
-      "ctime": "2017-07-19T08:10:36.000Z",
-      "birthtime": "2017-07-19T07:47:09.000Z"
-    },
     "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark": {
       "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark",
       "children": [],
@@ -1385,6 +1428,23 @@
         "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file"
       },
       "fileAbsolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md"
+    },
+    "SitePage /offline-plugin-app-shell-fallback/": {
+      "path": "/offline-plugin-app-shell-fallback/",
+      "component": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline/app-shell.js",
+      "componentChunkName": "page-component---node-modules-gatsby-plugin-offline-app-shell-js",
+      "jsonName": "offline-plugin-app-shell-fallback.json",
+      "internalComponentName": "ComponentOfflinePluginAppShellFallback",
+      "context": {},
+      "pluginCreator___NODE": "Plugin gatsby-plugin-offline",
+      "id": "SitePage /offline-plugin-app-shell-fallback/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "048da71f9983eaa203972b997114b926",
+        "owner": "internal-data-bridge"
+      }
     },
     "SitePage /bucket-list/": {
       "path": "/bucket-list/",
@@ -1457,97 +1517,28 @@
         "contentDigest": "91160f20c818456525359c0fbbd61333",
         "owner": "internal-data-bridge"
       }
-    },
-    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file": {
-      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
-      "children": [
-        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp"
-      ],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
-        "mediaType": "image/jpeg",
-        "type": "File",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "pages",
-      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg",
-      "relativePath": "17-07-2017-drive-a-digger/drive-a-digger.jpg",
-      "extension": "jpg",
-      "size": 221907,
-      "prettySize": "222 kB",
-      "modifiedTime": "2017-07-19T07:52:59.000Z",
-      "accessTime": "2017-07-19T07:52:59.000Z",
-      "changeTime": "2017-07-19T07:52:59.000Z",
-      "birthTime": "2017-07-19T07:52:59.000Z",
-      "root": "/",
-      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
-      "base": "drive-a-digger.jpg",
-      "ext": ".jpg",
-      "name": "drive-a-digger",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4096,
-      "ino": 74779843,
-      "blocks": 440,
-      "atime": "2017-07-19T07:52:59.000Z",
-      "mtime": "2017-07-19T07:52:59.000Z",
-      "ctime": "2017-07-19T07:52:59.000Z",
-      "birthtime": "2017-07-19T07:52:59.000Z"
-    },
-    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp": {
-      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp",
-      "children": [],
-      "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
-      "internal": {
-        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
-        "type": "ImageSharp",
-        "owner": "gatsby-transformer-sharp"
-      }
     }
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "6369403cd6188fe725cb548e1d9fcc67"
+    "PLUGINS_HASH": "de0ad0d07edc947a83c49e532ea94269"
   },
   "pageDataDependencies": {
     "nodes": {
       "Site": [
-        "/hello-world/",
-        "/my-second-post/",
-        "/hi-folks/",
-        "/",
-        "/blog/",
         "/bucket-list/",
-        "/drive-a-digger/"
-      ],
-      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-01-hello-world/index.md absPath of file >>> MarkdownRemark": [
-        "/hello-world/"
-      ],
-      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-06-my-second-post/index.md absPath of file >>> MarkdownRemark": [
-        "/my-second-post/"
-      ],
-      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-28-hi-folks/index.md absPath of file >>> MarkdownRemark": [
-        "/hi-folks/"
+        "/drive-a-digger/",
+        "/blog/"
       ],
       "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark": [
-        "/bucket-list/",
-        "/drive-a-digger/"
+        "/bucket-list/"
       ],
       "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark": [
         "/drive-a-digger/"
       ]
     },
     "connections": {
-      "SitePage": [
-        "/dev-404-page/"
-      ],
       "MarkdownRemark": [
-        "/",
         "/blog/"
       ]
     }

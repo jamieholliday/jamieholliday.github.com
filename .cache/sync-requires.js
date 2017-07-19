@@ -3,14 +3,14 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
-  "page-component---cache-dev-404-page-js": preferDefault(require("/Users/peterfox/Documents/jamieholliday.com/.cache/dev-404-page.js")),
+  "page-component---node-modules-gatsby-plugin-offline-app-shell-js": preferDefault(require("/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline/app-shell.js")),
   "page-component---src-templates-blog-post-js": preferDefault(require("/Users/peterfox/Documents/jamieholliday.com/src/templates/blog-post.js")),
   "page-component---src-pages-blog-js": preferDefault(require("/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js")),
   "page-component---src-pages-index-js": preferDefault(require("/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js"))
 }
 
 exports.json = {
-  "dev-404-page.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/dev-404-page.json"),
+  "offline-plugin-app-shell-fallback.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/offline-plugin-app-shell-fallback.json"),
   "bucket-list.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "drive-a-digger.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/drive-a-digger.json"),
   "blog.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/blog.json"),

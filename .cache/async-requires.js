@@ -2,14 +2,14 @@
 const preferDefault = m => m && m.default || m
 
 exports.components = {
-  "page-component---cache-dev-404-page-js": require("gatsby-module-loader?name=page-component---cache-dev-404-page-js!/Users/peterfox/Documents/jamieholliday.com/.cache/dev-404-page.js"),
+  "page-component---node-modules-gatsby-plugin-offline-app-shell-js": require("gatsby-module-loader?name=page-component---node-modules-gatsby-plugin-offline-app-shell-js!/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline/app-shell.js"),
   "page-component---src-templates-blog-post-js": require("gatsby-module-loader?name=page-component---src-templates-blog-post-js!/Users/peterfox/Documents/jamieholliday.com/src/templates/blog-post.js"),
   "page-component---src-pages-blog-js": require("gatsby-module-loader?name=page-component---src-pages-blog-js!/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js"),
   "page-component---src-pages-index-js": require("gatsby-module-loader?name=page-component---src-pages-index-js!/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js")
 }
 
 exports.json = {
-  "dev-404-page.json": require("gatsby-module-loader?name=path---dev-404-page!/Users/peterfox/Documents/jamieholliday.com/.cache/json/dev-404-page.json"),
+  "offline-plugin-app-shell-fallback.json": require("gatsby-module-loader?name=path---offline-plugin-app-shell-fallback!/Users/peterfox/Documents/jamieholliday.com/.cache/json/offline-plugin-app-shell-fallback.json"),
   "bucket-list.json": require("gatsby-module-loader?name=path---bucket-list!/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "drive-a-digger.json": require("gatsby-module-loader?name=path---drive-a-digger!/Users/peterfox/Documents/jamieholliday.com/.cache/json/drive-a-digger.json"),
   "blog.json": require("gatsby-module-loader?name=path---blog!/Users/peterfox/Documents/jamieholliday.com/.cache/json/blog.json"),
