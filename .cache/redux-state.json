@@ -1,13 +1,19 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
+      "component": "/Users/peterfox/Documents/jamieholliday.com/.cache/dev-404-page.js",
       "path": "/dev-404-page/",
+      "componentChunkName": "page-component---cache-dev-404-page-js",
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
+        "contentDigest": "cebed10a142bbc84603fdbaa9d8dc3f3",
         "owner": "internal-data-bridge"
       }
     },
@@ -1091,13 +1097,15 @@
         "title": "Jamie Holliday - Frontend Developer",
         "author": "Jamie Holliday"
       },
+      "port": "8000",
+      "host": "localhost",
       "pathPrefix": "",
-      "buildTime": "2017-07-19T18:53:54.268Z",
+      "buildTime": "2017-07-19T18:48:31.954Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "d1e41687033c12cf770b3370d7fca665",
+        "contentDigest": "30e0d4da51ba21efeab6f4658e824289",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1430,23 +1438,6 @@
       },
       "fileAbsolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md"
     },
-    "SitePage /offline-plugin-app-shell-fallback/": {
-      "path": "/offline-plugin-app-shell-fallback/",
-      "component": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline/app-shell.js",
-      "componentChunkName": "page-component---node-modules-gatsby-plugin-offline-app-shell-js",
-      "jsonName": "offline-plugin-app-shell-fallback.json",
-      "internalComponentName": "ComponentOfflinePluginAppShellFallback",
-      "context": {},
-      "pluginCreator___NODE": "Plugin gatsby-plugin-offline",
-      "id": "SitePage /offline-plugin-app-shell-fallback/",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "048da71f9983eaa203972b997114b926",
-        "owner": "internal-data-bridge"
-      }
-    },
     "SitePage /bucket-list/": {
       "path": "/bucket-list/",
       "component": "/Users/peterfox/Documents/jamieholliday.com/src/templates/blog-post.js",
@@ -1518,6 +1509,45 @@
         "contentDigest": "91160f20c818456525359c0fbbd61333",
         "owner": "internal-data-bridge"
       }
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "db9b9ca0700189b99a9c07da9e865a17",
+        "mediaType": "application/octet-stream",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME",
+      "relativePath": "CNAME",
+      "extension": "",
+      "size": 17,
+      "prettySize": "17 B",
+      "modifiedTime": "2017-07-19T19:00:59.000Z",
+      "accessTime": "2017-07-19T19:00:59.000Z",
+      "changeTime": "2017-07-19T19:00:59.000Z",
+      "birthTime": "2017-07-19T19:00:59.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+      "base": "CNAME",
+      "ext": "",
+      "name": "CNAME",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74806596,
+      "blocks": 8,
+      "atime": "2017-07-19T19:00:59.000Z",
+      "mtime": "2017-07-19T19:00:59.000Z",
+      "ctime": "2017-07-19T19:00:59.000Z",
+      "birthtime": "2017-07-19T19:00:59.000Z"
     }
   },
   "status": {
