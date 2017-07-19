@@ -1,0 +1,30 @@
+{
+    "data": {
+        "allSitePage": {
+            "totalCount": 4,
+            "edges": [
+                {
+                    "node": {
+                        "path": "/bucket-list/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/drive-a-digger/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/blog/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/"
+                    }
+                }
+            ]
+        }
+    },
+    "pathContext": {}
+}

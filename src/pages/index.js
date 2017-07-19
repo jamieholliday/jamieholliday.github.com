@@ -29,17 +29,26 @@ const S_div_about = styled.div`
   `};
 `;
 
-const S_img_profile = styled.img`
+const S_div_profile = styled.div`
   margin-bottom: 20px;
   width: 300px;
   height: 300px;
-  border: 5px solid ${colours.darkBlue};
-  border-radius: 50%;
   align-self: center;
   flex: 1;
 
   ${media.sm`
     margin: 0 20px 0 0;
+    width: 150px;
+    height: 150px;
+  `};
+`;
+
+const S_img_profile = styled.img`
+  border: 5px solid ${colours.darkBlue};
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  ${media.sm`
     width: 150px;
     height: 150px;
   `};
@@ -87,7 +96,9 @@ class Home extends React.Component {
     return (
       <section>
         <S_div_about>
-          <S_img_profile src={profilePic} alt="Jamie Holliday" />
+          <S_div_profile>
+            <S_img_profile src={profilePic} alt="Jamie Holliday" />
+          </S_div_profile>
           <S_div_copy>
             <p>
               I'm Jamie. I currenty work for{' '}

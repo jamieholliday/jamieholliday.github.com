@@ -1092,12 +1092,12 @@
         "author": "Jamie Holliday"
       },
       "pathPrefix": "",
-      "buildTime": "2017-07-19T18:26:35.477Z",
+      "buildTime": "2017-07-19T18:53:54.268Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "a3bea1e69b43bdda435ae2e6cf2b1238",
+        "contentDigest": "d1e41687033c12cf770b3370d7fca665",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1224,7 +1224,7 @@
       "children": [],
       "parent": "___SOURCE___",
       "internal": {
-        "contentDigest": "f60a7eb9e6c9cc3bfb600880c622be5c",
+        "contentDigest": "cb992e86485f0744fa4545a789e199ae",
         "mediaType": "application/javascript",
         "type": "File",
         "owner": "gatsby-source-filesystem"
@@ -1233,11 +1233,11 @@
       "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js",
       "relativePath": "index.js",
       "extension": "js",
-      "size": 4515,
-      "prettySize": "4.51 kB",
-      "modifiedTime": "2017-07-19T18:04:33.000Z",
-      "accessTime": "2017-07-19T18:26:38.000Z",
-      "changeTime": "2017-07-19T18:04:33.000Z",
+      "size": 4709,
+      "prettySize": "4.71 kB",
+      "modifiedTime": "2017-07-19T18:53:18.000Z",
+      "accessTime": "2017-07-19T18:53:18.000Z",
+      "changeTime": "2017-07-19T18:53:18.000Z",
       "birthTime": "2017-07-19T18:04:33.000Z",
       "root": "/",
       "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
@@ -1253,9 +1253,9 @@
       "blksize": 4096,
       "ino": 74800454,
       "blocks": 16,
-      "atime": "2017-07-19T18:26:38.000Z",
-      "mtime": "2017-07-19T18:04:33.000Z",
-      "ctime": "2017-07-19T18:04:33.000Z",
+      "atime": "2017-07-19T18:53:18.000Z",
+      "mtime": "2017-07-19T18:53:18.000Z",
+      "ctime": "2017-07-19T18:53:18.000Z",
       "birthtime": "2017-07-19T18:04:33.000Z"
     },
     "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file": {
@@ -1541,6 +1541,9 @@
     "connections": {
       "MarkdownRemark": [
         "/blog/"
+      ],
+      "SitePage": [
+        "/dev-404-page/"
       ]
     }
   }
