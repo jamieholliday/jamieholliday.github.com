@@ -1,0 +1,1555 @@
+{
+  "nodes": {
+    "SitePage /dev-404-page/": {
+      "component": "/Users/peterfox/Documents/jamieholliday.com/.cache/dev-404-page.js",
+      "path": "/dev-404-page/",
+      "componentChunkName": "page-component---cache-dev-404-page-js",
+      "jsonName": "dev-404-page.json",
+      "internalComponentName": "ComponentDev404Page",
+      "context": {},
+      "pluginCreator___NODE": "Plugin dev-404-page",
+      "id": "SitePage /dev-404-page/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "cebed10a142bbc84603fdbaa9d8dc3f3",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin component-page-creator": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "name": "component-page-creator",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/component-page-creator",
+      "packageJson": {
+        "name": "component-page-creator",
+        "description": "An internal Gatsby plugin that creates pages from component files in src/pages",
+        "version": "1.0.0",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin component-page-creator",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "26e949ea3d5cf3d2a4822d1b284e3991",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin internal-data-bridge": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "name": "internal-data-bridge",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "packageJson": {
+        "name": "internal-data-bridge",
+        "description": "An internal Gatsby plugin which creates data nodes from internal data",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin internal-data-bridge",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "fa4f766e46e2877588f9acdf72a10976",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin dev-404-page": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "name": "dev-404-page",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "packageJson": {
+        "name": "dev-404-page",
+        "description": "Internal plugin to add a 404 page in development with helpful information",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin dev-404-page",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "42957060fa6c49ebca2d7a006ae8283f",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin prod-404": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "name": "prod-404",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "packageJson": {
+        "name": "prod-404",
+        "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin prod-404",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "ae949443edaa284c599c809371ee1c36",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin query-runner": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "name": "query-runner",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "packageJson": {
+        "name": "query-runner",
+        "description": "Internal plugin for running queries",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin query-runner",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "6fa3fab02aaa06616cf1c5b86ae81d05",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-source-filesystem": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-source-filesystem",
+      "name": "gatsby-source-filesystem",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+        "name": "pages"
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-source-filesystem",
+      "packageJson": {
+        "name": "gatsby-source-filesystem",
+        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
+        "version": "1.0.1",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          }
+        ],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-source-filesystem",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "97de2dd4f1dd39870efb0cbb3290a484",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-transformer-remark": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-transformer-remark",
+      "name": "gatsby-transformer-remark",
+      "version": "1.0.9",
+      "pluginOptions": {
+        "plugins": [
+          {
+            "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-images",
+            "name": "gatsby-remark-images",
+            "version": "1.0.1",
+            "pluginOptions": {
+              "plugins": [],
+              "maxWidth": 590,
+              "wrapperStyle": "",
+              "backgroundColor": "white",
+              "quality": 50,
+              "jpegProgressive": true,
+              "pngCompressionLevel": 9,
+              "grayscale": false,
+              "duotone": false,
+              "pathPrefix": "",
+              "toFormat": "",
+              "sizes": "(max-width: 590px) 100vw, 590px"
+            },
+            "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-images"
+          },
+          {
+            "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-responsive-iframe",
+            "name": "gatsby-remark-responsive-iframe",
+            "version": "1.0.1",
+            "pluginOptions": {
+              "plugins": [],
+              "wrapperStyle": "margin-bottom: 1.0725rem"
+            },
+            "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-responsive-iframe"
+          },
+          {
+            "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-prismjs",
+            "name": "gatsby-remark-prismjs",
+            "version": "1.0.1",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-prismjs"
+          },
+          {
+            "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-copy-linked-files",
+            "name": "gatsby-remark-copy-linked-files",
+            "version": "1.0.1",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-copy-linked-files"
+          },
+          {
+            "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-smartypants",
+            "name": "gatsby-remark-smartypants",
+            "version": "1.0.1",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-smartypants"
+          }
+        ]
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-transformer-remark",
+      "packageJson": {
+        "name": "gatsby-transformer-remark",
+        "description": "Gatsby transformer plugin for Markdown using the Remark library and ecosystem",
+        "version": "1.0.9",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "markdown",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "gray-matter",
+            "version": "^2.1.0"
+          },
+          {
+            "name": "hast-util-to-html",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "mdast-util-to-hast",
+            "version": "^2.4.0"
+          },
+          {
+            "name": "remark",
+            "version": "^7.0.1"
+          },
+          {
+            "name": "sanitize-html",
+            "version": "^1.14.1"
+          },
+          {
+            "name": "underscore.string",
+            "version": "^3.3.4"
+          },
+          {
+            "name": "unist-util-select",
+            "version": "^1.5.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.1.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          },
+          {
+            "name": "babel-plugin-transform-object-rest-spread",
+            "version": "^6.20.2"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-transformer-remark",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "53b4f816fe78a01345d727acfb1a2e3d",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-remark-images": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-images",
+      "name": "gatsby-remark-images",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": [],
+        "maxWidth": 590,
+        "wrapperStyle": "",
+        "backgroundColor": "white",
+        "quality": 50,
+        "jpegProgressive": true,
+        "pngCompressionLevel": 9,
+        "grayscale": false,
+        "duotone": false,
+        "pathPrefix": "",
+        "toFormat": "",
+        "sizes": "(max-width: 590px) 100vw, 590px"
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-images",
+      "packageJson": {
+        "name": "gatsby-remark-images",
+        "description": "Processes images in markdown so they can be used in the production build.",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "markdown",
+          "remark",
+          "image",
+          "responsive images"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.1"
+          },
+          {
+            "name": "image-size",
+            "version": "^0.5.1"
+          },
+          {
+            "name": "is-relative-url",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "unist-util-select",
+            "version": "^1.5.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-remark-images",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "0028f90d5f7af8476c1b5375910e6e5e",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-remark-responsive-iframe": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-responsive-iframe",
+      "name": "gatsby-remark-responsive-iframe",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": [],
+        "wrapperStyle": "margin-bottom: 1.0725rem"
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-responsive-iframe",
+      "packageJson": {
+        "name": "gatsby-remark-responsive-iframe",
+        "description": "Make iframes in Markdown processed by Remark responsive",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "cheerio",
+            "version": "^0.22.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.1.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-remark-responsive-iframe",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "39b58d6c020e874729464003dc652305",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-remark-prismjs": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-prismjs",
+      "name": "gatsby-remark-prismjs",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-prismjs",
+      "packageJson": {
+        "name": "gatsby-remark-prismjs",
+        "description": "Adds syntax highlighting to code blocks at build time using PrismJS",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "prismjs",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "parse-numeric-range",
+            "version": "^0.0.2"
+          },
+          {
+            "name": "prismjs",
+            "version": "^1.6.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.1.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-remark-prismjs",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "0fe367dea990aeb38e2d623c454dee41",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-remark-copy-linked-files": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-copy-linked-files",
+      "name": "gatsby-remark-copy-linked-files",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-copy-linked-files",
+      "packageJson": {
+        "name": "gatsby-remark-copy-linked-files",
+        "description": "Find files which are linked to from markdown and copy them to the public directory",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "prismjs",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.1"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^3.0.1"
+          },
+          {
+            "name": "is-relative-url",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.1.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-remark-copy-linked-files",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "ad8dfce32adc94f002b6b1749e0769ec",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-remark-smartypants": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-smartypants",
+      "name": "gatsby-remark-smartypants",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-remark-smartypants",
+      "packageJson": {
+        "name": "gatsby-remark-smartypants",
+        "description": "Use retext-smartypants to auto-enhance typography of markdown",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "smartypants"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "retext",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "retext-smartypants",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.1.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-remark-smartypants",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "46c63527cc82f24338d04ed84e7e676c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-styled-components": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-styled-components",
+      "name": "gatsby-plugin-styled-components",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-styled-components",
+      "packageJson": {
+        "name": "gatsby-plugin-styled-components",
+        "description": "Gatsby plugin to add support for styled components",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "styled-components"
+        ],
+        "author": "Guten Ye <ywzhaifei@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "styled-components",
+            "version": "^2.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-plugin-styled-components",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "3c8732ea5f40955e5139c9b2a719cb05",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-transformer-sharp": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-transformer-sharp",
+      "name": "gatsby-transformer-sharp",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-transformer-sharp",
+      "packageJson": {
+        "name": "gatsby-transformer-sharp",
+        "description": "Gatsby transformer plugin for images using Sharp",
+        "version": "1.0.1",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "sharp",
+          "image"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-transformer-sharp",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "2994e7a4af184086fd8b91681fd422f4",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-sharp": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-sharp",
+      "name": "gatsby-plugin-sharp",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-sharp",
+      "packageJson": {
+        "name": "gatsby-plugin-sharp",
+        "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "image",
+          "sharp"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "async",
+            "version": "^2.4.1"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "image-size",
+            "version": "^0.5.1"
+          },
+          {
+            "name": "imagemin",
+            "version": "^5.2.2"
+          },
+          {
+            "name": "imagemin-pngquant",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.4"
+          },
+          {
+            "name": "progress",
+            "version": "^1.1.8"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.17.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-plugin-sharp",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "d390f9f08807e32b3f15d61b0b73f73e",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-google-analytics": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-google-analytics",
+      "name": "gatsby-plugin-google-analytics",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-google-analytics",
+      "packageJson": {
+        "name": "gatsby-plugin-google-analytics",
+        "description": "Gatsby plugin to add google analytics onto a site",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "google analytics"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "dependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-plugin-google-analytics",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "c4fa3b2e24346fc58574a43f336abb18",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-offline": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline",
+      "name": "gatsby-plugin-offline",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-offline",
+      "packageJson": {
+        "name": "gatsby-plugin-offline",
+        "description": "Gatsby plugin which sets up a site to be able to run offline",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "offline",
+          "precache",
+          "service-worker"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "sw-precache",
+            "version": "^5.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-plugin-offline",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "a53128da1a68c27d41231e4325947723",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-react-helmet": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-react-helmet",
+      "name": "gatsby-plugin-react-helmet",
+      "version": "1.0.1",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com/node_modules/gatsby-plugin-react-helmet",
+      "packageJson": {
+        "name": "gatsby-plugin-react-helmet",
+        "description": "Stub description for gatsby-plugin-react-helmet",
+        "version": "1.0.1",
+        "main": "index.js",
+        "keywords": [
+          "gatsby"
+        ],
+        "author": "Kyle Mathews &lt;mathews.kyle@gmail.com&gt;",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "react-helmet",
+            "version": "^5.1.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "babel-cli",
+            "version": "^6.24.1"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin gatsby-plugin-react-helmet",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "7cfec59380443d59540370fabdd906c4",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin default-site-plugin": {
+      "resolve": "/Users/peterfox/Documents/jamieholliday.com",
+      "name": "default-site-plugin",
+      "version": "ab997495d746e7bb011f56516b81cfdd",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "pluginFilepath": "/Users/peterfox/Documents/jamieholliday.com",
+      "packageJson": {
+        "name": "gatsby-starter-blog",
+        "description": "Starter Gatsby Blog",
+        "version": "1.0.0",
+        "main": "n/a",
+        "keywords": [
+          "gatsby"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "gatsby",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-link",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-google-analytics",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-manifest",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-offline",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-preact",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-react-helmet",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-plugin-styled-components",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "gatsby-remark-copy-linked-files",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-remark-images",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-remark-prismjs",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-remark-responsive-iframe",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-remark-smartypants",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-source-filesystem",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-transformer-remark",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "gatsby-transformer-sharp",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.15.0"
+          },
+          {
+            "name": "styled-components",
+            "version": "^2.1.1"
+          },
+          {
+            "name": "typeface-raleway",
+            "version": "^0.0.31"
+          },
+          {
+            "name": "typography",
+            "version": "^0.15.8"
+          },
+          {
+            "name": "typography-theme-wordpress-2016",
+            "version": "^0.15.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "gh-pages",
+            "version": "^0.12.0"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "id": "Plugin default-site-plugin",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "84a7205074d19fb05f5c9bce567ba796",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Site": {
+      "siteMetadata": {
+        "title": "Jamie Holliday - Frontend Developer",
+        "author": "Jamie Holliday"
+      },
+      "port": "8000",
+      "host": "localhost",
+      "buildTime": "2017-07-19T07:49:41.190Z",
+      "id": "Site",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "7759429cccfee2b4592b47b992be78b6",
+        "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "130d7a69c8c102438f2bf8dc149da898",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js",
+      "relativePath": "blog.js",
+      "extension": "js",
+      "size": 1919,
+      "prettySize": "1.92 kB",
+      "modifiedTime": "2017-07-18T17:03:25.000Z",
+      "accessTime": "2017-07-18T17:03:26.000Z",
+      "changeTime": "2017-07-18T17:03:25.000Z",
+      "birthTime": "2017-07-12T17:23:27.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+      "base": "blog.js",
+      "ext": ".js",
+      "name": "blog",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74453730,
+      "blocks": 8,
+      "atime": "2017-07-18T17:03:26.000Z",
+      "mtime": "2017-07-18T17:03:25.000Z",
+      "ctime": "2017-07-18T17:03:25.000Z",
+      "birthtime": "2017-07-12T17:23:27.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "f60a7eb9e6c9cc3bfb600880c622be5c",
+        "mediaType": "application/javascript",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js",
+      "relativePath": "index.js",
+      "extension": "js",
+      "size": 4515,
+      "prettySize": "4.51 kB",
+      "modifiedTime": "2017-07-18T17:59:35.000Z",
+      "accessTime": "2017-07-18T17:59:35.000Z",
+      "changeTime": "2017-07-18T17:59:35.000Z",
+      "birthTime": "2017-07-11T13:59:24.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+      "base": "index.js",
+      "ext": ".js",
+      "name": "index",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74074487,
+      "blocks": 16,
+      "atime": "2017-07-18T17:59:35.000Z",
+      "mtime": "2017-07-18T17:59:35.000Z",
+      "ctime": "2017-07-18T17:59:35.000Z",
+      "birthtime": "2017-07-11T13:59:24.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/favicon.ico absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/favicon.ico absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "4d03042820907c8a538fae73e87cae15",
+        "mediaType": "image/x-icon",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/favicon.ico",
+      "relativePath": "favicon.ico",
+      "extension": "ico",
+      "size": 1001,
+      "prettySize": "1 kB",
+      "modifiedTime": "2017-07-13T07:54:26.000Z",
+      "accessTime": "2017-07-13T07:55:31.000Z",
+      "changeTime": "2017-07-13T07:55:31.000Z",
+      "birthTime": "2017-07-13T07:54:26.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+      "base": "favicon.ico",
+      "ext": ".ico",
+      "name": "favicon",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74461618,
+      "blocks": 8,
+      "atime": "2017-07-13T07:55:31.000Z",
+      "mtime": "2017-07-13T07:54:26.000Z",
+      "ctime": "2017-07-13T07:55:31.000Z",
+      "birthtime": "2017-07-13T07:54:26.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/robots.txt absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/robots.txt absPath of file",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+        "mediaType": "text/plain",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/robots.txt",
+      "relativePath": "robots.txt",
+      "extension": "txt",
+      "size": 24,
+      "prettySize": "24 B",
+      "modifiedTime": "2017-07-11T14:52:33.000Z",
+      "accessTime": "2017-07-12T18:43:18.000Z",
+      "changeTime": "2017-07-11T14:52:33.000Z",
+      "birthTime": "2017-07-11T14:52:33.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
+      "base": "robots.txt",
+      "ext": ".txt",
+      "name": "robots",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74224388,
+      "blocks": 8,
+      "atime": "2017-07-12T18:43:18.000Z",
+      "mtime": "2017-07-11T14:52:33.000Z",
+      "ctime": "2017-07-11T14:52:33.000Z",
+      "birthtime": "2017-07-11T14:52:33.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file",
+      "children": [
+        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "002d5227a14e07832f798801da41a295",
+        "mediaType": "text/x-markdown",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md",
+      "relativePath": "17-06-2017-bucketlist/index.md",
+      "extension": "md",
+      "size": 3616,
+      "prettySize": "3.62 kB",
+      "modifiedTime": "2017-07-19T07:55:37.000Z",
+      "accessTime": "2017-07-19T07:55:37.000Z",
+      "changeTime": "2017-07-19T07:55:37.000Z",
+      "birthTime": "2017-07-11T14:52:33.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74224380,
+      "blocks": 8,
+      "atime": "2017-07-19T07:55:37.000Z",
+      "mtime": "2017-07-19T07:55:37.000Z",
+      "ctime": "2017-07-19T07:55:37.000Z",
+      "birthtime": "2017-07-11T14:52:33.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file",
+      "internal": {
+        "content": "---\ntitle: Bucket List\ndate: \"2017-06-17T22:12:03.284Z\"\nlayout: post\nreadNext: \"/my-second-post/\"\npath: \"/bucket-list/\"\n---\n\nMy last birthday was one of the bigger ones. 40 years old. While I wasn't particulary sad at turning 40 it did make be think about all the things I'd accomplished so far and about how I thought I may have achieved a few other goals by this age.\n\nWith that in mind I got thinking about the next 10 year block and how I could make that as enjoyable, productive and fulfilling as possible.\n\nI decidied to compose a bucket list, normally a list of things you hope to do in your lifetime, instead this one would be limited to 100 items and a timeframe of 10 years.\n\nI figured that if I knock off all 100 things on this list I'm going to have some good stories to talk about on my 50th birthday.\n\nSuper simple maths - 100 items in ten years is 10 per year so aprox 1 a month with a couple months left out. \n\nSome of the items are much harder/larger than others and will take a whole bunch of effort to achieve. Some can probably be batched up a few at a time etc, some are simple things that maybe easy to achieve but for whatever reason I've no goten around to completing them thus far.\n\nHere is the list:\n\n* Stand under a waterfall\n* Arrive be seaplane\n* Catch a wave surfing\n* Mush a dog sled\n* Travel on a Zip line\n* Do a Backflip\n* Go Fatbiking\n* Paddle board on a warm ocean\n* Go in a submarine\n* Drive a tank\n* Drive a rally car\n* Drive a supercar\n* Fly in a helicopter\n* Learn to scuba dive\n* Walk a rope bridge\n* Zorbing\n* Feed/Wash an elephant\n* Climb a volcano\n* Relax in a natural hot spring\n* Sleep in an igloo\n* Visit the ice hotel\n* Start a fire by rubbing sticks together\n* Swim with sea turtles\n* **Drive a digger - [Done](/drive-a-digger)**\n* See the northern lights\n* Live by the sea\n* Meet someone famous - (define this)\n* Have a book published\n* Create a family tree\n* Learn to carve wood\n* Make pottery on a wheel\n* Be in a TV show audience\n* Be an extra in a film\n* Fly first/business class\n* See a ted talk live\n* Watch the Hakka live\n* See a live Wimbledon match\n* Set a guinness world record\n* Watch a rocket launch\n* Go in a sensory deprivation tank\n* Take a mud bath\n* Catch, cook and eat a fish\n* Create an ice sculpture\n* Create a signature dish\n* Eat a 10 course meal\n* Eat an insect\n* Eat at a michelin 3-star restaurant\n* Eat fondue\n* Learn a song on the piano \n* Make cheese\n* Make my own wine\n* Stomp grapes\n* Have cooking lesson from a famous chef\n* Eat a deep fried mars bar\n* Do random act of kindness\n* Give blood\n* Help someone complete something on their bucket list\n* Learn to speak another language\n* 2 min Handstand\n* One arm hand stand\n* One arm chin up\n* Planche\n* Manna\n* Iron cross\n* Front lever\n* Side lever\n* Go deep sea fishing\n* Shoot a machine gun\n* Ride a snowmobile\n* Drive speed boat\n* Have a go on a Jetski\n* Ride a Segway\n* Drive a dune buggy\n* Spend Xmas in the snow\n* Spend Xmas in the sun\n* Road trip around Europe\n* Sleep in a treehouse\n* Stay at an underwater hotel\n* Visit New Zealand\n* Stay in a Water bungalow\n* Trip to Vegas\n* See the Grand canyon\n* Visit the Hover damn\n* Holiday in Bali\n* Go to San Francisco\n* Run the Rocky Steps in Philadelphia \n* Relax in the Blue lagoon in Iceland\n* Take the Guinness Brewery tour in Dublin\n* Zero gravity plane ride\n* Sell some wood creations I made\n* Climb Snowdon\n* Volunteer \n* Take a photo every day for a year\n* Go to watch gymnastics \n* Watch strongman competition \n* Wedding reunion in Cyprus \n* Learn to dive into water\n* Donate a bench with your name on it\n* Watch a demolition\n\n\n",
+        "contentDigest": "51634353ba29e002accf4c46730a2130",
+        "type": "MarkdownRemark",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "Bucket List",
+        "date": "2017-06-17T22:12:03.284Z",
+        "layout": "post",
+        "readNext": "/my-second-post/",
+        "path": "/bucket-list/",
+        "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file"
+      },
+      "fileAbsolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file",
+      "children": [
+        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "71398f35e56a75e49e6d77a726ea514c",
+        "mediaType": "text/x-markdown",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md",
+      "relativePath": "17-07-2017-drive-a-digger/index.md",
+      "extension": "md",
+      "size": 1710,
+      "prettySize": "1.71 kB",
+      "modifiedTime": "2017-07-19T08:10:36.000Z",
+      "accessTime": "2017-07-19T08:10:36.000Z",
+      "changeTime": "2017-07-19T08:10:36.000Z",
+      "birthTime": "2017-07-19T07:47:09.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74779112,
+      "blocks": 8,
+      "atime": "2017-07-19T08:10:36.000Z",
+      "mtime": "2017-07-19T08:10:36.000Z",
+      "ctime": "2017-07-19T08:10:36.000Z",
+      "birthtime": "2017-07-19T07:47:09.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark",
+      "children": [],
+      "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file",
+      "internal": {
+        "content": "---\ntitle: Drive a Digger\ndate: \"2017-07-17T22:12:03.284Z\"\nlayout: post\npath: \"/drive-a-digger/\"\n---\n\n![Digger](./drive-a-digger.jpg)\n\n## First item ticked off the list!\n\nFor as long as I can remember I have wanted to drive a big digger. Everytime I drove past one on a building site I'd mention to anyone else in the car at the time that I wanted to have a go.\n\nSo as a birthday present my wife bought me 90min lesson with one to one instruction at DiggerLand in Kent\n\nIt was a really good experience. After some basic instruction about what the controls were and a little practice in a coned off area I then got to drive to the 'digging area'. \n\nThe ride in this thing is bumpy and jerky and it takes a while to get where it is going but I'm pleased I got to move it to the digging spot.\n\nFrom there the instructor gave me some more pointers again of the basic controls and I got to spend 10-15 mins doing some basic digging.\n\nABout every 10 mins the instructor would jump back in the cab and give a few more pointer on digging technique, trying to smoothly uses the controls in conjuntion with each other to get an efficient action. \n\nWe also went over how to backfill and level the areas that we dug.\n\nThere was a final challenge at the end to dig the biggest hole I could in 5 mins followed by filling it back in and making it smooth again within the same timeframe.\n\nAll in all I very enjoyable day being a big kid and achieving something I always wanted to do.\n\n## Whats Next?\n\nThe next things on the list I have planned are riding the fastest zip line in the world and the longest in Europe (currently) in North Wales. If the weather permits we are also planning walking up Snowdon in the same weekend.",
+        "contentDigest": "79bb2ff85acaacbe2f7571478ca00e3d",
+        "type": "MarkdownRemark",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "Drive a Digger",
+        "date": "2017-07-17T22:12:03.284Z",
+        "layout": "post",
+        "path": "/drive-a-digger/",
+        "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file"
+      },
+      "fileAbsolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md"
+    },
+    "SitePage /bucket-list/": {
+      "path": "/bucket-list/",
+      "component": "/Users/peterfox/Documents/jamieholliday.com/src/templates/blog-post.js",
+      "context": {
+        "path": "/bucket-list/"
+      },
+      "componentChunkName": "page-component---src-templates-blog-post-js",
+      "jsonName": "bucket-list.json",
+      "internalComponentName": "ComponentBucketList",
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "id": "SitePage /bucket-list/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "d71b87b6c5b4c2327c4499f2ae0c0b3d",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /drive-a-digger/": {
+      "path": "/drive-a-digger/",
+      "component": "/Users/peterfox/Documents/jamieholliday.com/src/templates/blog-post.js",
+      "context": {
+        "path": "/drive-a-digger/"
+      },
+      "componentChunkName": "page-component---src-templates-blog-post-js",
+      "jsonName": "drive-a-digger.json",
+      "internalComponentName": "ComponentDriveADigger",
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "id": "SitePage /drive-a-digger/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "948aac9304cf98dffbc2321dbbafea52",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /blog/": {
+      "path": "/blog/",
+      "component": "/Users/peterfox/Documents/jamieholliday.com/src/pages/blog.js",
+      "componentChunkName": "page-component---src-pages-blog-js",
+      "jsonName": "blog.json",
+      "internalComponentName": "ComponentBlog",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "id": "SitePage /blog/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "5010326a37d460073a60eec0eb6038d6",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "path": "/",
+      "component": "/Users/peterfox/Documents/jamieholliday.com/src/pages/index.js",
+      "componentChunkName": "page-component---src-pages-index-js",
+      "jsonName": "index.json",
+      "internalComponentName": "ComponentIndex",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "id": "SitePage /",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "91160f20c818456525359c0fbbd61333",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
+      "children": [
+        "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
+        "mediaType": "image/jpeg",
+        "type": "File",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "pages",
+      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg",
+      "relativePath": "17-07-2017-drive-a-digger/drive-a-digger.jpg",
+      "extension": "jpg",
+      "size": 221907,
+      "prettySize": "222 kB",
+      "modifiedTime": "2017-07-19T07:52:59.000Z",
+      "accessTime": "2017-07-19T07:52:59.000Z",
+      "changeTime": "2017-07-19T07:52:59.000Z",
+      "birthTime": "2017-07-19T07:52:59.000Z",
+      "root": "/",
+      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger",
+      "base": "drive-a-digger.jpg",
+      "ext": ".jpg",
+      "name": "drive-a-digger",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 74779843,
+      "blocks": 440,
+      "atime": "2017-07-19T07:52:59.000Z",
+      "mtime": "2017-07-19T07:52:59.000Z",
+      "ctime": "2017-07-19T07:52:59.000Z",
+      "birthtime": "2017-07-19T07:52:59.000Z"
+    },
+    "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp": {
+      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file >> ImageSharp",
+      "children": [],
+      "parent": "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/drive-a-digger.jpg absPath of file",
+      "internal": {
+        "contentDigest": "e98b12c7a43af876214f9563f98d9b04",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    }
+  },
+  "status": {
+    "plugins": {},
+    "PLUGINS_HASH": "6369403cd6188fe725cb548e1d9fcc67"
+  },
+  "pageDataDependencies": {
+    "nodes": {
+      "Site": [
+        "/hello-world/",
+        "/my-second-post/",
+        "/hi-folks/",
+        "/",
+        "/blog/",
+        "/bucket-list/",
+        "/drive-a-digger/"
+      ],
+      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-01-hello-world/index.md absPath of file >>> MarkdownRemark": [
+        "/hello-world/"
+      ],
+      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-06-my-second-post/index.md absPath of file >>> MarkdownRemark": [
+        "/my-second-post/"
+      ],
+      "/Users/peterfox/Documents/jamieholliday.com/src/pages/2015-05-28-hi-folks/index.md absPath of file >>> MarkdownRemark": [
+        "/hi-folks/"
+      ],
+      "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-06-2017-bucketlist/index.md absPath of file >>> MarkdownRemark": [
+        "/bucket-list/",
+        "/drive-a-digger/"
+      ],
+      "/Users/peterfox/Documents/jamieholliday.com/src/pages/17-07-2017-drive-a-digger/index.md absPath of file >>> MarkdownRemark": [
+        "/drive-a-digger/"
+      ]
+    },
+    "connections": {
+      "SitePage": [
+        "/dev-404-page/"
+      ],
+      "MarkdownRemark": [
+        "/",
+        "/blog/"
+      ]
+    }
+  }
+}

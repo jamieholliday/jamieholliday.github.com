@@ -1,0 +1,27 @@
+[
+    {
+        "componentChunkName": "page-component---cache-dev-404-page-js",
+        "jsonName": "dev-404-page.json",
+        "path": "/dev-404-page/"
+    },
+    {
+        "componentChunkName": "page-component---src-templates-blog-post-js",
+        "jsonName": "bucket-list.json",
+        "path": "/bucket-list/"
+    },
+    {
+        "componentChunkName": "page-component---src-templates-blog-post-js",
+        "jsonName": "drive-a-digger.json",
+        "path": "/drive-a-digger/"
+    },
+    {
+        "componentChunkName": "page-component---src-pages-blog-js",
+        "jsonName": "blog.json",
+        "path": "/blog/"
+    },
+    {
+        "componentChunkName": "page-component---src-pages-index-js",
+        "jsonName": "index.json",
+        "path": "/"
+    }
+]
