@@ -36,6 +36,7 @@ const S_img_profile = styled.img`
   border: 5px solid ${colours.darkBlue};
   border-radius: 50%;
   align-self: center;
+  flex: 1;
 
   ${media.sm`
     margin: 0 20px 0 0;
