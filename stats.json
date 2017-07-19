@@ -1,0 +1,52 @@
+{
+  "assetsByChunkName": {
+    "commons": [
+      "commons-253cae0a75d970a96b92.js",
+      "commons-253cae0a75d970a96b92.js.map"
+    ],
+    "layout-component---index": [
+      "layout-component---index-dce493435c3ee6be4fc0.js",
+      "layout-component---index-dce493435c3ee6be4fc0.js.map"
+    ],
+    "page-component---src-pages-index-js": [
+      "page-component---src-pages-index-js-5fcd6169bec24bce55ce.js",
+      "page-component---src-pages-index-js-5fcd6169bec24bce55ce.js.map"
+    ],
+    "page-component---src-pages-blog-js": [
+      "page-component---src-pages-blog-js-a8bd9fdabb77a0cdef43.js",
+      "page-component---src-pages-blog-js-a8bd9fdabb77a0cdef43.js.map"
+    ],
+    "page-component---src-templates-blog-post-js": [
+      "page-component---src-templates-blog-post-js-12f8cfb64150c1a42d37.js",
+      "page-component---src-templates-blog-post-js-12f8cfb64150c1a42d37.js.map"
+    ],
+    "path---offline-plugin-app-shell-fallback": [
+      "path---offline-plugin-app-shell-fallback-586c7e095e534a3909ec.js",
+      "path---offline-plugin-app-shell-fallback-586c7e095e534a3909ec.js.map"
+    ],
+    "path---index": [
+      "path---index-586c7e095e534a3909ec.js",
+      "path---index-586c7e095e534a3909ec.js.map"
+    ],
+    "path---drive-a-digger": [
+      "path---drive-a-digger-e13f27e026fefedee8e6.js",
+      "path---drive-a-digger-e13f27e026fefedee8e6.js.map"
+    ],
+    "path---bucket-list": [
+      "path---bucket-list-215c4f84be84b51cabfe.js",
+      "path---bucket-list-215c4f84be84b51cabfe.js.map"
+    ],
+    "path---blog": [
+      "path---blog-84e84ed6bfff5a778dbb.js",
+      "path---blog-84e84ed6bfff5a778dbb.js.map"
+    ],
+    "page-component---node-modules-gatsby-plugin-offline-app-shell-js": [
+      "page-component---node-modules-gatsby-plugin-offline-app-shell-js-4f0dddda43ae15168f16.js",
+      "page-component---node-modules-gatsby-plugin-offline-app-shell-js-4f0dddda43ae15168f16.js.map"
+    ],
+    "app": [
+      "app-41bf06748ad429d0dd77.js",
+      "app-41bf06748ad429d0dd77.js.map"
+    ]
+  }
+}

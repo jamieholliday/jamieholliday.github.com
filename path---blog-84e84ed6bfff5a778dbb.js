@@ -1,0 +1,2 @@
+webpackJsonp([9],{"./node_modules/json-loader/index.js!./.cache/json/blog.json":function(e,t){e.exports={data:{site:{siteMetadata:{title:"Jamie Holliday - Frontend Developer"}},allMarkdownRemark:{edges:[{node:{frontmatter:{path:"/drive-a-digger/",date:"2017-07-17T22:12:03.284Z",title:"Drive a Digger"}}},{node:{frontmatter:{path:"/bucket-list/",date:"2017-06-17T22:12:03.284Z",title:"Bucket List"}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---blog-84e84ed6bfff5a778dbb.js.map
