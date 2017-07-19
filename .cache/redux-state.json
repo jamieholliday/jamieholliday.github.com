@@ -1509,45 +1509,6 @@
         "contentDigest": "91160f20c818456525359c0fbbd61333",
         "owner": "internal-data-bridge"
       }
-    },
-    "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME absPath of file": {
-      "id": "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME absPath of file",
-      "children": [],
-      "parent": "___SOURCE___",
-      "internal": {
-        "contentDigest": "db9b9ca0700189b99a9c07da9e865a17",
-        "mediaType": "application/octet-stream",
-        "type": "File",
-        "owner": "gatsby-source-filesystem"
-      },
-      "sourceInstanceName": "pages",
-      "absolutePath": "/Users/peterfox/Documents/jamieholliday.com/src/pages/CNAME",
-      "relativePath": "CNAME",
-      "extension": "",
-      "size": 17,
-      "prettySize": "17 B",
-      "modifiedTime": "2017-07-19T19:00:59.000Z",
-      "accessTime": "2017-07-19T19:00:59.000Z",
-      "changeTime": "2017-07-19T19:00:59.000Z",
-      "birthTime": "2017-07-19T19:00:59.000Z",
-      "root": "/",
-      "dir": "/Users/peterfox/Documents/jamieholliday.com/src/pages",
-      "base": "CNAME",
-      "ext": "",
-      "name": "CNAME",
-      "dev": 16777220,
-      "mode": 33188,
-      "nlink": 1,
-      "uid": 501,
-      "gid": 20,
-      "rdev": 0,
-      "blksize": 4096,
-      "ino": 74806596,
-      "blocks": 8,
-      "atime": "2017-07-19T19:00:59.000Z",
-      "mtime": "2017-07-19T19:00:59.000Z",
-      "ctime": "2017-07-19T19:00:59.000Z",
-      "birthtime": "2017-07-19T19:00:59.000Z"
     }
   },
   "status": {
