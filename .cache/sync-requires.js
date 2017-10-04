@@ -11,8 +11,8 @@ exports.components = {
 
 exports.json = {
   "offline-plugin-app-shell-fallback.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/offline-plugin-app-shell-fallback.json"),
-  "bucket-list.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "drive-a-digger.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/drive-a-digger.json"),
+  "bucket-list.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "blog.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/blog.json"),
   "index.json": require("/Users/peterfox/Documents/jamieholliday.com/.cache/json/index.json")
 }

@@ -6,13 +6,13 @@
     },
     {
         "componentChunkName": "page-component---src-templates-blog-post-js",
-        "jsonName": "bucket-list.json",
-        "path": "/bucket-list/"
+        "jsonName": "drive-a-digger.json",
+        "path": "/drive-a-digger/"
     },
     {
         "componentChunkName": "page-component---src-templates-blog-post-js",
-        "jsonName": "drive-a-digger.json",
-        "path": "/drive-a-digger/"
+        "jsonName": "bucket-list.json",
+        "path": "/bucket-list/"
     },
     {
         "componentChunkName": "page-component---src-pages-blog-js",

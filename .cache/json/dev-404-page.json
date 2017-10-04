@@ -5,12 +5,12 @@
             "edges": [
                 {
                     "node": {
-                        "path": "/bucket-list/"
+                        "path": "/drive-a-digger/"
                     }
                 },
                 {
                     "node": {
-                        "path": "/drive-a-digger/"
+                        "path": "/bucket-list/"
                     }
                 },
                 {

@@ -10,8 +10,8 @@ exports.components = {
 
 exports.json = {
   "offline-plugin-app-shell-fallback.json": require("gatsby-module-loader?name=path---offline-plugin-app-shell-fallback!/Users/peterfox/Documents/jamieholliday.com/.cache/json/offline-plugin-app-shell-fallback.json"),
-  "bucket-list.json": require("gatsby-module-loader?name=path---bucket-list!/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "drive-a-digger.json": require("gatsby-module-loader?name=path---drive-a-digger!/Users/peterfox/Documents/jamieholliday.com/.cache/json/drive-a-digger.json"),
+  "bucket-list.json": require("gatsby-module-loader?name=path---bucket-list!/Users/peterfox/Documents/jamieholliday.com/.cache/json/bucket-list.json"),
   "blog.json": require("gatsby-module-loader?name=path---blog!/Users/peterfox/Documents/jamieholliday.com/.cache/json/blog.json"),
   "index.json": require("gatsby-module-loader?name=path---index!/Users/peterfox/Documents/jamieholliday.com/.cache/json/index.json")
 }
