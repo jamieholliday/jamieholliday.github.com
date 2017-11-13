@@ -1,0 +1,1 @@
+Personal website for jamieholliday.com built using next.js static site
