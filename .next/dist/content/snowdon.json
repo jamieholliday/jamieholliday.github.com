@@ -1,0 +1,13 @@
+{
+  "title": "Snowdon",
+  "date": "2017-08-16T22:12:03.284Z",
+  "layout": "post",
+  "path": "/snowdon/",
+  "bodyContent": "climbing up snowdon",
+  "bodyHtml": "<p>climbing up snowdon</p>\n",
+  "dir": "content",
+  "base": "snowdon.json",
+  "ext": ".json",
+  "sourceBase": "snowdon.md",
+  "sourceExt": ".md"
+}

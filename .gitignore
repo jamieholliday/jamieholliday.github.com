@@ -1,5 +1,0 @@
-logs/*
-.DS_Store
-node_modules/
-dist/main.css
-public/
