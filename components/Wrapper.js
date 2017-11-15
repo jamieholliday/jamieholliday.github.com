@@ -48,6 +48,10 @@ injectGlobal`
     margin-bottom: 10px;
     list-style: initial; 
   }
+
+  img {
+    max-width: 100%
+  }
 `;
 
 const S_main = styled.main`
