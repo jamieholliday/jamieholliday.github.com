@@ -44,9 +44,6 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/peterfox/Documents/jamieholliday.com/pages/post.js?entry';
-
-
 var Post = function (_Component) {
   (0, _inherits3.default)(Post, _Component);
 
@@ -61,36 +58,7 @@ var Post = function (_Component) {
     value: function render() {
       var content = this.props.content;
 
-      return _react2.default.createElement(_Wrapper2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, _react2.default.createElement(_head2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 16
-        }
-      }, _react2.default.createElement('title', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        }
-      }, content.title)), _react2.default.createElement('h1', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        }
-      }, content.title), _react2.default.createElement('p', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        }
-      }, (0, _date.fromIso)(content.date)), _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content.bodyHtml }, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        }
-      }));
+      return _react2.default.createElement(_Wrapper2.default, null, _react2.default.createElement(_head2.default, null, _react2.default.createElement('title', null, content.title)), _react2.default.createElement('h1', null, content.title), _react2.default.createElement('p', null, (0, _date.fromIso)(content.date)), _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: content.bodyHtml } }));
     }
   }], [{
     key: 'getInitialProps',
@@ -106,4 +74,3 @@ var Post = function (_Component) {
 }(_react.Component);
 
 exports.default = Post;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL3Bvc3QuanMiXSwibmFtZXMiOlsiQ29tcG9uZW50IiwiSGVhZCIsIldyYXBwZXIiLCJmcm9tSXNvIiwic3R5bGVkIiwiUG9zdCIsImNvbnRlbnQiLCJwcm9wcyIsInRpdGxlIiwiZGF0ZSIsIl9faHRtbCIsImJvZHlIdG1sIiwicXVlcnkiLCJyZXF1aXJlIiwiaWQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBUzs7OztBQUNULEFBQU87Ozs7QUFDUCxBQUFPLEFBQWE7Ozs7QUFDcEIsQUFBUyxBQUFlOztBQUN4QixBQUFPOzs7Ozs7Ozs7SUFFRCxBOzs7Ozs7Ozs7Ozs2QkFLSztVQUFBLEFBQ0MsVUFBWSxLQURiLEFBQ2tCLE1BRGxCLEFBQ0MsQUFDUjs7NkJBQ0UsQUFBQzs7b0JBQUQ7c0JBQUEsQUFDRTtBQURGO0FBQUEsT0FBQSxrQkFDRSxBQUFDOztvQkFBRDtzQkFBQSxBQUNFO0FBREY7QUFBQSx5QkFDRSxjQUFBOztvQkFBQTtzQkFBQSxBQUFRO0FBQVI7QUFBQSxpQkFGSixBQUNFLEFBQ0UsQUFBZ0IsQUFFbEIseUJBQUEsY0FBQTs7b0JBQUE7c0JBQUEsQUFBSztBQUFMO0FBQUEsaUJBSkYsQUFJRSxBQUFhLEFBQ2Isd0JBQUEsY0FBQTs7b0JBQUE7c0JBQUEsQUFBSTtBQUFKO0FBQUEsNEJBQVksUUFMZCxBQUtFLEFBQUksQUFBZ0IsQUFDcEIsK0NBQUsseUJBQXlCLEVBQUUsUUFBUSxRQUF4QyxBQUE4QixBQUFrQjtvQkFBaEQ7c0JBUEosQUFDRSxBQU1FLEFBR0w7QUFISzs7Ozs7MENBYjRCO1VBQVQsQUFBUyxhQUFULEFBQVMsQUFDaEM7O1VBQU0sVUFBVSx3QkFBc0IsTUFBdEIsQUFBNEIsS0FBNUMsQUFDQTthQUFPLEVBQUUsSUFBSSxNQUFOLEFBQVksSUFBSSxTQUF2QixBQUFPLEFBQ1I7Ozs7O0FBSmdCLEEsQUFvQm5COztrQkFBQSxBQUFlIiwiZmlsZSI6InBvc3QuanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL3BldGVyZm94L0RvY3VtZW50cy9qYW1pZWhvbGxpZGF5LmNvbSJ9
