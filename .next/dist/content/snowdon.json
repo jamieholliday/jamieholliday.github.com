@@ -1,10 +1,10 @@
 {
   "title": "Snowdon",
-  "date": "2017-08-16T22:12:03.284Z",
+  "date": "2017-09-16T22:12:03.284Z",
   "layout": "post",
   "path": "/snowdon/",
-  "bodyContent": "climbing up snowdon",
-  "bodyHtml": "<p>climbing up snowdon</p>\n",
+  "bodyContent": "## First item ticked off the list!",
+  "bodyHtml": "<h2 id=\"first-item-ticked-off-the-list-\">First item ticked off the list!</h2>\n",
   "dir": "content",
   "base": "snowdon.json",
   "ext": ".json",

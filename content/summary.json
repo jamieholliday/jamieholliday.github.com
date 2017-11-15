@@ -16,7 +16,7 @@
       "title": "Drive a Digger",
       "date": "2017-07-17T22:12:03.284Z",
       "layout": "post",
-      "path": "/drive-a-digger/",
+      "path": "/drive-a-digger",
       "dir": "content",
       "base": "drive-a-digger.json",
       "ext": ".json",
@@ -25,7 +25,7 @@
     },
     "content/snowdon.json": {
       "title": "Snowdon",
-      "date": "2017-08-16T22:12:03.284Z",
+      "date": "2017-09-16T22:12:03.284Z",
       "layout": "post",
       "path": "/snowdon/",
       "dir": "content",
@@ -33,11 +33,23 @@
       "ext": ".json",
       "sourceBase": "snowdon.md",
       "sourceExt": ".md"
+    },
+    "content/zipworld.json": {
+      "title": "Zipworld Velocity",
+      "date": "2017-09-15T22:12:03.284Z",
+      "layout": "post",
+      "path": "/velocity",
+      "dir": "content",
+      "base": "zipworld.json",
+      "ext": ".json",
+      "sourceBase": "zipworld.md",
+      "sourceExt": ".md"
     }
   },
   "sourceFileArray": [
     "posts/bucket-list.md",
     "posts/drive-a-digger.md",
-    "posts/snowdon.md"
+    "posts/snowdon.md",
+    "posts/zipworld.md"
   ]
 }

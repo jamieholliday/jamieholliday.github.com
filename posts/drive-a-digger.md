@@ -2,7 +2,7 @@
 title: Drive a Digger
 date: "2017-07-17T22:12:03.284Z"
 layout: post
-path: "/drive-a-digger/"
+path: "/drive-a-digger"
 ---
 
 ![Digger](/images/drive-a-digger.jpg)
