@@ -1,17 +1,5 @@
 {
   "fileMap": {
-    "content/bucket-list.json": {
-      "title": "Bucket List",
-      "date": "2017-06-17T22:12:03.284Z",
-      "layout": "post",
-      "readNext": "/my-second-post/",
-      "path": "/bucket-list/",
-      "dir": "content",
-      "base": "bucket-list.json",
-      "ext": ".json",
-      "sourceBase": "bucket-list.md",
-      "sourceExt": ".md"
-    },
     "content/drive-a-digger.json": {
       "title": "Drive a Digger",
       "date": "2017-07-17T22:12:03.284Z",
@@ -32,6 +20,18 @@
       "base": "snowdon.json",
       "ext": ".json",
       "sourceBase": "snowdon.md",
+      "sourceExt": ".md"
+    },
+    "content/bucket-list.json": {
+      "title": "Bucket List",
+      "date": "2017-06-17T22:12:03.284Z",
+      "layout": "post",
+      "readNext": "/my-second-post/",
+      "path": "/bucket-list/",
+      "dir": "content",
+      "base": "bucket-list.json",
+      "ext": ".json",
+      "sourceBase": "bucket-list.md",
       "sourceExt": ".md"
     },
     "content/zipworld.json": {
