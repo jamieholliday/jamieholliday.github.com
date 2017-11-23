@@ -6,17 +6,28 @@ readNext: "/my-second-post/"
 path: "/bucket-list/"
 ---
 
-My last birthday was one of the bigger ones. 40 years old. While I wasn't particulary sad at turning 40 it did make be think about all the things I'd accomplished so far and about how I thought I may have achieved a few other goals by this age.
+My last birthday was one of the bigger ones. 40 years old. While I wasn't
+particulary sad at turning 40 it did make be think about all the things I'd
+accomplished so far and about how I thought I may have achieved a few other
+goals by this age.
 
-With that in mind I got thinking about the next 10 year block and how I could make that as enjoyable, productive and fulfilling as possible.
+With that in mind I got thinking about the next 10 year block and how I could
+make that as enjoyable, productive and fulfilling as possible.
 
-I decidied to compose a bucket list, normally a list of things you hope to do in your lifetime, instead this one would be limited to 100 items and a timeframe of 10 years.
+I decidied to compose a bucket list, normally a list of things you hope to do in
+your lifetime, instead this one would be limited to 100 items and a timeframe of
+10 years.
 
-I figured that if I knock off all 100 things on this list I'm going to have some good stories to talk about on my 50th birthday.
+I figured that if I knock off all 100 things on this list I'm going to have some
+good stories to talk about on my 50th birthday.
 
-Super simple maths - 100 items in ten years is 10 per year so aprox 1 a month with a couple months left out. 
+Super simple maths - 100 items in ten years is 10 per year so aprox 1 a month
+with a couple months left out.
 
-Some of the items are much harder/larger than others and will take a whole bunch of effort to achieve. Some can probably be batched up a few at a time etc, some are simple things that maybe easy to achieve but for whatever reason I've no goten around to completing them thus far.
+Some of the items are much harder/larger than others and will take a whole bunch
+of effort to achieve. Some can probably be batched up a few at a time etc, some
+are simple things that maybe easy to achieve but for whatever reason I've no
+goten around to completing them thus far.
 
 Here is the list:
 
@@ -24,7 +35,7 @@ Here is the list:
 * Arrive be seaplane
 * Catch a wave surfing
 * Mush a dog sled
-* Travel on a Zip line
+* **Travel on a Zip line - [Done](/blog/zipworld)**
 * Do a Backflip
 * Go Fatbiking
 * Paddle board on a warm ocean
@@ -43,7 +54,7 @@ Here is the list:
 * Visit the ice hotel
 * Start a fire by rubbing sticks together
 * Swim with sea turtles
-* **Drive a digger - [Done](/drive-a-digger)**
+* **Drive a digger - [Done](/blog/drive-a-digger)**
 * See the northern lights
 * Live by the sea
 * Meet someone famous - (define this)
@@ -68,7 +79,7 @@ Here is the list:
 * Eat an insect
 * Eat at a michelin 3-star restaurant
 * Eat fondue
-* Learn a song on the piano 
+* Learn a song on the piano
 * Make cheese
 * Make my own wine
 * Stomp grapes
@@ -105,19 +116,17 @@ Here is the list:
 * Visit the Hover damn
 * Holiday in Bali
 * Go to San Francisco
-* Run the Rocky Steps in Philadelphia 
+* Run the Rocky Steps in Philadelphia
 * Relax in the Blue lagoon in Iceland
 * Take the Guinness Brewery tour in Dublin
 * Zero gravity plane ride
 * Sell some wood creations I made
-* Climb Snowdon
-* Volunteer 
+* **Climb Snowdon - [Done](/blog/snowdon)**
+* Volunteer
 * Take a photo every day for a year
-* Go to watch gymnastics 
-* Watch strongman competition 
-* Wedding reunion in Cyprus 
+* Go to watch gymnastics
+* Watch strongman competition
+* Wedding reunion in Cyprus
 * Learn to dive into water
 * Donate a bench with your name on it
 * Watch a demolition
-
-
