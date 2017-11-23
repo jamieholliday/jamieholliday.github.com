@@ -29,4 +29,4 @@ All in all I very enjoyable day being a big kid and achieving something I always
 
 ## Whats Next?
 
-The next things on the list I have planned are riding the fastest zip line in the world and the longest in Europe (currently) in North Wales. If the weather permits we are also planning walking up Snowdon in the same weekend.
+The next things on the list I have planned are riding [the fastest zip line in the world](/blog/zipworld) and the longest in Europe (currently) in North Wales. If the weather permits we are also planning walking up [Snowdon](/blog/snowdon) in the same weekend.

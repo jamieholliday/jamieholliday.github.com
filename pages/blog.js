@@ -28,9 +28,12 @@ const Blog = props => {
       </Head>
       <S_h1_title>Blog posts</S_h1_title>
       <ul>
-        {Object.keys(summary.fileMap).map((item, itr) =>
-          renderItem(summary.fileMap[item], itr)
-        )}
+        {Object.keys(summary.fileMap)
+          .sort(
+            (a, b) =>
+              summary.fileMap[a].date > summary.fileMap[b].date ? 0 : 1
+          )
+          .map((item, itr) => renderItem(summary.fileMap[item], itr))}
       </ul>
     </Wrapper>
   );

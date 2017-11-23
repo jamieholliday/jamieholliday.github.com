@@ -74,7 +74,7 @@ Again another sharp slowdown to a stop, get off the line, wobble around all over
 
 It was an awesome experience though! I'd highly recommend it.
 
-That was the first day of our weekend adventure. The next day we were planning on getting up early to climb snowdon, so was time to get back to the digs, check in, get a bite to eat at the local pub and get to bed early for an early start the next day.
+That was the first day of our weekend adventure. The next day we were planning on getting up early to climb [Snowdon](/blog/snowdon), so was time to get back to the digs, check in, get a bite to eat at the local pub and get to bed early for an early start the next day.
 
 
 

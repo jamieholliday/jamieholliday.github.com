@@ -39,6 +39,7 @@ const S_img_profile = styled.img`
   width: 300px;
   height: 300px;
   ${media.sm`
+    min-width: 150px;
     width: 150px;
     height: 150px;
   `};
@@ -86,7 +87,12 @@ const renderAbout = () => {
     <section>
       <S_div_about>
         <S_div_profile>
-          <S_img_profile src={'/images/jamie.jpg'} alt="Jamie Holliday" />
+          <S_img_profile
+            src={'/images/jamie.jpg'}
+            alt="Jamie Holliday"
+            width="150"
+            height="150"
+          />
         </S_div_profile>
         <S_div_copy>
           <p>
