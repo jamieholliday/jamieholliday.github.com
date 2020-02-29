@@ -1,25 +1,52 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import React from 'react';
 
 export default class MyDocument extends Document {
-  render() {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
-    const main = sheet.collectStyles(<Main />);
-    const styleTags = sheet.getStyleElement();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => {
+            // conditional is only needed for disableVendorPrefixes on server
+            if (ctx.isServer) {
+              return (
+                <StyleSheetManager sheet={sheet.instance} disableVendorPrefixes>
+                  <App {...props} />
+                </StyleSheetManager>
+              );
+            }
+            return sheet.collectStyles(<App {...props} />);
+          },
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+
+  render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          {styleTags}
-          <link
-            href="https://fonts.googleapis.com/css?family=Raleway:500,700,800"
-            rel="stylesheet"
-            type="text/css"
-          />
         </Head>
         <body>
-          <div className="root">{main}</div>
+          <Main />
           <NextScript />
         </body>
       </html>

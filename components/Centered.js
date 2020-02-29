@@ -13,11 +13,10 @@ const S_div_container = styled.div`
   max-width: ${layout.maxWidth}px;
 `;
 
-const Centered = props =>
+const Centered = props => (
   <S_div_wrapper>
-    <S_div_container>
-      {props.children}
-    </S_div_container>
-  </S_div_wrapper>;
+    <S_div_container>{props.children}</S_div_container>
+  </S_div_wrapper>
+);
 
 export default Centered;

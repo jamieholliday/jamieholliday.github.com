@@ -10,12 +10,12 @@ const breakpoints = {
 };
 
 export const fonts = {
-  default: '"Raleway", sans-serif',
+  default: 'courier, sans-serif',
 };
 
 export const colours = {
-  blue: '#428bca',
-  darkBlue: '#5d6c80',
+  orange: '#f3795c',
+  purple: '#7878b7',
 };
 
 const mediaRules = {
@@ -25,8 +25,9 @@ const mediaRules = {
   // /* medium size and up */
   md: `(min-width: ${breakpoints.md}px)`,
   // /* only medium size */
-  onlyMd: `only screen and (min-width: ${breakpoints.md}px) and ${breakpoints.lg -
-    1}px`,
+  onlyMd: `only screen and (min-width: ${
+    breakpoints.md
+  }px) and ${breakpoints.lg - 1}px`,
   // /* large size and up */
   lg: `(min-width: ${breakpoints.lg}px)`,
 };
@@ -34,6 +35,11 @@ const mediaRules = {
 export const media = Object.keys(mediaRules).reduce((prev, next) => {
   return {
     ...prev,
-    [`${next}`]: (...args) => css`@media ${mediaRules[next]}{${css(...args)}}`,
+    [`${next}`]: (...args) =>
+      css`
+        @media ${mediaRules[next]} {
+          ${css(...args)}
+        }
+      `,
   };
 }, {});
