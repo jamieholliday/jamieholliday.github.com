@@ -10,7 +10,7 @@
     "start": "next start",
     "build:export": "npm run build && npm run export",
     "export": "next export && cp -R public/* out/",
-    "deploy": "npm run build:export && npm run cname && touch out/.nojekyll && gh-pages -d out",
+    "deploy": "npm run build:export && npm run cname && gh-pages -d out",
     "cname": "echo \"jamieholliday.com\" > out/CNAME",
     "lint": "eslint --debug pages/*.js"
   },
